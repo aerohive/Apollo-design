@@ -1,0 +1,168 @@
+/**
+  *@ui-ip
+  */
+.ui-ip{
+	position: relative;
+}
+
+.ui-ip-list{
+	position:absolute;
+	width : 360px;
+	border : 1px solid #ddd;
+	font-size : 13px;
+	background-color: #fff;
+	z-index : 99;
+}
+
+.ui-ip-list-scroll{
+	height : 350px;
+	overflow : auto
+}
+
+.ui-ip-types{
+	position : absolute;
+	top : 35px;
+	width : 160px;
+	border : 1px solid #ddd;
+	font-size : 13px;
+	background-color: #fff;
+	z-index : 9;
+}
+.ui-ip-types:after,
+.ui-ip-types:before{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	top: -10px;
+	left: 15px;
+}
+.ui-ip-types:after{
+	border-bottom: 10px solid white;
+	top : -8px
+}
+.ui-ip-types:before{
+	border-bottom: 10px solid #eee
+}
+.ui-ip-types-title{
+	margin : 0;
+	padding : 6px 10px;
+	border-bottom : 1px solid #eee
+}
+.ui-ip-types-list{
+	margin : 10px 0 15px
+}
+
+
+.ui-ip-sta,
+.ui-ip-mark{
+	background-image: url(../../images/common/sprite/icons-widget.png);
+	background-repeat: no-repeat;
+}
+
+.ui-ip-sta{
+	display : inline-block;
+	vertical-align :middle;
+	margin-left : 20px;
+	cursor : pointer;
+}
+.ui-ip-mark{
+	display : inline-block;
+	position: absolute;
+	width : 22px;
+	height : 18px;
+	margin-left : -27px;
+	margin-top : 7px;
+	/*
+	right : -1px;
+	top:7px;
+	*/
+}
+
+.ui-ip-save,
+.ui-ip-save-active{
+	width : 13px;
+	height : 13px
+}
+.ui-ip-edit,
+.ui-ip-edit-active{
+	width : 20px;
+	height : 17px
+}
+
+.ui-ip-edit{
+	background-position: 0 -500px;
+}
+.ui-ip-edit-active{
+	background-position: -30px -500px;
+}
+.ui-ip-save{
+	background-position: -60px -480px;
+}
+.ui-ip-save-active{
+	background-position: -76px -480px;
+}
+
+.ui-ip-inactive{
+	background-position: 0 -480px;
+}
+.ui-ip-active{
+	background-position: -30px -480px;
+}
+
+.ui-ip-list-item{
+	border-bottom: 1px solid #eee
+}
+
+.ui-ip .item-title-wrap{
+	margin: 0;
+	padding: 6px 10px;
+	border-bottom: 1px solid #eee;
+}
+
+.ui-ip .item-title-wrap .item-new{
+	float : right
+}
+
+.ui-ip .item-title{
+	color : #919193;
+	display: inline-block;
+	width: 200px;
+}
+
+.ui-ip .item-area{
+	margin : 10px 0 15px;
+	color : #868686;
+}
+
+.ui-ip .item-area li,
+.ui-ip-types-item{
+	padding : 5px 0 5px 10px;
+	word-break : break-word;
+	cursor: pointer;
+}
+
+.ui-ip-types-item{
+	color : #0093d1
+}
+
+.ui-ip .item-area li:hover,
+.ui-ip-types-item:hover{
+	background-color: #fff9e7
+}
+
+.ui-ip-noresult{
+	padding : 10px
+}
+
+.ui-ip-del{
+	margin-right:20px;
+	float:right;
+	visibility : hidden
+}
+
+.ui-cwp .ui-ip-list{
+	width : 260px
+}

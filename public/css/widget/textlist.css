@@ -1,0 +1,47 @@
+/**
+ *@ui-textlist
+ */
+.ui-textlist { font: 11px "Lucida Grande", Verdana; cursor: text}
+.ui-textlist-tags { zoom: 1; overflow: hidden; margin: 0; padding: 3px 4px 0; border: 1px solid #aaa; *padding-bottom: 3px; }
+.ui-textlist-tag { list-style-type: none; float: left; display: block; padding: 0; margin: 0 5px 3px 0; cursor: default; }
+.ui-textlist-tag-editable { border: 1px solid #fff; }
+.ui-textlist-tag-editable-input {width:60px; border: 0 !important; padding: 2px 0 !important; *padding-bottom: 0; height: 14px !important; font: 11px "Lucida Grande", Verdana; }
+.ui-textlist-tag-editable-input:focus { outline: 0; }
+.ui-textlist-tag-box { 
+	position: relative; /*line-height: 18px; padding: 0 5px;*/ -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; 
+	/*border: 1px solid #CAD8F3; background: #DEE7F8;*/ 
+	line-height: 13px;
+	padding: 3px 20px 3px 5px;
+	margin: 0 5px 0 0;
+	-moz-background-clip   : padding;
+  	-webkit-background-clip: padding-box;
+  	background-clip        : padding-box;
+	cursor: default; 
+	color: #333;
+  	border: 1px solid #aaaaaa;
+	background-color: #e4e4e4;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#eeeeee', GradientType=0 ); 
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%); 
+
+}
+.ui-textlist-tag-box-deletebutton { 
+       position: absolute;
+       right: 3px;
+       top: 4px;
+       width: 12px;
+       height: 12px;
+       font-size: 1px;
+       background-image:url('../../images/chosen-sprite.png');
+       background-position : -42px 1px;
+       background-repeat : no-repeat;
+}
+
+.ui-textlist-tag-box-deletebutton:hover { background-position: -42px -10px;} 
+.ui-textlist-tag-box-hover { background: #BBCEF1; border: 1px solid #6D95E0; }
+.ui-textlist-tag-box-focus { 
+       border-color: #777; 
+}

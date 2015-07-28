@@ -1,0 +1,18 @@
+/*
+ * @desc this file is used to overwrite the dojo upload button component
+ * @author XiaoMing
+ */
+
+ #uploaderCtn .dijitButtonNode{
+	border: medium none;
+	cursor: pointer;
+ }
+ #uploaderCtn .dijitButtonHover .dijitButtonNode{
+ 	background: transparent;
+ 	color: #4c687f;
+ }
+
+ .claro .dijitDialogPaneContent{
+	padding : 0;
+}
+

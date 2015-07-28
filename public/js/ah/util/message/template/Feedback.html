@@ -1,0 +1,71 @@
+<div class="ui-msg-wrap feedback-box">
+    <div class="feedback-wrapper">
+	<div class="ui-msg-inner">
+		<h3 class="ui-msg-title">Product Feedback and Suggestion</h3>
+		<div class="ui-msg-con">
+			<p class="mt10">Have any comments, feedback or suggestions? <strong>We want to know...</strong></p>
+			<div class="line clearfix mt30">
+				<div class="grid_3 first column">
+					<label>What can we improve</label>
+				</div>
+				<div class="column grid_5 last">
+					<ul class="radio-list">
+						<li style="">
+							<label class="radio"><input name="feedtype" checked="true" type="radio" value="" /><span class="lbl" data-dojo-attach-point="pageEl">Pages name goes there</span>
+
+							</label>
+						</li>
+						<li>
+							<label class="radio"><input name="feedtype" type="radio" value="" /><span class="lbl" data-dojo-attach-point="overall">Overall Aerohive Products</span></label>
+						</li>
+					</ul>
+
+				</div>	
+			</div>
+
+			<div class="line clearfix">
+				<div class="grid_3 first column">
+					<label>Subject</label>
+				</div>
+				<div class="column grid_5 last">
+					<input class="input_5" type="text" name="" data-dojo-attach-point="subjectEl" />	
+				</div>	
+			</div>
+
+			<div class="line clearfix">
+				<div class="grid_3 first column">
+					<label>Feedback</label>
+				</div>
+				<div class="column grid_ last">
+					<textarea class="grid_5" rows="4" data-dojo-attach-point="desEl"></textarea>
+				</div>	
+			</div>
+            <div class="line clearfix feedback-txt-con">
+            	Use the Feedback button to send us product ideas and feedback on features and usability. 
+            	For specific questions or issues, or to report a product defect, please contact <a class="feedback-link" target="_blank" href="https://support.aerohive.com/login">Aerohive Support</a> directly. 
+            	If you are an International customer outside of the Americas please contact your Aerohive Distributor or Partner. 
+            	Messages received via the Feedback button are not monitored by <a class="feedback-link" target="_blank" href="https://support.aerohive.com/login">Aerohive Support</a>.
+            </div>
+			<div class="line clearfix">
+				<div class="grid_3 first column">
+					&nbsp;
+				</div>
+				<div class="column grid_5 last">
+					<button class="btn btn-small btn-dim" data-dojo-attach-point="sendBtn">Send</button>
+					<button class="btn btn-small btn-cancel" data-dojo-attach-point="cancelBtn">Cancel</button>
+				</div>	
+			</div>
+
+		</div>
+	</div>
+    <div class="like-container"><span class="user-feedback ml20 selected" data-dojo-attach-point="feedbackLike">
+									<i class="feedback-icon feedback-like"></i>
+									<span class="feedback-count" data-dojo-attach-point="likeCount">0</span>
+								</span>
+
+								<span class="user-feedback ml5" data-dojo-attach-point="feedbackDislike">
+									<i class="feedback-icon feedback-dislike">
+                                    </i> <span class="feedback-count" data-dojo-attach-point="dislikeCount">0</span>
+								</span></div>
+    </div>
+</div>

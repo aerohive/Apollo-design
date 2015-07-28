@@ -1,0 +1,19 @@
+<div>
+	<div data-dojo-attach-point="backgroundContainer" class="blackout-bg">
+		<div class="modal">
+			<span class="close-button" data-dojo-attach-point="closeButton">X</span>
+			<div class="title">Add/Remove CWP Web Pages</div>
+			<ol>
+				<li>Web page file must not be one of the following types: *.img, *.img.S, *.pem
+				<li>The file name can not contain spaces and must not exceed 32 characters.</li>
+				<li>The sum of web page file size in directory must not exceed 1MB.</li>
+			</ol>
+			<div class="file-upload-field">
+				<div class="drop-target" data-dojo-attach-point="dropTarget"></div>
+				<div data-dojo-attach-point="fileUpload"></div>
+			</div>
+			<ul class="uploaded-file-list" data-dojo-attach-point="uploadedFileList">
+			</ul>
+		</div>
+	</div>
+</div>

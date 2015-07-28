@@ -1,0 +1,220 @@
+.filter-panel {
+	width: 204px;
+/*	font-family: "Helvetica Neue";*/
+}
+
+.filter-con-header {
+	background-color: #0093d1;
+	height: 44px;
+	font-size: 13px;
+	line-height: 44px;
+	padding-left: 8px;
+	border-bottom: 1px solid #999;
+	color:#fff;
+}
+
+h3.ui-filter-categ-tle {
+	height: 36px;
+	background-color: #fff;
+	font-size:14px;
+	color: #858585;
+	line-height: 36px;
+	padding-left: 8px;
+	border-top: 1px solid #999;
+	position: relative;
+	cursor:pointer;
+}
+
+.ui-filter-extextend-blue {
+    background: url(../../images/configLeftNavIcons.png) no-repeat top left;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    background-position: 0 -278px;
+}
+.ui-filter-extextend-blue-cur {
+	background-position: 0 -339px;
+}
+
+h4.ui-filter-dtl-tle {
+	margin: 17px 0 5px 0;
+	font-size:12px;
+	color: #393939;
+	height: 25px;
+	padding-left: 8px;
+	border-bottom: 1px solid #D1D2D4;
+	position: relative;
+}
+.ui-filter-dtl ul {
+	margin-bottom: 15px;
+}
+.ui-filter-dtl ul li {
+	font-size: 12px;
+	color: #717174;
+	padding-left: 8px;
+	margin-bottom: 5px;
+}
+.ui-filter-dtl ul li .J-detail {
+	margin: 4px 8px 0 0;
+	float: right;
+	width: 21px;
+	height: 13px;
+	cursor: pointer;
+	background: url(../../images/common/sprite/icons.png) no-repeat 0 -478px;
+}
+.ui-filter-dtl ul li .J-detail:hover {
+	background-position: -37px -478px;
+}
+.filter-con-title {
+	width: 118px;
+	display: inline-block;
+}
+.btn-fillter-save {
+	font-size: 12px;
+	color: #7e92a1;
+	font-weight: bold;
+	background-color: #fff;
+	right:-17px;
+	line-height: 22px;
+	height: 22px;
+	padding: 0 9px;
+}
+
+.ui-filter-list-wrap {
+	min-height: 26px;
+    background-image: url(../../images/common/sprite/icons.png);
+    background-repeat: no-repeat;
+    background-position: -325px -496px;
+
+}
+.ui-filter-list {
+	margin-top: 10px;
+	max-height: 180px;
+	overflow: auto;
+}
+
+.ui-filter-list-item {
+	font-size: 12px;
+	color: #717174;
+	padding-left: 8px;
+	margin-bottom: 15px;
+	position: relative;
+	background-color: transparent;
+}
+.list-item-del {
+	position: absolute;
+	width: 10px;
+	height: 15px;
+	right: 10px;
+	top:6px;
+    background-image: url(../../images/common/sprite/icons.png);
+    background-repeat: no-repeat;
+    background-position: -354px -161px;
+}
+.C-more {
+	padding-top:10px;
+}
+.filter-panel a.J-more {
+	float: right;
+	font-size: 11px;
+	color: #717174;
+	text-decoration: none;
+	display: block;
+	position: relative;
+	padding-right: 0px;
+	top:-10px;
+}
+.filter-panel a.J-less {
+	float: right;
+	font-size: 11px;
+	color: #717174;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+	padding-right: 0px;
+	top:-10px;
+}
+.no-filter {
+	font-style:italic;
+	padding-left: 8px;
+}
+.J-pa-hook {
+	position: relative;
+	padding-left: 20px;
+}
+.ui-filter-extextend-location-blue {
+	width: 20px;
+	height: 20px;
+    background-image: url(../../images/common/sprite/icons.png);
+    background-repeat: no-repeat;
+    background-position: -348px -74px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    display: inline-block;
+}
+.ui-filter-extextend-location-blue-cur {
+	background-position: -348px -112px;
+}
+
+.ui-filter-extextend-location-blue {
+	width: 20px;
+	height: 20px;
+    background-image: url(../../images/common/sprite/icons.png);
+    background-repeat: no-repeat;
+    background-position: -90px -405px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    display: inline-block;
+}
+.ui-filter-extextend-location-blue-cur {
+	background-position: -90px -442px;
+}
+
+h3.ui-filter-categ-tle,
+h3.ui-filter-categ-tle:hover{
+	border-top: 1px solid #e9f1f3;
+	color:#0093d1;
+	background: #e9f1f3;
+}
+
+
+.ui-filter-extextend-blue {
+	background-position: -33px -277px!important;
+	-ms-transform: rotate(0deg)!important;
+    -webkit-transform: rotate(0deg)!important;
+    transform: rotate(0deg)!important;
+}
+
+.ui-filter-extextend-blue-cur {
+	background-position: -33px -277px!important;
+	-ms-transform: rotate(-90deg)!important;
+    -webkit-transform: rotate(-90deg)!important;
+    transform: rotate(-90deg)!important;
+}
+
+.btn-fillter-save {
+    font-family:Helvetica Neue,Helvetica;
+    font-size: 12px;
+    color: #7e92a1;
+    font-weight: bold;
+    background-color: #fff;
+    right:-17px;
+    line-height: 12px;
+    height: 22px;
+    padding: 0 9px;
+    padding: 6px 8px!important;
+}
+
+.ui-filter-list-item {
+    font-size: 12px;
+    color: #717174;
+    padding-left: 8px;
+    margin-bottom: 17px;
+    position: relative;
+    background-color: transparent;
+}

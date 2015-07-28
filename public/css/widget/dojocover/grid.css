@@ -1,0 +1,635 @@
+/*
+ * @desc this file is used to overwrite the dojo grid component
+ * @author XiaoMing
+ */
+
+.dojoxGridRow {
+ -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+}
+
+.claro .dojoxGrid {
+	font-family: 'Helvetica';
+	border: 0px solid transparent;
+	/*border-bottom: 1px solid #d1c3c3;*/
+}
+
+.claro .dojoxGridCellFocus {
+	border: 0px solid transparent !important;
+	border: 0px solid transparent;
+	border-bottom: 1px solid #d1c3c3 !important;
+}
+
+.claro .dojoxGridRowSelected .dojoxGridRowTable tr {
+	background-color: #fff8ea;
+}
+
+.claro .dojoxGridHeader tr:first-child .dojoxGridCell {
+	vertical-align:middle;
+}
+.claro .dojoxGridRowOdd .dojoxGridRowTable tr {
+	background-color: #ffffff;
+}
+
+.claro .dijitCheckBox, .claro .dijitCheckBoxIcon {
+    background-image:url('../../../images/common/sprite/grid-checkbox-radio.png');
+}
+
+.claro .dojoxGridDoubleAffordance .dojoxGridRowOver .dojoxGridCellOver {
+	border: solid 1px #769dc0;
+	background-color: #fff8ea;
+	border-collapse: separate; /*FF*/
+}
+
+.claro .dojoxGridRowOver .dojoxGridCell {
+	background: #fff8ea;
+}
+
+.claro .dojoxGridHeader .dojoxGridCellOver {
+	background: #7493a4;
+}
+
+.claro .dojoxGridRowSelected .dojoxGridCell {
+
+}
+
+.left-nav-spacing {
+	margin-bottom: -3px;
+	padding-left: 10px;
+}
+
+.claro .dojoxGridMasterHeader {
+	background: #7493a4;
+	color: #FFF;
+	font-family: 'Helvetica';
+	border: 0px solid transparent;
+}
+
+.claro .dojoxGridSortNode {
+	margin-top: 2px;
+	margin-left: 3px;
+}
+
+.claro .dojoxGridCellOver .dojoxGridSortNode {
+	background: #7493a4;
+}
+
+.claro .dojoxGridCellFocus {
+
+}
+
+.claro .dojoxGrid .dojoxGridCell {
+	outline: none;
+	padding: 3px 5px;
+	border: 1px solid transparent;
+	border-color: transparent transparent #E5DAC8 transparent;
+	height: 28px;
+}
+
+
+.dojoxGridRowTable .dijitCheckBox {
+
+}
+
+.claro .dojoxGridMasterMessages {
+	border: 0px solid transparent;
+	border-bottom: 1px solid #d1c3c3;
+}
+
+/**
+ *@For grid loading
+ */
+.gridloading{
+	height : 150px;
+	background : #fff url(../../../images/common/loading/grid_loading.gif) center center no-repeat;
+}
+.grid-mark{
+	position : absolute;
+	top : 0;
+	bottom : 0;
+	left : 0;
+	right : 0;
+	z-index : 12;
+	background : #fff url(../../../images/common/loading/grid_loading.gif) center center no-repeat;
+	opacity : 0.5
+}
+/*=============<table action menu>=============*/
+.admin-nav-menu {
+	line-height: 60px;
+	vertical-align: middle;
+}
+.table-action-icons {
+	background: url(../../../images/common/sprite/icons-comp.png) no-repeat 0 0;
+	width: 33px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor : pointer
+}
+
+.table-sim-remove{
+	width : 15px;
+	height : 18px;
+	background-position : -80px -190px;
+	cursor : pointer
+}
+.table-sim-remove:hover{
+	background-position : -120px -190px
+}
+
+.table-add {
+	background-position: 0 0;
+}
+
+.table-add:hover {
+	background-position: 0 -74px;
+}
+
+.table-email{
+	background-position : -50px -592px;
+}
+
+.table-email:hover{
+	background-position : -50px -666px;
+}
+
+.table-add-drop{
+	width: 0;
+	height: 0;
+	border: solid 3px;
+	border-color: #fff #45677f #45677f #fff;
+	position: absolute;
+	right: 1px;
+	bottom: 1px;
+}
+.table-add:hover .table-add-drop{
+	border-color: #45677f #fff #fff #45677f;
+}
+
+.table-drop-add{
+	position : relative;
+	background-position: 0 0;
+}
+
+.table-drop-add:hover {
+	background-position: 0 -74px;
+}
+
+
+.table-drop-add::after{
+	content : '';
+	width: 0;
+	height: 0;
+	border: solid 3px;
+	border-color: #fff #45677f #45677f #fff;
+	position: absolute;
+	right: 1px;
+	bottom: 1px;
+}
+
+.table-drop-add:hover::after{
+	border-color: #45677f #fff #fff #45677f;
+}
+
+
+.table-edit-table {
+	background-position: 0 -148px;
+}
+
+.table-edit-table:hover {
+	background-position: 0 -222px;
+}
+
+.table-edit {
+	background-position: 0 -296px;
+}
+
+.table-edit:hover {
+	background-position: 0 -370px;
+}
+
+.table-remove {
+	background-position: 0 -444px;
+}
+
+.table-remove:hover {
+	background-position: 0 -518px;
+}
+
+.table-select{
+	background-position: -50px -444px;
+}
+
+.table-select:hover{
+	background-position: -50px -518px;
+}
+
+.table-restore{
+	background-position: -158px -444px;
+}
+
+.table-restore:hover{
+	background-position: -158px -518px;
+}
+
+.table-settings {
+	background-position: 0 -592px;
+}
+
+.table-settings:hover {
+	background-position: 0 -666px;
+}
+
+
+.table-import{
+	background-position: -80px -296px;
+}
+
+.table-import:hover{
+	background-position: -80px -370px;
+}
+
+.table-export{
+	background-position: -160px -296px;
+}
+
+.table-export:hover{
+	background-position: -160px -370px;
+}
+.table-share{
+	background-position: -160px -444px;
+}
+
+.table-share:hover{
+	background-position: -160px -518px;
+}
+.table-stop{
+	background-position: -160px -592px;
+}
+
+.table-stop:hover{
+	background-position: -160px -666px;
+}
+
+.table-resume{
+	background-position: -250px -296px;
+}
+
+.table-resume:hover{
+	background-position: -250px -370px;
+}
+
+.table-align-right-icon {
+	float: right;
+	margin-top: 8px;
+}
+.table-context{
+	background-position: -120px -148px;
+	width: 16px;
+	height: 16px;
+	margin-top: 6px;
+}
+
+.grid-action-menu {
+	width: 100%;
+}
+
+.grid-action-menu-title{
+	font-size: 21px;
+	line-height: 40px;
+	color: #333;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.grid-action-menu-list {
+	list-style-type: none;
+	line-height: 40px;
+}
+
+.grid-action-menu-list-item {
+	display: inline-block;
+	margin-left: 6px;
+	cursor: pointer;
+}
+.grid-action-menu-list-item:first-child{
+		margin-left: 0;
+}
+.grid-header-small-text {
+	margin-left: 10px;
+	font-style: italic;
+	color: #beb9aa;
+	font-size: 12px;
+}
+
+
+.addNewObj{
+	width: auto;
+	margin: 0;
+	padding: 0 20px;
+}
+.add-object-box {
+	border: 1px solid #CCC;
+	/*width: 798px;
+	margin-left: 20px;*/
+	position:relative;
+}
+
+.add-object-box:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -6px;
+	left: 10px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 7px solid white;
+}
+
+.add-object-box:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -7px;
+	left: 10px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 7px solid #ccc;
+}
+
+.add-object-box.l66:after{
+	left:66px;
+}
+
+/*===========</table action menu>============*/
+
+/*pagination*/
+.claro .dojoxGridPaginator{
+	background: none #fbfbfa;
+	border-top: none;
+}
+
+
+.ui-grid-action{
+	padding : 10px 0
+}
+
+.ui-grid-pages li{
+	float : left
+}
+
+.ui-grid-action-funnel{
+	width: 46px;
+  	height: 46px;
+  	background: url(../../../images/common/ah-nav-sprite-icons.png) no-repeat 0 0;
+  	background-position: -70px -23px;
+  	background-color: #cfe6ed;
+}
+.ui-grid-funnel-area{
+	padding : 15px 0 15px 46px;
+	background-color: #cfe6ed; 
+}
+
+.ui-grid-bottom {
+    width: 100%;
+    background-color: #fbfbfa;
+    border-bottom: 1px solid #d1c3c3;
+}
+
+.ui-grid-bottom-left {
+    padding-top: 5px;
+    margin-left: 5px;
+}
+.ui-grid-bottom-left a {
+    height: 14px;
+    line-height: 14px;
+    padding-right: 10px;
+    border-right: 1px solid #4b4b4b;
+    font-weight: normal;
+    color: #5D88AF;
+    float: left;
+    cursor: pointer;
+    margin: 1px 7px 0 7px;
+    zoom: 1; /* for IE */
+}
+
+.ui-grid-bottom-left a:last-child {
+    border-right : none;
+}
+
+.ui-grid-bottom-right {
+    padding-top: 5px;
+    margin-right: 5px;
+}
+
+.ui-grid-pages a {
+    font-weight: normal;
+    color: #5D88AF;
+    cursor: pointer;
+    margin: 1px 6px 0 5px;
+    float: left;
+    zoom: 1; /* for IE */
+}
+
+a.ui-page-item-cur, a.ui-page-size-cur {
+    font-weight: bold;
+    color: black;
+    text-decoration: none!important;
+}
+
+.ui-page-item-nav a {
+	margin-top: 2px;
+	width: 12px!important;
+	height: 12px!important;
+	float: left;
+	background: url("../../../images/common/sprite/grid-sprite-icons.png") no-repeat;
+}
+
+a.ui-page-item-last {
+	cursor: pointer;
+	margin: 3px 9px 0 5px;
+	background-position: -37px 3px;
+}
+.ui-page-item-last.ui-page-item-disable{
+	cursor: default;
+	background-position: -37px -17px;
+}
+a.ui-page-item-next {
+	cursor: pointer;
+	margin-left: 3px;
+	margin-top: 3px;
+	background-position: -17px 3px;
+}
+.ui-page-item-next.ui-page-item-disable{
+	cursor: default;
+	background-position: -17px -17px;
+}
+a.ui-page-item-first {
+	cursor: pointer;
+	margin-left: 1px;
+	margin-top: 3px;
+	background-position: -57px 3px;
+}
+.ui-page-item-first.ui-page-item-disable{
+	cursor: default;
+	background-position: -57px -17px;
+}
+a.ui-page-item-prev {
+	cursor: pointer;
+	margin: 3px 2px 0 5px;
+	background-position: 3px 3px;
+}
+.ui-page-item-prev.ui-page-item-disable{
+	cursor: default;
+	background-position: 3px -17px;
+}
+
+.ui-grid-pages .ui-page-num{
+  	width: 18px;
+	height: 10px;
+  	line-height: 10px;
+  	padding: 2px;
+  	font-size: 11px;
+	text-align: center;
+	border-color: #ccc;
+	float: left;
+}
+
+.ui-grid-pages .ui-page-num-go{
+  	display: inline-block;
+  	height: 16px;
+  	padding: 0 3px;
+  	background-color: #0093D1;
+	font-size: 11px;
+	color : #fff;
+	cursor : pointer;
+	float: left;
+}
+
+.sp-rule-add-norm, .sp-rule-select-norm {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: url(../../../images/configuration/sprite/rule_icons.png) no-repeat;
+	background-repeat: no-repeat;
+}
+
+.sp-rule-add-norm {
+	background-position: 0 0;
+}
+
+.sp-rule-add-norm:hover {
+	background-position: -13px 0;
+}
+
+.sp-rule-select-norm {
+	background-position: 0 -13px;
+}
+
+.sp-rule-select-norm:hover {
+	background-position: -13px -13px;
+}
+
+/*for paginator*/
+.claro .dojoxGridWardButton{
+	background: url(../../../images/common/sprite/grid-sprite-icons.png);
+	margin: 3px 6px 0 5px
+}
+.claro .dojoxGridfirstPageBtn{
+	background-position: -57px 3px;
+}
+.claro .dojoxGridprevPageBtn{
+	background-position: 3px 3px;
+	cursor: pointer;
+	margin: 3px 2px 0 9px;
+	background-position: 3px 3px;
+}
+.claro .dojoxGridnextPageBtn{
+	background-position: -17px 3px;
+	margin-left: 3px;
+  	margin-top: 3px;
+}
+.claro .dojoxGridlastPageBtn{
+	background-position: -37px 3px;
+}
+.claro .dojoxGridfirstPageBtnDisable, .claro .dojoxGridprevPageBtnDisable, .claro .dojoxGridnextPageBtnDisable, .claro .dojoxGridlastPageBtnDisable{
+	display: none;
+}
+.claro .dojoxGridInactived{
+	vertical-align: bottom;
+	margin: 4px 6px 0 5px;
+}
+.claro .dojoxGridActived{
+	font-weight: bold;
+	color: black;
+	text-decoration: none!important;
+	margin: 4px 6px 0 5px;
+}
+
+.claro .dojoxGridPaginator td:first-child {
+	display: none;
+}
+
+.claro .dojoxGridExpando {
+	margin-top: 1px;
+}
+
+.claro .dojoxGridExpandoNode {
+	background:none;
+}
+.claro .dojoxGridExpandoNode:before {
+	content: "\f067";
+	display: inline-block;
+	color: #8b8d8b;
+	font-family: FontAwesome;
+	font-size: 16px;
+	margin-top:1px;
+}
+.claro .dojoxGridExpandoOpened .dojoxGridExpandoNode:before {
+	content: "\f068";
+}
+
+.claro .dojoxGridTreeModel .dojoxGridNoChildren .dojoxGridExpandoNode:before, .dj_ie6 .claro .dojoxGridTreeModel .dojoxGridNoChildren .dojoxGridExpandoNode:before {
+	content: "";
+}
+
+.claro .dojoxGridfirstPageBtnDisable {
+	cursor: default;
+	background-position: -57px -17px;
+	margin-left: 1px;
+	margin-top: 5px;
+	display: block;
+}
+
+
+.claro .dojoxGridprevPageBtnDisable {
+	cursor: default;
+	background-position: 3px -17px;
+	margin: 5px 2px 0 5px;
+	display: block;
+}
+.claro .dojoxGridnextPageBtnDisable {
+	cursor: default;
+	background-position: -17px -17px;
+	margin-left: 3px;
+	margin-top: 5px;
+	display: block;
+}
+.claro .dojoxGridlastPageBtnDisable {
+	cursor: default;
+	background-position: -37px -17px;
+	margin: 5px 9px 0 5px;
+	display: block;
+}
+
+.claro .dojoxGridfirstPageBtn, .claro .dojoxGridprevPageBtn, .claro .dojoxGridnextPageBtn, .claro .dojoxGridlastPageBtn {
+	margin-top: 5px;
+}
+
+.dojoxGridPaginatorGotoTd {
+	width: 45px !important;
+}

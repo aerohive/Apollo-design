@@ -1,0 +1,167 @@
+/*
+*@ui-dialog
+*@For dialog
+*@Author:Peng
+*/
+/*** Override dojo dialog style ***/
+.claro .dijitDialogTitleBar {
+	border: none;
+	background-color: #fff;
+	background-image: none;
+	padding: 20px 35px 10px;
+}
+
+
+.claro .dijitDialog{
+	border : none;
+	box-shadow : none;
+    z-index:1000!important;
+}
+
+.claro .dijitDialogPaneContent {
+	border: none;
+}
+
+.claro .dijitDialogTitle {
+	font-size: 21px;
+	font-weight: 500;
+	color: #393939;
+	padding: 0
+}
+
+.claro .dijitDialogCloseIcon {
+	background: url(../../../images/inventorymgmt/device-onboarding-sprite.png) no-repeat top left;
+	background-position: -10px -804px;
+	width: 18px;
+	height: 18px;
+	top:20px;
+	right:20px;
+	outline: none;
+	z-index: 9;
+}
+
+.claro .dijitDialogCloseIconHover {
+	background-position: -10px -804px
+}
+
+.ui-dialog-top {
+	padding: 20px 35px 0;
+}
+
+.ui-dialog-content {
+	height: 380px;
+	padding: 10px 35px 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ui-dialog-bottom {
+	border-top: 1px solid #989898;
+	padding: 10px 35px;
+}
+
+.ui-sml-dialog .ui-dialog-top,
+.ui-sml-dialog .ui-dialog-content,
+.ui-sml-dialog .ui-dialog-bottom {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*************Need Remove later***********
+*****************************************/
+.ui-dialog {
+	padding: 10px 20px 20px;
+}
+
+.ui-dialog-x {
+	background-image: url(../../../images/common/sprite/icons-tip.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background-position: 0 -200px;
+	right: 20px;
+	top: 12px;
+	cursor: pointer;
+}
+
+.ui-dialog-x:hover {
+	background-position: -49px -200px
+}
+
+.ui-profile-dialog {
+	display: block;
+	height: 520px;
+	overflow: auto;
+}
+
+.ui-profile-dialog-new {
+	padding: 20px 20px 0 20px;
+}
+
+.ui-profile-dialog-content {
+	padding: 20px 20px;
+}
+
+
+/**
+ *@ah/comp/common/AboutDialog
+ *@Author JunWang
+ */
+.about-dialog .dijitDialogPaneContent {
+    background: none;
+    padding: 10px 8px;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.about-dialog.dijitDialog {
+    background-color: white;
+    overflow: hidden !important;
+}
+
+.about-dialog ul, .about-dialog div {
+    width: 350px;
+    margin: 10px auto 10px;
+		white-space: nowrap;
+}
+
+.about-dialog li {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.about-dialog  span {
+    margin: 0 10px 5px;
+}
+
+.about-dialog  span:first-child {
+    width: 130px;
+    display: inline-block;
+}
+
+.about-dialog .dijitDialogTitle {
+	font-weight: 700;
+	padding-left: 10px;
+}
+
+.about-dialog .dijitDialogTitleBar {
+    margin: 0;
+    padding: 21px 10px 8px 10px;
+		width: 100%;
+		border-bottom: 1px solid #989898;
+		margin-bottom: 25px;
+}
+
+.about-dialog .dijitDialogCloseIcon {
+	top: 17px;
+	right: 15px;
+}
+
+.about-dialog .dijitDialogPaneContent {
+    margin: 0;
+    padding: 0;
+}
+.about-dialog .closeText {
+    display: none !important;
+}

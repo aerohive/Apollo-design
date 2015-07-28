@@ -1,0 +1,26 @@
+/**
+  *@reset.css
+  *@Summuy reset brower standard style
+  */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,/* structural elements */
+dl,dt,dd,ul,ol,li,/* list elements*/
+pre,/* text formatting elements */
+form,fieldset,legend,button,input,textarea,/* form elements */
+th,td /* table elements */{margin:0;padding:0;}
+/*body,button,input,select,textarea {font:12px/1.5 helvetica, tahoma, arial, sans-serif;}*/
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new, courier, monospace;}
+small{font-size:12px;}
+ul,ol,dl{list-style:none;}
+a{text-decoration:none;}
+/*a:hover{text-decoration:underline;}*/
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+fieldset,img{border:0;}
+table{border-collapse:collapse;border-spacing:0;}
+h1,h2,h3,h4,h5,h6,button,input,select,textarea{font-size:100%;}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary{display:block}
+/*@media screen and -webkit-min-device-pixel-ratio0 {
+html body,button,input,select,textarea{font-family:'Helvetica Neue', Helvetica, Tahoma, Arial, sans-serif;}
+}*/

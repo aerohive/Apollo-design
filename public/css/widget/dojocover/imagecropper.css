@@ -1,0 +1,105 @@
+@CHARSET "UTF-8";
+
+.image-cropper .crop-node {
+	width: 100px;
+	height: 100px;
+	border: 1px dotted #999;
+	position: absolute;
+	left: 0;
+	top: 0;
+	cursor: move;
+}
+
+.image-cropper .crop-node img {
+	position: absolute;
+	z-index: 100;
+	width: 5px;
+	height: 5px;
+	border: 1px solid #ccc;
+}
+
+.image-cropper .crop-node img.lt {
+	cursor: nw-resize;
+	left: -4px;
+	top: -4px;
+}
+
+.image-cropper .crop-node img.t {
+	cursor: s-resize;
+	top: -4px;
+}
+
+.image-cropper .crop-node img.rt {
+	cursor: ne-resize;
+	right: -4px;
+	top: -4px;
+}
+
+.image-cropper .crop-node img.r {
+	cursor: e-resize;
+	right: -4px;
+}
+
+.image-cropper .crop-node img.rb {
+	cursor: se-resize;
+	right: -4px;
+	bottom: -4px;
+}
+
+.image-cropper .crop-node img.b {
+	cursor: s-resize;
+	bottom: -4px;
+}
+
+.image-cropper .crop-node img.lb {
+	cursor: sw-resize;
+	left: -4px;
+	bottom: -4px;
+}
+
+.image-cropper .crop-node img.l {
+	cursor: e-resize;
+	left: -4px;
+}
+
+.image-cropper .block {
+	position: absolute;
+	opacity: 0.5;
+	z-index: 50;
+	background-color: #000;
+}
+
+.image-cropper .block-l {
+	left: 0;
+	top: 149px;
+	width: 149px;
+	height: 102px;
+}
+
+.image-cropper .block-t {
+	top: 0;
+	width: 100%;
+	height: 149px;
+}
+
+.image-cropper .block-r {
+	right: 0;
+	top: 149px;
+	width: 149px;
+	height: 102px;
+}
+
+.image-cropper .block-b {
+	bottom: 0;
+	width: 100%;
+	height: 149px;
+}
+
+.image-cropper {
+	border: 0px solid #aaa;
+	position: relative;
+	background: green;
+}
+
+.image-cropper > img {
+}

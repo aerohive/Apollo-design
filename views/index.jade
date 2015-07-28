@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	if debug === 'true'
+		h1=debug
+	
+	div(data-dojo-type='ah/app/common/home')
+	script(src='/js/dojo/dojo.js')
+	script(src='/js/ah/app/common/main.js')
+	

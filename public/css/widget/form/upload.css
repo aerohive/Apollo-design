@@ -1,0 +1,83 @@
+.ui-uploader {
+  position: relative;
+  width: 100%;
+}
+.ui-upload-button {
+  display: block;
+  /* or inline-block */
+
+  width: 105px;
+  padding: 7px 0;
+  text-align: center;
+  background: #087DAF;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+}
+.ui-upload-button-hover {
+  /*background: #0495d3;*/
+  background: #dedcd4;
+}
+.ui-upload-button-focus {
+  outline: 1px dotted black;
+}
+.ui-upload-drop-area {
+  display : none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 70px;
+  z-index: 2;
+  background: #FF9797;
+  text-align: center;
+}
+.ui-upload-drop-area span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -8px;
+  font-size: 16px;
+}
+.ui-upload-drop-area-active {
+  background: #FF7171;
+}
+.ui-upload-list {
+  margin: 15px 0;
+  padding: 0;
+}
+.ui-upload-list li {
+  margin: 0;
+  padding: 0;
+  line-height: 15px;
+  font-size: 12px;
+}
+.ui-upload-file,
+.ui-upload-spinner,
+.ui-upload-size,
+.ui-upload-cancel,
+.ui-upload-failed-text,
+.ui-upload-del {
+  margin-right: 7px;
+}
+.ui-upload-del {
+  color: #ff0000;
+}
+.ui-upload-spinner {
+  display: inline-block;
+  background: url("../../../images/common/loading/spinner_loading.gif");
+  width: 15px;
+  height: 15px;
+  vertical-align: text-bottom;
+}
+.ui-upload-size,
+.ui-upload-cancel {
+  font-size: 11px;
+}
+.ui-upload-failed-text {
+  display: none;
+}
+.ui-upload-fail .ui-upload-failed-text {
+  display: inline;
+}

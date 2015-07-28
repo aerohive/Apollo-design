@@ -1,0 +1,233 @@
+/*
+ * @desc this file is used to overwrite the dojo slider component
+ * @author XiaoMing
+ */
+.claro .dijitSliderHover .dijitSliderImageHandleH {
+	background-position: 0 0;
+}
+
+.claro .dijitSliderFocused .dijitSliderImageHandleH {
+	background-position: 0 0;
+}
+
+.claro .dijitSliderProgressBarH .dijitSliderThumbHover {
+	background-position: 0 0;
+}
+
+.claro .dijitSliderProgressBarH .dijitSliderThumbActive {
+	background-position: -0 0;
+}
+
+.claro .dijitSliderReadOnly .dijitSliderImageHandleH,.claro .dijitSliderDisabled .dijitSliderImageHandleH
+	{
+	background-position: -0 0;
+}
+
+.claro .hslider .dijitSliderImageHandleH {
+	border: 0;
+	width: 18px;
+	height: 16px;
+	background-image: url("../../../images/common/sprite/icons-comp.png");
+	top: -2.5px;
+	background-position: -80px -148px !important;
+}
+
+.claro .hslider .dijitSliderHover .dijitSliderImageHandleH {
+	background-position: -80px -148px !important;
+	background-image: url("../../../images/common/sprite/icons-comp.png");
+}
+
+.claro .hslider .dijitSliderFocused .dijitSliderImageHandleH {
+	background-position: -80px -148px !important;
+	background-image: url("../../../images/common/sprite/icons-comp.png");
+}
+
+.claro .hslider .dijitSliderProgressBarH .dijitSliderThumbHover {
+	background-position: -80px -148px !important;
+	background-image: url("../../../images/common/sprite/icons-comp.png");
+}
+
+.claro .hslider .dijitSliderProgressBarH .dijitSliderThumbActive {
+	background-position: -80px -148px !important;
+	background-image: url("../../../images/common/sprite/icons-comp.png");
+}
+
+.claro .dijitSliderHover .dijitSliderRemainingBarH,.claro .dijitSliderHover .dijitSliderRightBumper
+	{
+	background-color: #dedcd4;
+}
+
+.claro .dijitSlider .dijitSliderRemainingBarH,.claro .dijitSlider .dijitSliderRightBumper
+	{
+	background-color: #dedcd4;
+}
+
+.claro .hslider .dijitSliderBarH {
+	height: 10px !important;
+	background-color: #dedcd4;
+}
+
+.claro .dijitSliderImageHandleH {
+	outline: none !important;
+}
+
+.dijitSliderBumperH {
+	height: 10px !important;
+}
+
+.claro .hsliderBL .dijitSliderProgressBarH {
+	border-color: #39A3D8 !important;
+	background-color: #39A3D8 !important;
+	background-image: none;
+}
+
+.claro .hsliderBL .dijitSliderLeftBumper {
+	border-color: #39A3D8 !important;
+	background-color: #39A3D8 !important;
+	background-image: none;
+}
+
+.claro .hsliderORG .dijitSliderProgressBarH {
+	border-color: #F2931F !important;
+	background-color: #F2931F !important;
+	background-image: none;
+}
+
+.claro .hsliderORG .dijitSliderLeftBumper {
+	border-color: #F2931F !important;
+	background-color: #F2931F !important;
+	background-image: none;
+}
+
+.claro .hsliderDORG .dijitSliderProgressBarH {
+	border-color: #CF753A !important;
+	background-color: #CF753A !important;
+	background-image: none;
+}
+
+.claro .hsliderDORG .dijitSliderLeftBumper {
+	border-color: #CF753A !important;
+	background-color: #CF753A !important;
+	background-image: none;
+}
+
+.claro .hsliderYG .dijitSliderProgressBarH {
+	border-color: yellowgreen !important;
+	background-color: yellowgreen !important;
+}
+
+.claro .hsliderYG .dijitSliderLeftBumper {
+	border-color: yellowgreen !important;
+	background-color: yellowgreen !important;
+}
+
+.claro .hsliderYellow .dijitSliderProgressBarH {
+	border-color: #f5a433 !important;
+	background-color: #f5a433 !important;
+	background-image:none;
+}
+
+.claro .hsliderYellow .dijitSliderLeftBumper {
+	border-color: #f5a433 !important;
+	background-color: #f5a433 !important;
+	background-image:none;
+}
+
+.dijitSlider td{
+	padding : 0 !important;
+	border : 0 !important
+}
+
+.tooltip-slider{
+  width: 352px;
+  height: 10px;
+  display: block;
+  position: relative;
+  background: #dedcd4;
+}
+.tooltip-slider .min-value{
+  color: #000;
+  font-size:10px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+.tooltip-slider .max-value{
+  color: #000;
+  font-size: 10px;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.tooltip-slider .slider-fill{
+  width: 200px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f5a433;
+}
+.tooltip-slider .slider-fill:after{
+  content:"|||";
+  width: 12px;
+  height: 12px;
+  display: block;
+  background: #fff;
+  border: solid 1px #f5a433;
+  color: #f5a433;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 14px;
+  position: absolute;
+  top: -2px;
+  left: 194px;
+  cursor: pointer;
+}
+.tooltip-slider .toolTip-up {
+  position: relative;
+  background: #f0efeb;
+/*  width: 50px;*/
+  text-align: center;
+  line-height: 20px;
+  display: block;
+  border: 2px solid #dedcd4;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.tooltip-slider .toolTip-up:after, .toolTip-up:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.tooltip-slider .toolTip-up:after {
+  border-color: rgba(240, 239, 235, 0);
+  border-top-color: #f0efeb;
+  border-width: 5px;
+  margin-left: -5px;
+}
+.tooltip-slider .toolTip-up:before {
+  border-color: rgba(222, 220, 212, 0);
+  border-top-color: #dedcd4;
+  border-width: 8px;
+  margin-left: -8px;
+}
+.tooltip-slider .toolTip-up{
+  position: absolute;
+  bottom: 25px;
+  right:0px;
+}
+
+.tip-default { border: 2px solid #dedcd4; font-size: 10px; padding: 0 10px; font-weight: bold; display: inline-block; }
+.tooltip-slider .direct-input { width: 60px; padding: 0 !important; margin-right: 4px; overflow: hidden; }

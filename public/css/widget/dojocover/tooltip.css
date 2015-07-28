@@ -1,0 +1,11 @@
+.claro .dijitTooltipRight .dijitTooltipContainer {
+   border: 1px solid #b3b3b3;
+   background-image: none;
+   background-color: #676767;
+   color:#FFF;
+   box-shadow: none;
+   border-radius: 0;
+}
+.claro .dijitTooltipRight .dijitTooltipConnector {
+  background-image:url('../../../images/entity/tooltip.png')
+}

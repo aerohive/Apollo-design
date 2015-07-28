@@ -1,0 +1,50 @@
+.claro .dijitTab {
+	border: 1px solid transparent;
+}
+
+.tabLabel {
+	outline: none !important;
+}
+
+.claro .dijitTabChecked {
+	border: 1px solid #b5bcc7;
+	background-color: white;
+	color: #000000;
+}
+
+.claro .dijitTabContainerTop-tabs .dijitTab {
+	background: none;
+	box-shadow: none !important;
+	border-radius: 15px 0 0 0/10px /*0px 0 0 0*/;
+  /*  background:
+        -webkit-linear-gradient(0deg,  transparent 0px, #aaa 0px),
+        -webkit-linear-gradient(0deg, transparent 0px, #aaa 0px),
+        -webkit-linear-gradient(0deg, transparent 0px, #aaa 0px),
+        -webkit-linear-gradient(315deg, transparent 5px, #aaa 5px);
+    
+    background-position: bottom left, bottom right, top right, top left;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    width: auto;
+    padding:5px;
+    color: white;
+    line-height:1.5;
+	*/
+	
+}
+.claro .dijitTabContainerLeft-tabs .dijitTab .tabLabel{
+    line-height: 22px;
+}
+.claro .dijitTabContainerLeft-tabs .dijitTabHover{
+    background-color: #efefef;
+    color: #494949;
+    border: 1px solid transparent;
+}
+.claro .dijitTabContainerLeft-tabs .dijitTabChecked {
+    border: 1px solid #b5bcc7;
+    background-color: white;
+    color: #000000;
+    border-right: none;
+}

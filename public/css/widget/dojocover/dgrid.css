@@ -1,0 +1,62 @@
+/*cover dgrid styles*/
+
+.claro .dgrid{
+	border: medium none;
+}
+.claro .dgrid .dgrid-header .dgrid-cell{
+	background: #7493a4;
+	color: #FFF;
+	text-align: left;
+	border: medium none;
+	border-bottom: solid 1px #E5DAC8;
+	font-weight: normal;
+}
+.claro .dgrid .dgrid-header .dgrid-cell:hover{
+	background: #7493a4;
+}
+.claro .dgrid .dgrid-cell{
+	padding: 3px 5px;
+	vertical-align: middle;
+	color: #393939;
+	height: 35px;
+	border: 1px solid transparent;
+	border-color: transparent transparent #E5DAC8 transparent;
+	outline: none;
+}
+.claro .dgrid .dgrid-cell:hover{
+	background-color: #fff8ea;
+}
+
+/*
+.claro .dgrid input{
+	opacity: 1;
+	width: 15px;
+	height: 15px;
+	margin-top: -7px;
+}
+*/
+.claro .dgrid .dgrid-row:hover {
+	background-color: #fff8ea;
+}
+.claro .dgrid .dgrid-selected {
+  background-color: #fff8ea;
+}
+.claro .dgrid .dgrid-selected:hover {
+  background-color: #fff8ea;
+}
+.claro .dgrid-no-data{
+	padding: 10px 0;
+	text-align: center;
+	border-bottom: solid 1px #E5DAC8;
+}
+.claro .dgrid-tree-container .dgrid-selector{
+	padding-left: 25px;
+	display: none;
+}
+.claro .dgrid-row-expanded+.dgrid-tree-container .dgrid-selector{
+	display: table-cell;
+}
+
+.dgrid-overheight{
+	height : 100%
+}

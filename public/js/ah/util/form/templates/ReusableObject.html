@@ -1,0 +1,41 @@
+<div>
+	<div class="ui-dialog-content" style="height: 465px">
+
+		<div data-dojo-attach-point="listArea">
+			<div data-dojo-attach-point="gridPick" data-dojo-type="ah/util/form/Grid"
+				data-dojo-props="target : this.__target, delTarget: this.__delTarget, structure : this.__structure, plugins : {'select' : true}, actionArea : 'remove', param : this.__gridParam, noDataMessage : 'No Records Found'">
+			</div>
+		</div>
+
+		<div data-dojo-attach-point="formArea" style="display:none">
+			<p class="tan">${i18n.createCopy}</p>
+
+			<div class="line clearfix">
+				<div class="grid_2 column first">
+					<label class="label-rqe">${i18n.saveAs}</label>
+				</div>
+				<div class="grid_4 column last">
+					<input type="text" data-dojo-attach-point="nameEl" />
+				</div>
+			</div>
+
+			<div class="line clearfix" data-dojo-attach-point="autoGroupArea" style="display:none">
+				<div class="grid_2 column first">
+					${i18n.namePre}
+				</div>
+				<div class="grid_4 column last">
+					<input type="text" data-dojo-attach-point="prefixEl" />
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="ui-dialog-bottom clearfix">
+		<button class="btn btn-small btn-primary fn-right" data-dojo-attach-point="linkButton" title="${linkTitle}">${i18n.btn.select}</button>
+		<button class="btn btn-small btn-primary fn-right" data-dojo-attach-point="copyButton" title="${copyTitle}">${i18n.btn.copy}</button>
+		<button class="btn btn-small btn-primary fn-right" data-dojo-attach-point="saveButton" style="display:none">${i18n.btn.save}</button>
+		<button class="btn btn-small btn-cancel" data-dojo-attach-point="cancelButton">${i18n.btn.cancel}</button>
+	</div>
+</div>

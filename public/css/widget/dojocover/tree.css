@@ -1,0 +1,55 @@
+/*
+ * @desc this file is used to overwrite the dojo tree component
+ * @author XiaoMing
+ */
+ 
+.dijitTreeNode .dijitTreeIcon{
+	background: url("../../../images/common/sprite/icons-comp.png") no-repeat -80px -74px;
+	width: 20px;
+}
+.dijitTreeIcon.dijitFolderClosed{
+	background-position: -79px -74px;
+}
+.dijitTreeIcon.dijitFolderOpened{
+	background-position: -80px -111px; 
+}
+
+.claro .dijitTreeNode .dijitTreeExpando{
+	background: url("../../../images/common/sprite/icons-comp.png") no-repeat -80px 0;
+	width: 11px;
+	height: 11px;
+}
+.claro .dijitTreeExpando.dijitTreeExpandoClosed{
+	background-position: -80px 0;
+}
+.claro .dijitTreeExpando.dijitTreeExpandoOpened{
+	background-position: -80px -37px;
+}
+.claro .dijitTreeNode .dijitTreeExpandoLeaf, .dj_ie6 .claro .dijitTreeNode .dijitTreeExpandoLeaf{
+	background-image: none;
+}
+
+.claro .dijitTreeNode .dijitTreeRowSelected, .claro .dijitTreeNode .dijitTreeRowHover{
+	background-color: #FFF;
+	border: medium none;
+	padding: 4px 0 2px 0;
+}
+.claro .dijitTreeNode .dijitTreeLabel{
+	outline: none;
+}
+
+
+/**
+ *@For assignment tree
+ *@Author Peng
+ */
+.assignment-location .dijitTreeContainer{
+	width : 100%
+}
+
+.assignment-location .dijitTreeNode .dijitTreeRowSelected,
+.assignment-location .dijitTreeNode .dijitTreeRowHover{
+	background-color : #cfe5fa;
+	background-image : none
+}
+

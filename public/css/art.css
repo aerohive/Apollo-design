@@ -43,7 +43,8 @@ a:hover{
 	-webkit-transition : background-color 0.2s ease-out;
 }
 
-.nav li a:hover{
+.nav li a:hover,
+.nav li a.active{
 	background-color : #fafafa;
 }
 

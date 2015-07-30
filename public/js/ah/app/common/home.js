@@ -21,7 +21,7 @@ define(["dojo/_base/declare",
 		postCreate : function(){
 			this.inherited(arguments);
 
-			this._mods = {};
+			this._mods = {'stage' : this.stageObj};
 
 			this._maps = {
 				'stage' : Stage,
@@ -35,7 +35,12 @@ define(["dojo/_base/declare",
 		_setActiveAttr : function(type){
 			if(!type) return;
 
-			domCla[type === 'stage'?'add':'remove'](this.content, 'main');
+			var cla = 'active', cur = this.get(cla);
+
+			domCla[type === 'stage' ? 'add' : 'remove'](this.content, 'main');
+
+			domCla.remove(this[cur], cla);
+			domCla.add(this[type], cla);
 
 			this._set('active', type);
 		},
@@ -45,12 +50,14 @@ define(["dojo/_base/declare",
 
 			var mods = this._mods, obj, m;
 
+			if(e.target.className.indexOf('active') != -1) return;
+			
+			mods[this.get('active')].domNode.style.display = 'none';
+
 			if(!(obj = mods[type])){
-				this.content.children[this.content.children.length-1].style.display = 'none';
 				m = mods[type] = new this._maps[type]();
 				m.placeAt(this.content, 'last');
 			}else{
-				mods[this.get('active')].domNode.style.display = 'none';
 				obj.domNode.style.display = '';
 			}
 

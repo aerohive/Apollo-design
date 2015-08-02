@@ -5,7 +5,9 @@ define(["dojo/_base/declare",
 		"ah/app/common/stage",
 		"ah/app/common/why",
 		"ah/app/common/components",
-		"ah/app/common/experience"], function(declare, template, domCla, ModuleBase, Stage, Why, Component, Experience) {
+		"ah/app/common/experience",
+		// preload
+		"ah/app/common/DemoArea"], function(declare, template, domCla, ModuleBase, Stage, Why, Component, Experience) {
 
 	return declare("ah/app/common/home", [ ModuleBase ], {
 

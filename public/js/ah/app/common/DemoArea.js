@@ -5,18 +5,28 @@ define(["dojo/_base/declare",
 
 	return declare("ah/app/common/DemoArea", [ ModuleBase ], {
 
-		templateString : '<div>${demoTpl}<pre><code>${codeTpl}</code></pre></div>',
-
-		demoTpl : '',
-
-		codeTpl : '',
+		templateString : '<div>'+
+                            '<div>${!demoTpl}</div>'+
+                            '<pre data-dojo-attach-point="codeArea">${codeTpl}</pre>'+
+                        '</div>',
 
 		events : [],
 
-		startup : function(){
+		postMixInProperties : function(){
 			this.inherited(arguments);
 
-			hjs.highlightBlock(this.$query('code')[0]);
+            var firstEl = this.srcNodeRef.firstElementChild;
+
+			this.demoTpl = firstEl.outerHTML;
+			this.codeTpl = firstEl.nextElementSibling.outerHTML;
+
+            this.srcNodeRef.removeChild(firstEl);
+		},
+
+		postCreate : function(){
+			this.inherited(arguments);
+
+			hjs.highlightBlock(this.codeArea);
 		}
 	
 	});

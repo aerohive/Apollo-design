@@ -1,6 +1,6 @@
 define([
-	'ah/util/form/Upload',
-	'ah/util/dojocover/AHSlider',
+    "ah/app/common/DemoArea",       
+
 	'ah/util/form/PasswordLevel',
 	'ah/util/form/ObscureInput',
 	'ah/util/Chosen',

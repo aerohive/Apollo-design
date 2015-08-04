@@ -8,11 +8,21 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #23241f;
+  1background: #23241f;
   -webkit-text-size-adjust: none;
+
+
+  color : #666;
+  font-family : Consolas, monospace;
+  font-size : 14px;
+  line-height : 1.5;
 }
 
-.hljs,
+.hljs code{
+  font-family : Consolas, monospace;
+}
+
+/*.hljs,*/
 .hljs-tag,
 .css .hljs-rule,
 .css .hljs-value,
@@ -45,7 +55,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs-title,
 .css .hljs-class,
 .hljs-class .hljs-title:last-child {
-  color: #a6e22e;
+  1color: #a6e22e;
+  color : #4271ae;
 }
 
 .hljs-link_url {
@@ -84,6 +95,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .css .unit,
 .css .hljs-important {
   color: #f92672;
+  1color : #8959a8;
 }
 
 .hljs-function .hljs-keyword,
@@ -100,7 +112,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs-params,
 .hljs-class .hljs-title,
 .hljs-aspect .hljs-title {
-  color: #f8f8f2;
+  1color: #f8f8f2;
+  color : #f5871f;
 }
 
 .hljs-string,
@@ -126,7 +139,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs-prompt,
 .hljs-link_label,
 .hljs-link_url {
-  color: #e6db74;
+  1color: #e6db74;
+  color : #718c00;
 }
 
 .hljs-comment,

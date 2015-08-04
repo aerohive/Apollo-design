@@ -2,6 +2,10 @@ html, body {
     height: 100%
 }
 
+html{
+    -webkit-font-smoothing: antialiased; 
+}
+
 body {
     font: 12px/1.5 helvetica, arial, san-serif;
     color: #777;

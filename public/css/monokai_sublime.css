@@ -30,7 +30,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .css .hljs-function
 .hljs-preprocessor,
 .hljs-pragma {
-  color: #f8f8f2;
+  1color: #f8f8f2;
+  color : #666;
 }
 
 .hljs-strongemphasis,
@@ -155,6 +156,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   color: #75715e;
 }
 
+/*
 .coffeescript .javascript,
 .javascript .xml,
 .tex .hljs-formula,
@@ -166,3 +168,4 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .php .xml {
   opacity: 0.5;
 }
+*/

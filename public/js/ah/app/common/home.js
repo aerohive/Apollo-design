@@ -52,7 +52,7 @@ define(["dojo/_base/declare",
 			var mods = this._mods, obj, m;
 
 			if(e.target.className.indexOf('active') != -1) return;
-			
+
 			mods[this.get('active')].domNode.style.display = 'none';
 
 			if(!(obj = mods[type])){
@@ -64,7 +64,7 @@ define(["dojo/_base/declare",
 
 			this.set('active', type);
 		}
-	
+
 	});
 
 });

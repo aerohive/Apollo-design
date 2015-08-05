@@ -1,19 +1,18 @@
-a,a:link,a:visited,a:hover{
-	color : #fc5b3a;
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #5A5A5A;
 }
 a:hover{
-	text-decoration : none
+	text-decoration: none;
 }
-
-
-
-
+.bg-gray{
+	background-color: #f6f6f6;
+}
 
 .wrapper,
 .height100{
 	height : 100%
 }
-
 
 /**************start header*************/
 #header{
@@ -22,30 +21,67 @@ a:hover{
 	border-bottom : 1px solid #eee;
 }
 
-.nav{
-	float : right;
-	width : 20%;
-	height : 80px;
-	line-height : 80px;
-	margin-right : 30px;
-	/***may we should use em*****/
-	font-size : 14px;
+.ui-nav{
+	margin: 0 40px;
+	border: solid 1px #f1f2f3;
+	border-top: medium none;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05)
 }
-
-.nav li{
-	float : left;
-	width : 25%;
+.ui-nav li{
+	float: left;
+	width:25%;
+	height: 60px;
+	line-height: 60px;
+	cursor: pointer;
+	text-align: center;
+	background-color: #0199e5;
 }
-
-.nav li a{
-	display : block;
-	text-align:center;
-	-webkit-transition : background-color 0.2s ease-out;
+.ui-nav li a{
+	color:#FFF;
+	display: block;
+	border-right: solid 1px #f1f2f3;
+	margin: 0 auto;
+	font-size: 18px;
+	font-weight: bold;
 }
+.ui-nav li:hover a,
+.ui-nav .active a{
+	color: #333;
+}
+.ui-nav li:hover{
+	background-color: rgba(157, 211, 238, 0.37);
+}
+.ui-nav li.active{
+	background-color: rgba(157, 211, 238, 0.37);
+}
+.logo{
+	margin: 10px 40px;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	width: 240px;
+}
+.logo-name{
+	font-size: 22px;
+	color: #0199e5;
+	margin-top: 10px;
+}
+.search{
+	position: relative;
+	margin-top: 20px;
+	width: 220px;
+}
+.search-text{
 
-.nav li a:hover,
-.nav li a.active{
-	background-color : #fafafa;
+}
+.search-action{
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	position: absolute;
+	right: 6px;
+	top: 8px;
+	background: url(../../images/search.png);
 }
 
 
@@ -56,6 +92,31 @@ a:hover{
 .main{
 	height : calc(100% - 180px);
 	min-height : 500px;
+}
+
+.sider-ctn{
+	width: 220px;
+	margin: 40px;
+	background-color: #FFF;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+	padding: 30px;
+}
+.cat-title{
+	font-size: 16px;
+}
+.cat-list-item{
+	margin: 12px 0;
+	font-size: 14px;
+	cursor: pointer;
+}
+.cat-list-item a{
+	padding-left: 20px;
+	color: #999;
+	border-left: solid 2px #FFF;
+}
+.cat-list-item .cur,
+.cat-list-item a:hover{
+	border-left: solid 2px rgba(1, 153, 229, 0.4) ;
 }
 
 

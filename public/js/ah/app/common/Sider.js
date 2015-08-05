@@ -1,14 +1,18 @@
 define(["dojo/_base/declare",
-		'dojo/_base/lang',"dojo/_base/array", "dojo/dom-construct","dojo/dom-class",
-	  	"ah/util/common/ModuleBase"], function(declare, lang, array, domCon, domClass, ModuleBase) {
+		'dojo/_base/lang',
+		'dojo/_base/array',
+		'dojo/dom-construct',
+		'dojo/dom-class',
+		'ah/util/common/ModuleBase'], function(declare, lang, array, domCon, domClass, ModuleBase) {
 
-	return declare("ah/app/common/Sider", [ ModuleBase ], {
+	return declare('ah/app/common/Sider', [ ModuleBase ], {
 
 		templateString : '<div></div>',
 
 		items : [
 			{category : 'Components', list : [
 				{label : 'Tab', type : '', current : true, widget : 'components/tab'},
+				{label : 'Grid', type : '', widget : 'components/tab'}
 			]},
 			{category : 'Styles', list : [
 				{label : 'Layout', widget : 'styles/layout'}
@@ -32,24 +36,24 @@ define(["dojo/_base/declare",
 		},
 
 		events : [
-			['domNode', 'li a:click', '_handleClickItem']	
+			['domNode', 'li a:click', '_handleClickItem']
 		],
 
 		_makeList : function(items){
 			var n = 0, frag = document.createDocumentFragment();
 
 			array.forEach(items, function(item){
-				var div = document.createElement('div'),
-					h3 = document.createElement('h3'),
-					ul = document.createElement('ul');
+				var div = domCon.create('div', {class: 'mb20'}),
+					h3 = domCon.create('h3', {class: 'cat-title'}),
+					ul = domCon.create('ul', {class: 'cat-list'});
 
 				this.$text(h3, item.category);
 				div.appendChild(h3);
 				div.appendChild(ul);
 
-				array.forEach(item.list, function(obj){
-					var li = document.createElement('li'),
-						a = document.createElement('a'),
+				array.forEach(item.list, function(obj, idx){
+					var li = domCon.create('li', {class: 'cat-list-item'}),
+						a = domCon.create('a'),
 						label = obj.label,
 						type = obj.type || this._normalize(label);
 
@@ -103,7 +107,7 @@ define(["dojo/_base/declare",
 		},
 
 		onClickItem : function(){}
-	
+
 	});
 
 });

@@ -36,9 +36,11 @@ define(["dojo/_base/declare",
 		_setActiveAttr : function(type){
 			if(!type) return;
 
-			var cla = 'active', cur = this.get(cla);
+			var cla = 'active', cur = this.get(cla),
+				isStage = type === 'stage';
 
-			domCla[type === 'stage' ? 'add' : 'remove'](this.content, 'main');
+			domCla[isStage ? 'add' : 'remove'](this.content, 'main');
+			domCla[isStage ? 'add' : 'remove'](this.domNode, 'overflow-hidden');
 
 			domCla.remove(this[cur], cla);
 			domCla.add(this[type], cla);

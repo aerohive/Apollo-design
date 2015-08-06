@@ -8,6 +8,7 @@ a{
 a:hover{
 	text-decoration: none;
 }
+
 .bg-gray{
 	background-color: #f6f6f6;
 }
@@ -17,15 +18,13 @@ a:hover{
 	height : 100%
 }
 
+
 /**************start header*************/
 #header{
-	/**height for placeholder**/
-	height : 80px;
-	border-bottom : 1px solid #eee;
+	margin : 0 3%;
 }
 
 .ui-nav{
-	margin: 0 40px;
 	border: solid 1px #f1f2f3;
 	border-top: medium none;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05)
@@ -59,7 +58,7 @@ a:hover{
 	background-color: rgba(157, 211, 238, 0.37);
 }
 .logo{
-	margin: 10px 40px;
+	margin: 10px 0;
 	display: block;
 	height: 50px;
 	line-height: 50px;
@@ -76,7 +75,8 @@ a:hover{
 	width: 220px;
 }
 .search .search-text{
-    border-color : #ccc
+    border-color : #ccc;
+	-webkit-transition : border-color 0.3s ease-in;
 }
 .search-action{
 	display: inline-block;
@@ -94,13 +94,13 @@ a:hover{
 
 
 .main{
-	height : calc(100% - 180px);
+	height : calc(100% - 210px);
 	min-height : 500px;
 }
 
 .sider-ctn{
 	width: 220px;
-	margin: 40px;
+	margin-right: 40px;
 	background-color: #FFF;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 	padding: 30px;
@@ -124,8 +124,11 @@ a:hover{
 	border-left: solid 2px rgba(1, 153, 229, 0.4) ;
 }
 
+
+.res-ctn{
+	margin : 0 3%;
+}
 .res-item{
-	margin: 0 40px;
 	border-top: solid 1px #eee;
 }
 
@@ -155,6 +158,12 @@ a:hover{
 
 .res-item-fourth{
 	background:url(/images/4.png) #ffd749 no-repeat 50%
+}
+
+
+.doc-ctn{
+	padding : 40px 3% 0 3%;
+	background-color : #f6f6f6
 }
 
 /**************start footer*************/

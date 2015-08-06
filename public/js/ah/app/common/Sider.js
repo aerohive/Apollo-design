@@ -36,7 +36,8 @@ define(["dojo/_base/declare",
 		},
 
 		events : [
-			['domNode', 'li a:click', '_handleClickItem']
+			['domNode', 'li a:click', '_handleClickItem'],
+            ['domNode', '.cat-title:click', '_toggleArea']
 		],
 
 		_makeList : function(items){
@@ -88,6 +89,12 @@ define(["dojo/_base/declare",
 			this.set('current', t);
 			this.onClickItem(t.mod);
 		},
+
+        _toggleArea : function(e){
+            var t = e.target;
+
+            this.$toggleWipe(t.nextElementSibling);
+        },
 
 		_normalize : function(txt){
 			var arr = txt.split(/\s+/),

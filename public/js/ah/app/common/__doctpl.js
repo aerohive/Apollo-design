@@ -1,18 +1,9 @@
 define(["dojo/_base/declare",
 		'dojo/_base/lang',
-		"dojo/text!./templates/components.html",
-	  	"ah/util/common/ModuleBase",
-        "ah/config/siderConfig",
-        "ah/app/common/__doctpl"], function(declare, lang, template, ModuleBase, configs, __doctpl) {
+		"ah/app/common/Sider"], function(declare, lang) {
 
-	return declare("ah/app/common/component", [ ModuleBase, __doctpl ], {
+	return declare("ah/app/common/__doctpl", [], {
 
-		templateString : template,
-
-		events : [
-		],
-
-        /*
 		_setActiveAttr : function(widget){
 			if(!widget) return;
 			
@@ -23,18 +14,7 @@ define(["dojo/_base/declare",
 
 			this._set('active', widget);
 		},
-        */
 
-		postMixInProperties : function(){
-			this.inherited(arguments);
-
-			this._mods = {};
-
-            this.__items = configs.components.items;
-			this.__siderClickItem = lang.hitch(this, this._handleToggleMod);
-		}
-
-        /*
 		_handleToggleMod : function(mod){
 			var m = this._mods[mod],
 				url = 'ah/app/design/'+mod;
@@ -56,7 +36,6 @@ define(["dojo/_base/declare",
 			this.set('active', m);
 
 		}
-        */
 	
 	});
 

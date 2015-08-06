@@ -2,6 +2,9 @@ body{
 	font-family: Arial, Helvetica, sans-serif;
 	color: #5A5A5A;
 }
+a{
+    outline : none
+}
 a:hover{
 	text-decoration: none;
 }
@@ -35,6 +38,7 @@ a:hover{
 	cursor: pointer;
 	text-align: center;
 	background-color: #0199e5;
+    -webkit-transition : background-color 0.3s ease-out
 }
 .ui-nav li a{
 	color:#FFF;
@@ -71,8 +75,8 @@ a:hover{
 	margin-top: 20px;
 	width: 220px;
 }
-.search-text{
-
+.search .search-text{
+    border-color : #ccc
 }
 .search-action{
 	display: inline-block;
@@ -103,6 +107,7 @@ a:hover{
 }
 .cat-title{
 	font-size: 16px;
+    cursor : pointer
 }
 .cat-list-item{
 	margin: 12px 0;

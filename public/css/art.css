@@ -45,7 +45,7 @@ a:hover{
 	display: block;
 	border-right: solid 1px #f1f2f3;
 	margin: 0 auto;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
 }
 .ui-nav li:hover a,
@@ -124,7 +124,38 @@ a:hover{
 	border-left: solid 2px rgba(1, 153, 229, 0.4) ;
 }
 
+.res-item{
+	margin: 0 40px;
+	border-top: solid 1px #eee;
+}
 
+.res-item-icon{
+	height: 250px;
+	width: 250px;
+}
+.res-item-desc{
+	width: 65%;
+	height: 250px;
+	margin: 30px 250px 0 0;
+	text-align: center;
+	font-size: 15px;
+}
+
+.res-item-first{
+	background: url(/images/1.png) #0199e5 no-repeat 50%;
+}
+
+.res-item-second{
+	background: url(/images/2.png) #28e1a5 no-repeat 50%;
+}
+
+.res-item-third{
+	background: url(/images/3.png) #FD6CA3 no-repeat 50%;
+}
+
+.res-item-fourth{
+	background:url(/images/4.png) #ffd749 no-repeat 50%
+}
 
 /**************start footer*************/
 #footer{

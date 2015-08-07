@@ -9,9 +9,6 @@ a:hover{
 	text-decoration: none;
 }
 
-.bg-gray{
-	background-color: #f6f6f6;
-}
 
 .wrapper,
 .height100{
@@ -46,6 +43,9 @@ a:hover{
 	margin: 0 auto;
 	font-size: 16px;
 	font-weight: bold;
+}
+.ui-nav li:last-child a{
+    border-right : none
 }
 .ui-nav li:hover a,
 .ui-nav .active a{
@@ -101,7 +101,7 @@ a:hover{
 .sider-ctn{
 	width: 220px;
 	margin-right: 40px;
-	background-color: #FFF;
+	background-color: #F9F9F9;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 	padding: 30px;
 }
@@ -137,11 +137,19 @@ a:hover{
 	width: 250px;
 }
 .res-item-desc{
-	width: 65%;
 	height: 250px;
-	margin: 30px 250px 0 0;
 	text-align: center;
 	font-size: 15px;
+}
+.res-item-desc article{
+    padding-top : 50px
+}
+
+.res-ctn .res-item:nth-child(odd) .res-item-desc{
+    margin-right : 250px   
+}
+.res-ctn .res-item:nth-child(even) .res-item-desc{
+    margin-left : 250px   
 }
 
 .res-item-first{
@@ -162,9 +170,64 @@ a:hover{
 
 
 .doc-ctn{
-	padding : 40px 3% 0 3%;
-	background-color : #f6f6f6
+	padding : 40px 3% 40px 3%;
+	background-color : #fff
 }
+
+
+.code-boxes-lt,
+.code-boxes-rt{
+    width : 50%;
+    float : left;
+    padding-right : 15px;
+}
+
+.code-boxes-rt{
+    padding-right : 0
+}
+
+.code-box{
+    border : 1px solid #e9e9e9;
+    border-radius : 5px;
+    -webkit-transition : border-color 0.4s ease;
+}
+
+.code-box:hover{
+    border-color : #ccc;
+}
+
+.code-box-demo{
+   padding : 40px 20px;
+}
+
+.code-box-info{
+    border-top : 1px solid #e9e9e9;
+    padding : 15px;
+    background-color : #fbfbfb
+}
+
+
+.code-box-hjs pre{
+    border-top : 1px dashed #e9e9e9;
+    padding : 0 20px
+}
+
+.code-box-arrow{
+    float : right;
+    font-size : 18px;
+    color : #ccc;
+    cursor : pointer;
+    -webkit-transition : all 0.3s ease;
+}
+
+.code-box-arrow:hover{
+    color : #aaa
+}
+
+.code-box-rotate .code-box-arrow{
+    transform : rotate(-180deg);
+}
+
 
 /**************start footer*************/
 #footer{

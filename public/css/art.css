@@ -15,6 +15,15 @@ a:hover{
 	height : 100%
 }
 
+.stage{
+    font-family:BrownLight, sans-serif;
+    font-size:86px;
+    color:#121212;
+    text-align:center;
+    padding:60px 0;
+    line-height:1.2
+}
+
 
 /**************start header*************/
 #header{
@@ -171,7 +180,30 @@ a:hover{
 
 .doc-ctn{
 	padding : 40px 3% 40px 3%;
-	background-color : #fff
+	background-color : #fff;
+    font-size : 14px;
+    font-family : "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei","微软雅黑",SimSun,sans-serif;
+}
+
+.doc-ctn h1{
+    font-size : 2.0em;
+}
+
+.doc-ctn h2,
+.doc-ctn h3{
+    margin : 1.8em 0 1em;
+}
+
+.doc-ctn h2{
+    font-size : 1.5em;
+}
+
+.doc-ctn h3{
+    font-size : 1.2em;
+}
+
+.doc-ctn p{
+    margin : 1.4em 0;
 }
 
 
@@ -203,7 +235,8 @@ a:hover{
 .code-box-info{
     border-top : 1px solid #e9e9e9;
     padding : 15px;
-    background-color : #fbfbfb
+    background-color : #fbfbfb;
+    font-size : 12px
 }
 
 

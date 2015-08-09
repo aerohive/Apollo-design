@@ -16,7 +16,7 @@ define([
 
     add('components', { items : [
         {category : 'Components', list : [
-			{label : 'Tab', type : '', current : true, widget : 'components/tab'}
+			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'}
 		]},
 		{category : 'Styles', list : [
 			{label : 'Layout', widget : 'styles/layout'}

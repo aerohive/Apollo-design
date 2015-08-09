@@ -108,28 +108,34 @@ a:hover{
 }
 
 .sider-ctn{
-	width: 220px;
+	width: 260px;
 	margin-right: 40px;
 	background-color: #F7F7F7;
-	padding: 30px;
 }
 .cat-title{
+    padding-left : 40px;
 	font-size: 16px;
     cursor : pointer
 }
 .cat-list-item{
-	margin: 12px 0;
 	font-size: 14px;
 	cursor: pointer;
 }
 .cat-list-item a{
-	padding-left: 20px;
+    display : block;
+    height : 40px;
+    line-height : 40px;
+	padding-left: 50px;
 	color: #999;
-	border-left: solid 2px #FFF;
+	border-left: solid 3px #F7F7F7;
 }
-.cat-list-item .cur,
+.cat-list-item .cur{
+    border-left: solid 3px rgba(1, 153, 229, 0.4);
+    color : #71B5DE;
+    background-color: #fff;
+}
 .cat-list-item a:hover{
-	border-left: solid 2px rgba(1, 153, 229, 0.4) ;
+	color : #71B5DE
 }
 
 

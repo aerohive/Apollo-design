@@ -1,42 +1,91 @@
 <div>
-    <h1>Tab选项卡</h1>
-    <p>选项卡</p>
+    <article data-dojo-attach-point="markdown">
 
-    <h2>效果展示</h2>
-    <div class="code-boxes clearfixe">
+<xmp style="display:none">
+# Tab选项卡    
+选项卡
+
+## API
+### Property
+| 参数          | 说明                           | 类型   | 可选值       | 默认值(Default) | 
+| ------------- | -------------                  | -----  | ------       | --------------- |
+| tabTitles     | 用来生成几个tab页              | String | 'tab1,tab2'  | N/A | 
+| cur           | 初始化第几个tab处于current状态 | Number | 0,1,2,3,4... | 0 |
+| theme         | 主题样式                       | String | gray         | N/A |
+| postion       | tab水平/垂直位置               | String | vertical     | horizontal |
+
+### Methods
+| 参数          | 说明            | 类型  |
+| ------------- | -------------   | ----- |
+| show          | 动态显示哪个tab | function( i : Number ) |
+| hide          | 动态隐藏哪个tab | function( i : Number ) |
+
+### Events
+| 参数          | 说明                              | 类型  |
+| ------------- | -------------                     | ----- |
+| tabClick      | 当点击各个tab项的时候，触发此事件 | function( tab:Element, content:Element, i:Number ) |
+</xmp> 
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
         <div class="code-boxes-lt">
             <div data-dojo-type="ah/app/common/DemoArea">
 		        <div>
-                    <select data-dojo-type="ah/util/Chosen">
-                        <option value="1">Test</option>
-                    </select>
+                    <div data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'">
+                        <div class="ui-tab-panel-wrap clearfix">
+                            <div class="ui-tab-panel">
+                                one
+                            </div>
+                            <div class="ui-tab-panel">
+                                two
+                            </div>
+                        </div> 
+                    </div>
                 </div>
 
 		        <code>
-var n = 0,
-    f = true;
-
-function f() {
-    var age = 28,
-        name = 'haha';	
-
-    console.log(age);
-};
-
-for(var i in {}){
-    if(){}
-}
-
-&lt;div data-dojo-type="ah/util/Chosen"&gt; &lt;/div&gt;
+&lt;div data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'"&gt;
+    &lt;div class="ui-tab-panel-wrap clearfix"&gt;
+        &lt;div class="ui-tab-panel"&gt;one&lt;/div&gt;
+        &lt;div class="ui-tab-panel"&gt;two&lt;/div&gt;
+    &lt;/div&gt; 
+&lt;/div&gt;
 
 		        </code>
 
-                <p>静态HTML用法</p>
+                <p>当内容都是事先存在的情况下</p>
 
 	        </div>
         </div>
 
         <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <div data-dojo-attach-point="tabObj" data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'">
+                        
+                    </div>
+                </div>      
+
+                <code>
+// template.html
+&lt;div data-dojo-attach-point="tabObj" data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'"&gt;
+&lt;/div&gt;
+
+// template.js
+events : [
+    ['tabObj', 'tabClick', '_makeWidgets']
+],
+
+_makeWidgets : function(tab, content, i){
+    // add your widget to content
+}
+
+                </code>
+
+                <p>当内容是动态添加进去的情况下(一般是动态添加模块)</p>
+            </div>
             
         </div>
     </div>

@@ -1,4 +1,5 @@
 define(["dojo/_base/declare",
+        "dojo/_base/lang",
 		"dojo/text!./templates/home.html",
 		"dojo/dom-class",
 	  	"ah/util/common/ModuleBase",
@@ -6,7 +7,7 @@ define(["dojo/_base/declare",
 		"ah/app/common/why",
 		"ah/app/common/components",
 		"ah/app/common/experience",
-        "ah/config/preload"], function(declare, template, domCla, ModuleBase, Stage, Why, Component, Experience) {
+        "ah/config/preload"], function(declare, lang, template, domCla, ModuleBase, Stage, Why, Component, Experience) {
 
 	return declare("ah/app/common/home", [ ModuleBase ], {
 
@@ -18,6 +19,12 @@ define(["dojo/_base/declare",
 			['component', 'click', '_handleMods', 'component'],
 			['experience', 'click', '_handleMods', 'experience']
 		],
+
+        postMixInProperties : function(){
+            this.inherited(arguments);
+
+            this.__gotoComp = lang.hitch(this, this._handleMods, 'component');
+        },
 
 		postCreate : function(){
 			this.inherited(arguments);

@@ -19,7 +19,7 @@ define([
 			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'}
 		]},
 		{category : 'Styles', list : [
-			{label : 'Layout', widget : 'styles/layout'}
+			{label : 'Layout 布局', widget : 'styles/layout'}
 		]}        
     ]});
 

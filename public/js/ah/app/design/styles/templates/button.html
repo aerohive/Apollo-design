@@ -1,0 +1,111 @@
+<div>
+	<article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Button 按钮
+*	提供多种颜色和尺寸的规则化按钮。
+*	按钮的宽度根据文字的内容自适应。
+*	建议使用button标签。
+
+## 使用方式
+
+### 支持的样式列表
+
+| class          | 说明     |
+| ------------- | ------------- |
+| ui-button     | 基础类名，提供标准尺寸的按钮|
+| ui-button-small | 定义高度比较小的按钮|
+| ui-button-gray, ui-button-lGray  | 灰色/浅灰色底色|
+| ui-button-lBlue, ui-button-dBlue | 浅蓝色/深蓝色底色|
+| ui-button-orange | 橙色底色 |
+
+### class叠加顺序
+
+基础类：ui-button
+
+&darr;
+
+定义大小：ui-button-small
+
+&darr;
+
+定义颜色：ui-button-gray等
+
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+	<div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+					<button class="ui-button ui-button-gray">灰色</button>
+					<button class="ui-button ui-button-lBlue">淡蓝色</button>
+					<button class="ui-button ui-button-dBlue">深蓝色</button>
+					<button class="ui-button ui-button-orange">橙色</button>
+                </div>
+
+		        <code>
+&lt;button class="ui-button ui-button-gray"&gt;
+    灰色
+&lt;/button&gt;
+&lt;button class="ui-button ui-button-lBlue"&gt;
+    淡蓝色
+&lt;/button&gt;
+&lt;button class="ui-button ui-button-dBlue"&gt;
+    深蓝色
+&lt;/button&gt;
+&lt;button class="ui-button ui-button-orange"&gt;
+    橙色
+&lt;/button&gt;
+		        </code>
+                <p>标准尺寸的按钮</p>
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+					<button class="ui-button ui-button-small ui-button-gray">灰色</button>
+					<button class="ui-button ui-button-small ui-button-lBlue">淡蓝色</button>
+					<button class="ui-button ui-button-small ui-button-dBlue">深蓝色</button>
+					<button class="ui-button ui-button-small ui-button-orange">橙色</button>
+                </div>
+
+                <code>
+&lt;button class="ui-button ui-button-small ui-button-gray"&gt;
+    灰色小尺寸
+&lt;/button&gt;
+&lt;button class="ui-button ui-button-small ui-button-lBlue"&gt;
+    淡蓝色小尺寸
+&lt;/button&gt;
+&lt;button class="ui-button ui-button-small ui-button-dBlue"&gt;
+    深蓝色小尺寸
+&lt;/button&gt;
+&lt;button class="ui-button ui-button-small ui-button-orange"&gt;
+    橙色小尺寸
+&lt;/button&gt;
+                </code>
+
+                <p>小尺寸的按钮</p>
+            </div>
+        </div>
+    </div>
+	<div class="code-boxes clearfix mt20">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+					<button class="ui-button" disabled>禁用</button>
+                </div>
+
+		        <code>
+&lt;button class="ui-button" disabled&gt;
+    禁用
+&lt;/button&gt;
+		        </code>
+                <p>被禁用的按钮</p>
+	        </div>
+        </div>
+    </div>
+</div>

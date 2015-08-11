@@ -7,6 +7,8 @@ define(["dojo/_base/declare",
 
 	return declare('ah/app/common/Sider', [ ModuleBase ], {
 
+        _flag : false,
+
 		templateString : '<div></div>',
 
 		items : [
@@ -25,14 +27,29 @@ define(["dojo/_base/declare",
 			this._makeList(items);
 		},
 
-		_setCurrentAttr : function(el){
-			if(!el) return;
-			var cur = this.get('current');
+        _getCurrentAttr : function(){
+            return !this._flag ? null : this._get('current');
+        },
+
+		_setCurrentAttr : function(mod){
+			if(!mod) return;
+
+            if(!this._aMaps) return;
+
+			var curMod = this.get('current'),
+                cur = this._aMaps[curMod],
+                el = this._aMaps[mod];
+
+            if(curMod === mod) return;
 
 			cur && domClass.remove(cur, 'cur');
-			domClass.add(el, 'cur');
+			el && domClass.add(el, 'cur');
+            
+			this.onClickItem(mod);
 
-			this._set('current', el);
+			this._set('current', mod);
+
+            this._flag = true;
 		},
 
 		events : [
@@ -62,9 +79,11 @@ define(["dojo/_base/declare",
 					//a.setAttribute('data-type', type);
 					a.mod = obj.widget;
 
-					if(obj.current && n === 0){
-						this.set('current', a);
-						this.onClickItem(obj.widget);
+                    (this._aMaps || (this._aMaps = {}))[obj.widget] = a;
+
+					if(obj.current && n === 0 && !this.current){
+						this.set('current', a.mod);
+						//this.onClickItem(obj.widget);
 						n++;
 					}
 
@@ -86,8 +105,8 @@ define(["dojo/_base/declare",
 
 			if(t === this.get('current')) return;
 
-			this.set('current', t);
-			this.onClickItem(t.mod);
+			this.set('current', t.mod);
+			//this.onClickItem(t.mod);
 		},
 
         _toggleArea : function(e){

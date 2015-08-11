@@ -25,6 +25,9 @@ define(["dojo/_base/declare",
 
 					this._mods[mod] = o = new Kla();
 					o.placeAt(this.area, 'last');
+                    o.domNode.style.opacity = 0;
+
+                    this.$fadeIn(o.domNode);
 
 					this.set('active', o);
 
@@ -35,7 +38,12 @@ define(["dojo/_base/declare",
 			
 			this.set('active', m);
 
-		}
+		},
+
+        setCurrent : function(mod){
+            this.sider && 
+                this.sider.set('current', mod);
+        }
 	
 	});
 

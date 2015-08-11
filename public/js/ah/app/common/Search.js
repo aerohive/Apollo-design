@@ -19,7 +19,14 @@ define(["dojo/_base/declare",
 
         events : [
             ['searchEl', 'focus', function(){domClass.add(this.ulEl, 'search-result-open')}],
-            ['searchEl', 'blur', function(){domClass.remove(this.ulEl, 'search-result-open')}],
+            //['searchEl', 'blur', function(){domClass.remove(this.ulEl, 'search-result-open')}],
+            [document, 'click', function(e){
+                var t = e.target;
+
+                if(t !== this.searchEl){
+                    domClass.remove(this.ulEl, 'search-result-open');
+                }
+            }],
             ['domNode', '.search-list-item:click', '_handleGotoWidget']
         ],
 

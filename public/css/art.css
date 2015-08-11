@@ -15,14 +15,10 @@ a:hover{
 	height : 100%
 }
 
-.stage{
-    font-family:BrownLight, sans-serif;
-    font-size:86px;
-    color:#121212;
-    text-align:center;
-    padding:60px 0;
-    line-height:1.2
+.minh500{
+    min-height : 500px
 }
+
 
 
 /**************start header*************/
@@ -95,6 +91,27 @@ a:hover{
 	right: 6px;
 	top: 8px;
 	background: url(../../images/search.png);
+}
+
+.search-result{
+    1display : none;
+    position : absolute;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color : #fff;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.search-list-item{
+    padding : 6px 12px;
+    font-size : 14px;
+    cursor : pointer
+}
+
+.search-list-item:hover{
+    background-color : #eaf8fe
 }
 
 
@@ -302,4 +319,41 @@ a:hover{
 
 #footer ul{
 	margin : 20px 3% 0 3%;
+}
+
+
+
+/**************stage word****************/
+.stage{
+    position : relative;
+    height : 100%;
+    font-family:BrownLight, sans-serif;
+    font-size:86px;
+    color:#121212;
+    text-align:center;
+    line-height:1.2
+}
+
+.stage-word-matter,
+.stage-word-help{
+    position : absolute;
+    width : 600px;
+    left : 50%;
+    margin-left : -300px;
+    top : 10%;
+    opacity : 0;
+    transition : all 0.5s ease-out;
+}
+
+.stage-word-help{
+    top : 70%
+}
+
+.stage-word-matter-top{
+    top : 20%;
+    opacity : 1;
+}
+.stage-word-help-top{
+    top : 60%;
+    opacity : 1;
 }

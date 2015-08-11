@@ -5,10 +5,7 @@
 				<img src="/images/logo.png" alt="" class="fn-left" width="50">
   				<span class="logo-name">Aerohive</span>
 			</a>
-			<div class="search fn-right">
-				<input type="text" class="search-text" placeholder="search component..." />
-				<span class="search-action"></span>
-			</div>
+            <div class="search fn-right" data-dojo-attach-point="searchObj" data-dojo-type="ah/app/common/Search"></div>
 		</div>
 		<nav>
 			<ul class="ui-nav clearfix">
@@ -21,7 +18,8 @@
 	</header>
 
 	<div data-dojo-attach-point="content" class="main">
-		<div data-dojo-attach-point="stageObj" data-dojo-type="ah/app/common/stage" class="height100"></div>
+        <div data-dojo-attach-point="stageObj" data-dojo-type="ah/app/common/stage" 
+            data-dojo-props="gotoComp:this.__gotoComp" class="height100"></div>
 	</div>
 
 

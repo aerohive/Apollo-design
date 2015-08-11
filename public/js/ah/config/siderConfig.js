@@ -19,36 +19,28 @@ define([
 			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'}
 		]},
 		{category : 'Styles', list : [
-			{label : 'Layout 布局', widget : 'styles/layout'}
-		]}        
+			{label : 'Layout 布局', widget : 'styles/layout'},
+			{label: 'Button 按钮', widget: 'styles/button'}
+		]}
     ]});
 
 
     add('experience', { items : [
 		{category : 'Base Structure', list : [
 			{label : 'Base', current : true, widget : 'experience/base'}
-		]}        
+		]}
     ]});
-
-
-
-
-
-
-
-
-
 
     /**
      *@For search list
-     *@Summary 
+     *@Summary
      */
     var arr = [];
 
     obj.components.items.forEach(function(item, i){
         arr = arr.concat(item.list);
     });
-    
+
     add('search', {items : arr});
 
     return obj;

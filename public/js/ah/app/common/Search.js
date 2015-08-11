@@ -12,14 +12,14 @@ define(["dojo/_base/declare",
 		templateString : '<div>'+
                             '<input type="text" data-dojo-attach-point="searchEl" class="search-text" placeholder="${placeholder}" />'+
                             '<span class="search-action"></span>'+
-                            '<ul class="search-result" style="display:none" data-dojo-attach-point="ulEl"></ul>'+
+                            '<ul class="search-result" data-dojo-attach-point="ulEl"></ul>'+
                          '</div>',
 
         placeholder : 'search component...',
 
         events : [
-            ['searchEl', 'focus', function(){this.$wipeIn(this.ulEl)}],
-            ['searchEl', 'blur', function(){this.$wipeOut(this.ulEl)}],
+            ['searchEl', 'focus', function(){domClass.add(this.ulEl, 'search-result-open')}],
+            ['searchEl', 'blur', function(){domClass.remove(this.ulEl, 'search-result-open')}],
             ['domNode', '.search-list-item:click', '_handleGotoWidget']
         ],
 
@@ -48,10 +48,11 @@ define(["dojo/_base/declare",
             this.ulEl.innerHTML = str;
         },
 
-        _handleGotoWidget : function(){
-            //this.defer(function(){console.log('aaa');},2e2);
-            console.log('aa');
-        }
+        _handleGotoWidget : function(e){
+            this.onClickItem(e.target.getAttribute('data-w'));
+        },
+
+        onClickItem : function(){}
 
     });
 

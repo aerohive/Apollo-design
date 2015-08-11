@@ -94,14 +94,24 @@ a:hover{
 }
 
 .search-result{
-    1display : none;
     position : absolute;
     border: 1px solid #d9d9d9;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
     background-color : #fff;
     max-height: 200px;
     overflow: auto;
+    transition : all 0.3s ease-out;
+    transform-origin : 0 0;
+    transform : scaleY(0);
+    opacity : 0;
+}
+
+.search-result-open{
+    transform : scaleY(1);
+    opacity : 1;
 }
 
 .search-list-item{

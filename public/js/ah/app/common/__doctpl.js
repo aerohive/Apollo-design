@@ -38,7 +38,12 @@ define(["dojo/_base/declare",
 			
 			this.set('active', m);
 
-		}
+		},
+
+        setCurrent : function(mod){
+            this.sider && 
+                this.sider.set('current', mod);
+        }
 	
 	});
 

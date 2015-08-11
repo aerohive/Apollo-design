@@ -31,6 +31,17 @@ define([
 		]}
     ]});
 
+    /**
+     *@For search list
+     *@Summary
+     */
+    var arr = [];
+
+    obj.components.items.forEach(function(item, i){
+        arr = arr.concat(item.list);
+    });
+
+    add('search', {items : arr});
 
     return obj;
 

@@ -17,7 +17,9 @@ define(["dojo/_base/declare",
 			['stage', 'click', '_handleMods', 'stage'],
 			['why', 'click', '_handleMods', 'why'],
 			['component', 'click', '_handleMods', 'component'],
-			['experience', 'click', '_handleMods', 'experience']
+			['experience', 'click', '_handleMods', 'experience'],
+
+            ['searchObj', 'clickItem', '_handleSearch']
 		],
 
         postMixInProperties : function(){
@@ -58,21 +60,49 @@ define(["dojo/_base/declare",
 		_handleMods : function(type, e){
 			e.preventDefault();
 
-			var mods = this._mods, obj, m;
-
 			if(e.target.className.indexOf('active') != -1) return;
 
-			mods[this.get('active')].domNode.style.display = 'none';
+			this._makeMods(type);
+		},
+
+        _handleSearch : function(widget){
+            var type = 'component',
+                obj = this._mods[type],
+                cur = this.get('active'),
+                isActive = cur === type;
+
+            if(obj && !isActive){
+                this._makeMods(type);
+                obj.setCurrent(widget);
+                return;
+            }
+
+            if(obj && isActive){
+                obj.setCurrent(widget);
+                return;
+            }
+
+            if(!obj){
+                this._makeMods(type, {'__current':widget});
+                return;
+            }
+            
+        },
+
+        _makeMods : function(type, opt){
+            var mods = this._mods, obj, m;
+
+            mods[this.get('active')].domNode.style.display = 'none';
 
 			if(!(obj = mods[type])){
-				m = mods[type] = new this._maps[type]();
+				m = mods[type] = new this._maps[type](opt || {});
 				m.placeAt(this.content, 'last');
 			}else{
 				obj.domNode.style.display = '';
 			}
 
 			this.set('active', type);
-		}
+        }
 
 	});
 

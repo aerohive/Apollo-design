@@ -1,5 +1,6 @@
 define([
     "ah/app/common/DemoArea",       
+    "ah/app/common/Search",
 
 	'ah/util/form/PasswordLevel',
 	'ah/util/form/ObscureInput',

@@ -1,0 +1,103 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Chosen选择列表
+选择列表
+
+# API
+## Chosen(静态列表)
+### Property
+| 参数          | 说明                           | 类型   | 可选值       | 是否必须 | 默认值(Default) |
+| ------------- | -------------                  | -----  | ------       | ---------| --------------- |
+| value         | 设置select标签选中的值         | String | any          | 否 | N/A |
+| forbidden     | 设置select标签是否disable      | Boolean | true,false  | 否 | N/A |
+| theme     | 主题样式      | String | blue  | 否 | N/A |
+
+### Tag Property
+| 参数          | 说明                           | 可选值    | 是否必须 | 默认值(Default) |
+| ------------- | -------------                  | -----     | ---------| --------------- |
+| class | 设置是否支持搜索功能、文字靠右显示及其他一些样式属性 | chzn-search,chzn-rtl或其他class | 否 | N/A |
+| data-placeholder | 设置没有选项时显示的文字 | any | 否 | Select One |
+
+### Methods
+| 参数          | 说明            | 类型  |
+| ------------- | -------------   | ----- |
+| addOption(option)  | 添加一个选项 | Dom |
+| set(attr,value)    | 设置一个属性的值 | 内部有_setValueAttr设置select标签value的值，_setForbiddenAttr设置select的disable属性 |
+| get(attr)    | 获取一个属性的值 | 内部有_getValueAttr获取select标签value的值 |
+
+### Events
+| 参数          | 说明                              | 类型  |
+| ------------- | -------------                     | ----- |
+| change | 当改变选择列表选项时触发此事件 | function(event) |
+
+## ChosenList(动态列表)
+### Property
+| 参数          | 说明                           | 类型   | 可选值       | 是否必须 | 默认值(Default) |
+| ------------- | -------------                  | -----  | ------       | ---------| --------------- |
+| selectClass   | 设置select的class属性 | String | any  | 否 | input_6 |
+| items     | 动态传入数据渲染select | Array | [{},{}]  | 否 | null |
+| itemKey   |  设置动态数据中哪个属性值作为option的显示文字 | String | any | 否 | null |
+| itemVal   |  设置动态数据中哪个属性值作为option的value | String | any | 否 | null |
+
+### Tips
+
+下拉选择框最大高度设置的为240px，可查看chosen.css。 若超过这个高度，将会呈现出滚动条。  
+但在本身页面高度不够而下拉内容又太多时，**内容将被截断**，造成显示不全，请在这种情况下，给予页面一个最小高度值，使下拉内容能达到240px即可，例如下方右边的demo。
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+                    <span>快选我</span>
+                    <select data-dojo-type="ah/util/Chosen" data-dojo-props="theme: 'blue'" class="grid_3">
+                        <option value="1">one</option>
+                        <option value="2">two</option>
+                        <option value="3">three</option>
+                    </select>
+                </div>
+
+		        <code>
+&lt;select data-dojo-type="ah/util/Chosen" data-dojo-props="theme: 'blue'" class="grid_3"&gt;
+    &lt;option value="1"&gt;one&lt;/option&gt;
+    &lt;option value="2"&gt;two&lt;/option&gt;
+    &lt;option value="3"&gt;three&lt;/option&gt;
+&lt;/select&gt;
+
+		        </code>
+
+                <p>当内容都是事先存在的情况下</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <select data-dojo-type="ah/util/Chosen" class="chzn-search">
+                        <option value="1">one</option>
+                        <option value="2">two</option>
+                        <option value="3">three</option>
+                    </select>
+                </div>
+
+                <code>
+&lt;div data-dojo-attach-point="chosenObj" data-dojo-type="ah/util/layout/list/ChosenList" data-dojo-props="mode: ''"&gt;
+&lt;/div&gt;
+
+具体用法请查看ChosenList文档
+
+                </code>
+
+                <p>当内容是动态添加进去的情况下</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

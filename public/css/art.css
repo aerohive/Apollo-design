@@ -94,14 +94,25 @@ a:hover{
 }
 
 .search-result{
-    1display : none;
     position : absolute;
     border: 1px solid #d9d9d9;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
     background-color : #fff;
     max-height: 200px;
     overflow: auto;
+    transition : all 0.3s ease-out;
+    transform-origin : 0 0;
+    transform : scaleY(0);
+    opacity : 0;
+    z-index : 99;
+}
+
+.search-result-open{
+    transform : scaleY(1);
+    opacity : 1;
 }
 
 .search-list-item{
@@ -181,10 +192,10 @@ a:hover{
 }
 
 .res-ctn .res-item:nth-child(odd) .res-item-desc{
-    margin-right : 250px   
+    margin-right : 250px
 }
 .res-ctn .res-item:nth-child(even) .res-item-desc{
-    margin-left : 250px   
+    margin-left : 250px
 }
 
 .res-item-first{
@@ -250,6 +261,20 @@ a:hover{
 
 .doc-ctn article{
     width : 80%
+}
+
+li:before{
+	border: solid 1px #999;
+    border-radius: 3px;
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    background-color: #999;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+.doc-ctn ul{
+	margin: 15px 0;
 }
 
 

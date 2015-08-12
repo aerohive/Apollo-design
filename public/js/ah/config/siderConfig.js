@@ -17,10 +17,12 @@ define([
     add('components', { items : [
         {category : 'Components', list : [
 			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
-			{label : 'Chosen 选择列表', type : '', widget : 'components/Chosen'}
+			{label : 'Chosen 选择列表', type : '', widget : 'components/Chosen'},
+			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'}
 		]},
 		{category : 'Styles', list : [
-			{label : 'Layout 布局', widget : 'styles/layout'}
+			{label : 'Layout 布局', widget : 'styles/layout'},
+			{label: 'Button 按钮', widget: 'styles/button'}
 		]}
     ]});
 
@@ -30,15 +32,6 @@ define([
 			{label : 'Base', current : true, widget : 'experience/base'}
 		]}
     ]});
-
-
-
-
-
-
-
-
-
 
     /**
      *@For search list

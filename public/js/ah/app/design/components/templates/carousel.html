@@ -1,0 +1,128 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Carousel轮播    
+图片轮播
+
+## API
+### Property
+| 参数          | 说明                           | 类型   | 可选值       | 默认值(Default) | 
+| ------------- | -------------                  | -----  | ------       | --------------- |
+| showNum     | 一次显示的图片个数，只有当总的图片个数大于showNum时，滚动箭头才会显示              | Number | 1,2,3,4...  | 1 | 
+
+### Methods
+| 参数          | 说明            | 类型  |
+| ------------- | -------------   | ----- |
+| refresh          | 动态显示轮播的内容 | function( i : NodeList ) |
+
+</xmp> 
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div style="width:245px;">
+                    <div data-dojo-type="ah/util/Carousel" data-dojo-props="showNum:4" style="height:70px">
+                        <ul style="height:83px">
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-smartphone"></span>
+                                <div class="online">online</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-laptop"></span><div class="online">online</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-tablet"></span><div class="offline">offline</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-mac"></span><div class="offline">offline</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-windows"></span><div class="offline">offline</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <code>
+&lt;div data-dojo-type="ah/util/Carousel" data-dojo-props="showNum:4"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;span class="user-device user-device-smartphone"&gt;&lt;/span&gt;
+            &lt;div class="online"&gt;online&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="user-device user-device-laptop"&gt;&lt;/span&gt;
+            &lt;div class="online"&gt;online&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="user-device user-device-tablet"&gt;&lt;/span&gt;
+            &lt;div class="offline"&gt;offline&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="user-device user-device-mac"&gt;&lt;/span&gt;
+            &lt;div class="offline"&gt;offline&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="user-device user-device-windows"&gt;&lt;/span&gt;
+            &lt;div class="offline"&gt;offline&lt;/div&gt;
+        &lt;/li&gt;      
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+                </code>
+
+                <p>当内容都是事先存在的情况下</p>
+
+            </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div style="width:245px;">
+                    <div data-dojo-type="ah/util/Carousel" data-dojo-props="showNum:4" style="height:70px">
+                        <ul style="height:83px">
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-smartphone"></span>
+                                <div class="online">online</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-laptop"></span><div class="online">online</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-tablet"></span><div class="offline">offline</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-mac"></span><div class="offline">offline</div>
+                            </li>
+                            <li style='width:50px;height:83px;'>
+                                <span class="user-device user-device-windows"></span><div class="offline">offline</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>    
+
+                <code>
+// template.html
+&lt;ul data-dojo-attach-point="test"&gt;&lt;/ul&gt;
+&lt;div data-dojo-attach-point="carouselList" data-dojo-type="ah/util/Carousel"&gt;
+&lt;/div&gt;
+
+// template.js
+startup : function(){
+    this.inherited(arguments);
+    this.carouselList.refresh(this.test);//this.test.innerHTML为动态获取
+}
+
+                </code>
+
+                <p>当内容是动态添加进去的情况下(一般是动态渲染模块数据)</p>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,256 @@
+.btn-area, .btn-area-nobd{
+	margin-top : 20px;
+	padding-top : 10px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #fff;
+	text-align : right
+}
+.btn-area-nobd{
+	border: medium none;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0 20px;
+	height : 30px;
+	line-height: 30px;
+	color: #FFF;
+	font-size: 13px;
+	font-family: Helvetica;
+	letter-spacing: 1px;
+	background-color: #abbac3;
+	-moz-transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 15px;
+	position: relative;
+	border : none;
+	-webkit-font-smoothing: antialiased;
+  	-moz-font-smoothing: antialiased;
+  	font-smoothing:antialiased;
+
+	/*Not sure this, just copy from ..*/
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+		!important
+}
+.btn:hover{
+	text-decoration : none
+}
+.btn:active,
+.btn:focus{
+	outline : 0
+}
+
+.btn:last-child{
+	margin-right: 0
+}
+
+.btn-small{
+	font-weight : 700;
+}
+
+.btn-sml{
+	font-size: 12px;
+	padding: 0 16px;
+	height: 26px;
+	line-height: 26px;
+}
+
+.btn-dim {
+	background-color: #7FC9E7;
+}
+.btn-dim:hover {
+	background-color: #62A3D8;
+}
+.btn-primary{
+	background-color: #0093D1;
+}
+.btn-primary:hover{
+	background-color: #166EB7;
+}
+.btn-secondary{
+	background-color: #7fc9e8;
+}
+.btn-secondary:hover{
+	background-color: #0093d1;
+}
+.btn-cancel{
+	background-color: #7E92A3;
+}
+
+.btn-cancel:hover{
+	background-color: #4C687F;
+}
+
+.btn-3{
+	background-color: #f5f4f2;
+	border: solid 1px #dedcd4;
+	color: #4c687f;
+	font-weight : 500;
+	font-size: 12px;
+}
+
+.btn-3:hover{
+	background-color: #dedcd4;
+	color: #002849;
+}
+
+
+.btn-orange{
+	background-color: #f8bf70 !important;
+}
+.btn-orange:hover {
+	background: #f5a433 !important;
+}
+.btn-combo{
+	position: relative;
+}
+.btn-combo .btn-combo-inline{
+	display: inline-block;
+}
+
+.btn-combo-drop-down{
+	min-width: 100%;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	z-index: 5555;
+	border: solid 3px #0093d1;
+	overflow: hidden;
+}
+.btn-combo-list a{
+	width: 100%;
+	border-bottom: 1px solid #0093d1 !important;
+	text-align: left;
+	background-color: #f5f4f2 !important;
+	color: #4c687f !important;
+}
+.btn-combo-list a:hover{
+	background-color: #dedcd4 !important;
+}
+.btn-drop-down{
+	background: url("../../images/common/sprite/icons.png") -250px -50px no-repeat #0093d1;
+	line-height: 30px !important;
+	width: 30px;
+	height: 30px !important;
+	text-align: center;
+	padding:  0 0 !important;
+	margin: 0 0 0 -3px;
+}
+
+.btn-plus {
+	background-color: #F5F4F1 !important;
+	border-color: #F5F4F1;
+	padding: 0 10px;
+}
+
+.btn-copy {
+	background-color: #7fc9e8 !important;
+	border-color: #7fc9e8;
+	padding: 0 10px !important;
+}
+
+.btn-copy-qos {
+	background-color: #7fc9e8 !important;
+	border-color: #7fc9e8;
+	padding: 0 15px !important;
+	height: 25px;
+}
+
+
+.btn-mir-hold{
+	width : 80px;
+	background-color : #d8dee4
+}
+.btn-mir,
+.btn-mir-leave{
+	width : 100%;
+	position : fixed;
+	bottom : 50px;
+	left : 0;
+	border : none;
+	z-index : 91;
+	margin-bottom:-10px
+}
+.btn-mir .btn-area-inner,
+.btn-mir-leave .btn-area-inner{
+	width : 1000px;
+	margin : 0 auto -30px auto;
+}
+.btn-mir button:last-child{
+	margin-right : -100px
+}
+.btn-mir-leave button:last-child{
+	margin-right : -10px
+}
+
+
+/* button wait */
+.button-wait-spinner:before {
+	content: "";
+	width: 15px;
+	height: 100%;
+	display: inline-block;
+	background: transparent url(../../images/common/loading/preloading.gif) no-repeat center center;
+	background-size: contain;
+	float: left;
+	margin-right: 5px;
+}
+
+button:disabled, input[type="button"]:disabled,
+button:hover:disabled, input[type="button"]:hover:disabled {
+	background: #6f6f6f;
+    cursor: default;
+    color: #bbb;
+}
+
+.btn-file{
+	width: 80px !important;
+	opacity: 0;
+	z-index: 10;
+	position: absolute;
+}
+
+
+.btn-assign{
+	display: inline-block;
+	padding : 0 20px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	letter-spacing: .5px;
+	background: #fafaf9;
+	text-align: center;
+	color: #4c687f;
+	border: solid 1px #dedcd4;
+	cursor: pointer;
+}
+
+.btn-link-assign {
+	color: #0093d1;
+}
+
+.btn-link-assign:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+/*for troubleshoot issue list filter*/
+.btn-greyish {
+	font-size: 14px;
+	color: #ffffff;
+	background-color: #abbbc4;
+}
+
+.btn-grey {
+	background-color:#e7e6e6;
+	color: #393939;	
+}
+
+.disabledBtn{
+	background-color:#dedcd4 !important;
+	color: #002849 !important;
+}

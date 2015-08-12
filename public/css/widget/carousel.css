@@ -1,0 +1,38 @@
+.offline{
+	font-size: 10px;
+	color: #C1282D;
+	margin-bottom: 0;
+}
+.online{
+	font-size: 10px;
+	color: #079247;
+	margin-bottom: 0;
+}
+.user-device{
+	background: url(../../images/user-device-icons.png);
+	display: inline-block;
+	height: 39px;
+}
+.user-device:hover{
+    background-position-x: -50px;
+}
+.user-device-mac{
+	width: 39px;
+	background-position: 0 -250px;
+}
+.user-device-windows{
+	width: 40px;
+	background-position: 0 0;
+}
+.user-device-laptop{
+	width: 36px;
+	background-position: 0 -200px;
+}
+.user-device-smartphone{
+	width: 16px;
+	background-position: 0 -150px;
+}
+.user-device-tablet{
+	width: 36px;
+	background-position: 0 -100px;
+}

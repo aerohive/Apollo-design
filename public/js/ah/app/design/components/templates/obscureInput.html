@@ -7,23 +7,37 @@
 
 ## API
 ### Property
-| 参数          | 说明                           | 类型   | 可选值       | 默认值(Default) |
-| ------------- | -------------                  | -----  | ------       | --------------- |
-| tabTitles     | 用来生成几个tab页              | String | 'tab1,tab2'  | N/A |
-| cur           | 初始化第几个tab处于current状态 | Number | 0,1,2,3,4... | 0 |
-| theme         | 主题样式                       | String | gray         | N/A |
-| postion       | tab水平/垂直位置               | String | vertical     | horizontal |
+| 参数         | 说明                   | 类型         | 可选值             | 默认值(Default) |
+| -------------| -------------          | -----        | ------             | --------------- |
+| isGenegate   | 是否出现自动生成按键   | Boolean      | true,false         | false     |
+| count        | 设置自动生成的信息长度 | Number       | 1,2,3...           | 64        |
+| required     | 是否是必填项           | Boolean      | true,false         | false     |
+| value        | 输入框默认值           | String,Number| 0,1,...;'a','b'... | N/A       |
+| checked      | 是否隐藏输入信息       | Boolean      | true,false         | true      |
+| labelClass   | 设定标签样式           | String       |'grid_1','grid_2'...| 'grid_4'  |
+| inputClass   | 设定输入区域样式       | String       |'grid_1','grid_2'...| 'grid_12' |
+| textClass    | 设定输入框样式         | String       |'input_1','input_2'...| N/A     |
+| label        | 设定第一个标签文本     | String       | 字符串             | 'Shared Secret' |
+| labelConfirm | 设定第二个标签文本     | String       | 字符串             | 'Confirm Secret'|
+| obscureTxt   | 设定隐藏提示文本       | String       | 字符串             | 'Obscure secret'|
+| des          | 设定输入提示信息       | String       |'标签&#166;字符串'  | N/A       |
+| passwordLevel|是否出现密码安全程度提示| Boolean      |  true,false        | false     |
 
 ### Methods
-| 参数          | 说明            | 类型  |
-| ------------- | -------------   | ----- |
-| show          | 动态显示哪个tab | function( i : Number ) |
-| hide          | 动态隐藏哪个tab | function( i : Number ) |
+| 参数              | 说明                     | 类型  |
+| -------------     | -------------            | ----- |
+| _setValueAttr     | 设置value值              | function( v : String ) |
+| _getValueAttr     | 获取value值              | function( ) |
+| _setCheckedAttr   | 设定单选按钮是否被选中   | function( f : Boolean ) |
+| _setRequiredAttr  | 动态设定是否是必填项     | function( f : Boolean ) |
+| _setMaxLengthAttr | 动态设定输入框的输入长度 | function( len : Number )|
+| changeDes         | 动态改变输入框提示信息   | function( msg : String )|
 
 ### Events
-| 参数          | 说明                              | 类型  |
-| ------------- | -------------                     | ----- |
-| tabClick      | 当点击各个tab项的时候，触发此事件 | function( tab:Element, content:Element, i:Number ) |
+| 参数          | 说明                                  | 类型  |
+| ------------- | -------------                         | ----- |
+| change        | 当单选按钮状态发生变化时，触发此事件  | function( e:event ) |
+| click         | 当自动生成按键被点击时，触发此事件    | function( ) |
 </xmp>
 
     </article>
@@ -33,29 +47,25 @@
         <div class="code-boxes-lt">
             <div data-dojo-type="ah/app/common/DemoArea">
 		        <div>
-                    <div data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'">
-                        <div class="ui-tab-panel-wrap clearfix">
-                            <div class="ui-tab-panel">
-                                one
-                            </div>
-                            <div class="ui-tab-panel">
-                                two
-                            </div>
-                        </div>
+                    <div data-dojo-type="ah/util/form/ObscureInput" data-dojo-attach-point="passwordObs" data-dojo-props="
+                    labelClass:'grid_2',
+                    inputClass:'grid_4',
+                    textClass:'input_4',
+                    value:'ObscureInput',
+                    isGenegate:true,
+                    count:16,
+                    charType:'ANY_SELECTED_CHARACTER_TYPES',
+                    passwordLevel: true,
+                    ">
                     </div>
                 </div>
 
 		        <code>
-&lt;div data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'"&gt;
-    &lt;div class="ui-tab-panel-wrap clearfix"&gt;
-        &lt;div class="ui-tab-panel"&gt;one&lt;/div&gt;
-        &lt;div class="ui-tab-panel"&gt;two&lt;/div&gt;
-    &lt;/div&gt;
+&lt;div ah/util/form/ObscureInput" data-dojo-props="labelClass:'grid_2', inputClass:'grid_4', textClass:'input_4', value:'ObscureInput', isGenegate:true, count:16, charType:'ANY_SELECTED_CHARACTER_TYPES', passwordLevel: true"&gt;
 &lt;/div&gt;
 
 		        </code>
-
-                <p>当内容都是事先存在的情况下</p>
+                <p>带自动生成和安全程度检测的密码输入</p>
 
 	        </div>
         </div>
@@ -63,28 +73,24 @@
         <div class="code-boxes-rt">
             <div data-dojo-type="ah/app/common/DemoArea">
                 <div>
-                    <div data-dojo-attach-point="tabObj" data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'">
-
+                    <div data-dojo-type="ah/util/form/ObscureInput" data-dojo-attach-point="commonObs" data-dojo-props="
+                    labelClass:'grid_2',
+                    inputClass:'grid_4',
+                    textClass:'input_4',
+                    label: 'Id card',
+                    labelConfirm: 'Id card Confirm',
+                    obscureTxt: 'hide or not',
+                    des:'span|Please input 18 digitals',
+                    ">
                     </div>
                 </div>
 
                 <code>
-// template.html
-&lt;div data-dojo-attach-point="tabObj" data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'"&gt;
+&lt;div ah/util/form/ObscureInput" data-dojo-props="labelClass:'grid_2', inputClass:'grid_4', textClass:'input_4',label: 'Id card', labelConfirm: 'Id card Confirm', obscureTxt: 'hide or not', des:'span|Please input 18 digitals'"&gt;
 &lt;/div&gt;
-
-// template.js
-events : [
-    ['tabObj', 'tabClick', '_makeWidgets']
-],
-
-_makeWidgets : function(tab, content, i){
-    // add your widget to content
-}
-
                 </code>
 
-                <p>当内容是动态添加进去的情况下(一般是动态添加模块)</p>
+                <p>普通的隐藏输入</p>
             </div>
 
         </div>

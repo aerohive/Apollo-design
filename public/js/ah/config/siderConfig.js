@@ -16,18 +16,19 @@ define([
 
     add('components', { items : [
         {category : 'Components', list : [
-			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'}
+			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
+			{label : 'ObscureInput 隐藏输入', type : '', current : true, widget : 'components/obscureInput'}
 		]},
 		{category : 'Styles', list : [
 			{label : 'Layout 布局', widget : 'styles/layout'}
-		]}        
+		]}
     ]});
 
 
     add('experience', { items : [
 		{category : 'Base Structure', list : [
 			{label : 'Base', current : true, widget : 'experience/base'}
-		]}        
+		]}
     ]});
 
 
@@ -41,14 +42,14 @@ define([
 
     /**
      *@For search list
-     *@Summary 
+     *@Summary
      */
     var arr = [];
 
     obj.components.items.forEach(function(item, i){
         arr = arr.concat(item.list);
     });
-    
+
     add('search', {items : arr});
 
     return obj;

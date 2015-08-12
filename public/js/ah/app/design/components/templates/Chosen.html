@@ -40,14 +40,13 @@
 ### Property
 | 参数          | 说明                           | 类型   | 可选值       | 是否必须 | 默认值(Default) |
 | ------------- | -------------                  | -----  | ------       | ---------| --------------- |
-| selectClass   | 设置select的class属性 | String | any  | 否 | input_6 |
+| selectClass   | 设置select的class属性，具体值请参考Chosen | String | any  | 否 | input_6 |
 | items     | 动态传入数据渲染select | Array | [{},{}...]  | 否 | null |
 | itemKey   |  设置动态数据中哪个属性值作为option的显示文字 | String | any | 否 | null |
 | itemVal   |  设置动态数据中哪个属性值作为option的value | String | any | 否 | null |
 | keepValue | 设置在调用refresh刷新选择列表时，是否保持已选中的值 | Boolean | true,false | 否 | true |
 | bEmpty | 设置选项列表是否显示一行空选项 | Boolean | true,false | 否 | false |
 | extraData | 额外的数据，在动态获取数据后若还有额外的数据，可以设置此值，将会插入到获取的数据前面 | Array | [{},{}...] | 否 | null |
-| selectClass | 设置select标签的class属性，具体值请参考Chosen | String | 任何class,各个class请以空格隔开 | 否 | input_6 |
 | mode | 自定义模式，与_maps和_keyMaps配合使用，需同时配置，若定义了此参数，items、itemKey、itemVal将不再起作用 | String | any | 否 | null |
 | _maps | 一个对象，key为mode所定义的值，value为要获取数据的API | Object | {key: 'service/...'} | 若mode定义了就必须定义 | {} |
 | _keyMaps | 一个对象，key为mode所定义的值，value为length为2的数组，[0]相当于itemKey，[1]相当于itemVal | Object | {key: [itemKey, itemVal]} | 若mode定义了就必须定义 | {} |
@@ -56,7 +55,7 @@
 | forbidden     | 设置select标签是否disable | Boolean | true,false  | 否 | N/A |
 | idData     | 以获取data的id为key，data本身为value的一个对象 | Object | 组件自动赋值 | 否 | N/A |
 | listData   | 以每条option显示的文本label为key，value值为value的一个对象 | Object | 组件自动赋值 | 否 | N/A |
-| label  | get时获取获取当前选择列表的文本，set时设置选中的值为其中文本lable的option | String | 组件自动赋值 | 否 | N/A |
+| label  | get时获取当前选择列表的文本，set时设置选中的值为其文本是lable的option | String | 组件自动赋值 | 否 | N/A |
 
 ### Methods
 | 参数          | 说明            | 类型  |
@@ -133,7 +132,7 @@
         <div class="code-boxes-rt">
             <div data-dojo-type="ah/app/common/DemoArea">
                 <div>
-                    <select data-dojo-type="ah/util/Chosen" class="chzn-search">
+                    <select data-dojo-type="ah/util/Chosen">
                         <option value="1">one</option>
                         <option value="2">two</option>
                         <option value="3">three</option>
@@ -141,10 +140,15 @@
                 </div>
 
                 <code>
-&lt;div data-dojo-attach-point="chosenObj" data-dojo-type="ah/util/layout/list/ChosenList" data-dojo-props="mode: ''"&gt;
+// template.html
+&lt;div data-dojo-attach-point="chosenObj" data-dojo-type="ah/util/layout/list/ChosenList" data-dojo-props="mode: 'someMode'"&gt;
 &lt;/div&gt;
 
-具体用法请查看ChosenList文档
+// template.js
+events : [
+    ['chosenObj', 'change', '_handleChosen']
+]
+
 
                 </code>
 

@@ -20,7 +20,9 @@ define([
 			{label : 'ObscureInput 隐藏输入', type : '', current : true, widget : 'components/obscureInput'}
 		]},
 		{category : 'Styles', list : [
-			{label : 'Layout 布局', widget : 'styles/layout'}
+			{label : 'Layout 布局', widget : 'styles/layout'},
+			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'},
+			{label: 'Button 按钮', widget: 'styles/button'}
 		]}
     ]});
 
@@ -30,15 +32,6 @@ define([
 			{label : 'Base', current : true, widget : 'experience/base'}
 		]}
     ]});
-
-
-
-
-
-
-
-
-
 
     /**
      *@For search list

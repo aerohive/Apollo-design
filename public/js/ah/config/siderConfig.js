@@ -21,7 +21,7 @@ define([
 			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'}
 		]},
 		{category : 'Styles', list : [
-			{label : 'Layout 布局', widget : 'styles/layout'},
+			//{label : 'Layout 布局', widget : 'styles/layout'},
 			{label: 'Button 按钮', widget: 'styles/button'}
 		]}
     ]});

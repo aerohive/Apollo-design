@@ -259,6 +259,10 @@ a:hover{
     background-color : #f7f7f7
 }
 
+.doc-ctn article ul{
+	margin: 15px 0;
+}
+
 .doc-ctn article{
     width : 80%
 }
@@ -273,9 +277,7 @@ li:before{
     vertical-align: middle;
     margin-top: 10px;
 }
-.doc-ctn ul{
-	margin: 15px 0;
-}
+
 
 
 .code-boxes-lt,

@@ -9,7 +9,7 @@ define(["dojo/_base/declare",
 
         _flag : false,
 
-		templateString : '<div></div>',
+		templateString : '<div class="cat-list-area"></div>',
 
 		items : [
 			{category : 'Components', list : [

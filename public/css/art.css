@@ -172,8 +172,13 @@ a:hover{
 	margin-right: 40px;
 	background-color: #F7F7F7;
 }
+
+.cat-list-area{
+    padding-top : 20px;
+}
+
 .cat-title{
-    padding-left : 40px;
+    padding :0 0 10px 40px;
 	font-size: 16px;
     cursor : pointer
 }

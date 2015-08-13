@@ -1,0 +1,44 @@
+.btn {
+	display: inline-block;
+	padding: 0 20px;
+	height : 30px;
+	line-height: 30px;
+	color: #FFF;
+	font-size: 13px;
+	font-family: Helvetica;
+	letter-spacing: 1px;
+	background-color: #abbac3;
+	-moz-transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+	cursor: pointer;
+	vertical-align: middle;
+	margin-right: 15px;
+	position: relative;
+	border : none;
+	-webkit-font-smoothing: antialiased;
+  	-moz-font-smoothing: antialiased;
+  	font-smoothing:antialiased;
+
+	/*Not sure this, just copy from ..*/
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+		!important
+}
+
+.btn:hover{
+	text-decoration : none
+}
+.btn-3{
+	background-color: #f5f4f2;
+	border: solid 1px #dedcd4;
+	color: #4c687f;
+	font-weight : 500;
+	font-size: 12px;
+}
+
+.btn-3:hover{
+	background-color: #dedcd4;
+	color: #002849;
+}

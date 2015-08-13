@@ -1,0 +1,213 @@
+<div>
+	<article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Tipbox 提示框
+提供error, warning, success 多种形式的提示框样式。
+
+## 使用方式
+
+### 支持的样式列表
+
+| class          | 说明     |
+| ------------- | ------------- |
+| ui-tipbox     | 基础类名, 提供标准尺寸的提示框|
+| ui-tipbox-large, ui-tipbox-small | 定义icon比较大和比较小的提示框 |
+| ui-tipbox-error, ui-tipbox-warning, ui-tipbox-success | 定义提示框类型 |
+| ui-tipbox-plain | 定义空白背景的提示框|
+
+### class叠加顺序
+
+基础类：ui-tipbox | ui-tipbox-small | ui-tipbox-large
+
+&darr;
+
+定义类型：ui-tipbox-error | ui-tipbox-warning | ui-tipbox-success
+
+&darr;
+
+定义plain ：ui-tipbox-plain
+
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+	<div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+					<div class="ui-tipbox ui-tipbox-warning">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">warning</div>
+                    </div>
+
+                    <div class="ui-tipbox ui-tipbox-error">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">error</div>
+                    </div>
+
+                    <div class="ui-tipbox ui-tipbox-success">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">success</div>
+                    </div>
+                </div>
+
+		        <code>
+&lt;div class="ui-tipbox ui-tipbox-warning"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;warning&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox ui-tipbox-error"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;error&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox ui-tipbox-success"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;success&lt;/div&gt;
+&lt;/div&gt;
+		        </code>
+                <p>标准尺寸无title的提示框</p>
+	        </div>
+
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+                    <div class="ui-tipbox-large ui-tipbox-warning">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">warning</div>
+                    </div>
+
+                    <div class="ui-tipbox-large ui-tipbox-error">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">error</div>
+                    </div>
+
+                    <div class="ui-tipbox-large ui-tipbox-success">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">success</div>
+                    </div>
+                </div>
+
+                <code>
+&lt;div class="ui-tipbox-large ui-tipbox-warning"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;warning&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox-large ui-tipbox-error"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;error&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox-large ui-tipbox-success"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;success&lt;/div&gt;
+&lt;/div&gt;                   
+                </code>
+
+                <p>大尺寸提示框</p>
+            </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+					<div class="ui-tipbox ui-tipbox-warning">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">
+                            <h3 class="ui-tipbox-title">Title</h3>
+                            <p>warning</p>
+                        </div>
+                    </div>
+
+                    <div class="ui-tipbox ui-tipbox-error">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">
+                            <h3 class="ui-tipbox-title">Title</h3>
+                            <p>error</p>
+                        </div>
+                    </div>
+
+                    <div class="ui-tipbox ui-tipbox-success">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">
+                            <h3 class="ui-tipbox-title">Title</h3>
+                            <p>success</p>
+                        </div>
+                    </div>
+                </div>
+
+                <code>
+&lt;div class="ui-tipbox ui-tipbox-warning"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;
+        &lt;h3 class="ui-tipbox-title"&gt;Title&lt;/h3&gt;
+        &lt;p&gt;warning&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox ui-tipbox-error"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;
+        &lt;h3 class="ui-tipbox-title"&gt;Title&lt;/h3&gt;
+        &lt;p&gt;error&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox ui-tipbox-success"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;
+        &lt;h3 class="ui-tipbox-title"&gt;Title&lt;/h3&gt;
+        &lt;p&gt;success&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </code>
+
+                <p>标准尺寸带title的提示框</p>
+            </div>
+
+           <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <div class="ui-tipbox ui-tipbox-plain ui-tipbox-warning">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">warning</div>
+                    </div>
+
+                    <div class="ui-tipbox ui-tipbox-plain ui-tipbox-error">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">error</div>
+                    </div>
+
+                    <div class="ui-tipbox ui-tipbox-plain ui-tipbox-success">
+                        <i class="ui-tipbox-icon"></i>
+                        <div class="ui-tipbox-con">success</div>
+                    </div>
+                </div>
+
+                <code>
+&lt;div class="ui-tipbox ui-tipbox-plain ui-tipbox-warning"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;warning&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox ui-tipbox-plain ui-tipbox-error"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;error&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-tipbox ui-tipbox-plain ui-tipbox-success"&gt;
+    &lt;i class="ui-tipbox-icon"&gt;&lt;/i&gt;
+    &lt;div class="ui-tipbox-con"&gt;success&lt;/div&gt;
+&lt;/div&gt;                  
+                </code>
+
+                <p>plain样式提示框</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+</div>

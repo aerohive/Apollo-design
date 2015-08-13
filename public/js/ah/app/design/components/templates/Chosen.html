@@ -1,0 +1,161 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Chosen选择列表
+选择列表
+
+# API
+## Chosen(静态列表)
+### Property
+| 参数          | 说明                      | 类型   | 可选值       | 是否必须 | 默认值(Default) |
+| ------------- | -------------             | -----  | ------       | ---------| --------------- |
+| theme     | 主题样式      | String | blue  | 否 | N/A |
+| value         | 设置select标签选中的值，请使用set和get方法设置和获取值，以下各属性相同  | String | any    | 否 | N/A |
+| forbidden | 设置select标签是否disable | Boolean | true,false  | 否 | N/A |
+
+
+### Tag Property
+| 参数          | 说明                           | 可选值    | 是否必须 | 默认值(Default) |
+| ------------- | -------------                  | -----     | ---------| --------------- |
+| class | 设置是否支持搜索功能、文字靠右显示及其他一些样式属性 | chzn-search,chzn-rtl或其他class | 否 | N/A |
+| data-placeholder | 设置没有选项时显示的文字 | any | 否 | Select One |
+
+### Methods
+| 参数          | 说明            | 类型  |
+| ------------- | -------------   | ----- |
+| addOption  | 添加一个选项 | function(option: Dom) |
+
+### Events
+| 参数          | 说明                              | 类型  |
+| ------------- | -------------                     | ----- |
+| change | 当改变选择列表选项时触发此事件 | function(event) |
+
+### 注册的事件
+| 参数 | 说明 |
+| ---- | ---- |
+| liszt:updated | 当改变了select的html结构或属性时，需调用this.$publish('liszt:updated', selectDom)，将会自动重新渲染整个select |
+
+## ChosenList(动态列表)
+### Property
+| 参数          | 说明                           | 类型   | 可选值       | 是否必须 | 默认值(Default) |
+| ------------- | -------------                  | -----  | ------       | ---------| --------------- |
+| selectClass   | 设置select的class属性，具体值请参考Chosen | String | any  | 否 | input_6 |
+| items     | 动态传入数据渲染select | Array | [{},{}...]  | 否 | null |
+| itemKey   |  设置动态数据中哪个属性值作为option的显示文字 | String | any | 否 | null |
+| itemVal   |  设置动态数据中哪个属性值作为option的value | String | any | 否 | null |
+| keepValue | 设置在调用refresh刷新选择列表时，是否保持已选中的值 | Boolean | true,false | 否 | true |
+| bEmpty | 设置选项列表是否显示一行空选项 | Boolean | true,false | 否 | false |
+| extraData | 额外的数据，在动态获取数据后若还有额外的数据，可以设置此值，将会插入到获取的数据前面 | Array | [{},{}...] | 否 | null |
+| mode | 自定义模式，与_maps和_keyMaps配合使用，需同时配置，若定义了此参数，items、itemKey、itemVal将不再起作用 | String | any | 否 | null |
+| _maps | 一个对象，key为mode所定义的值，value为要获取数据的API | Object | {key: 'service/...'} | 若mode定义了就必须定义 | {} |
+| _keyMaps | 一个对象，key为mode所定义的值，value为length为2的数组，[0]相当于itemKey，[1]相当于itemVal | Object | {key: [itemKey, itemVal]} | 若mode定义了就必须定义 | {} |
+| fetchData | 一个方法，在渲染数据之前，对已获取的数据自行进行处理，然后调用callback即可| Function | function(data,callback) | 否 | function(data,callback) |
+| value         | 设置select标签选中的值，请使用set和get方法设置和获取值，以下各属性相同    | String | any    | 否 | N/A |
+| forbidden     | 设置select标签是否disable | Boolean | true,false  | 否 | N/A |
+| idData     | 以获取data的id为key，data本身为value的一个对象 | Object | 组件自动赋值 | 否 | N/A |
+| listData   | 以每条option显示的文本label为key，value值为value的一个对象 | Object | 组件自动赋值 | 否 | N/A |
+| label  | get时获取当前选择列表的文本，set时设置选中的值为其文本是lable的option | String | 组件自动赋值 | 否 | N/A |
+
+### Methods
+| 参数          | 说明            | 类型  |
+| ------------- | -------------   | ----- |
+| add | 添加一条或多条选项 | function(obj: Object/Array) |
+| refresh | 刷新重新获取select数据 | function() |
+| done | 会保证在整个select全部渲染完成后才执行的方法，在异步处理时常用 | function(fn) |
+| _when | 与done方法类似 | function(fn) |
+
+
+### Events
+| 参数          | 说明                              | 类型  |
+| ------------- | -------------                     | ----- |
+| change | 当改变选择列表选项时触发此事件 | function(value) |
+
+### Tips
+
+下拉选择框最大高度设置的为240px，可查看chosen.css。若超过这个高度，将会呈现出滚动条。  
+但在本身页面高度不够而下拉内容又太多时，**内容将被截断**，造成显示不全，请在这种情况下，给予页面一个最小高度值，使下拉内容能达到240px即可。
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+                    <div>
+                        <select data-dojo-type="ah/util/Chosen">
+                            <option value="1">标准</option>
+                            <option value="2">two</option>
+                            <option value="3">three</option>
+                        </select>
+                        <select data-dojo-type="ah/util/Chosen" data-dojo-props="theme: 'blue'" class="grid_2">
+                            <option value="1">蓝色主题</option>
+                            <option value="2">two</option>
+                            <option value="3">three</option>
+                        </select>
+                        <select data-dojo-type="ah/util/Chosen" class="grid_2 chzn-search">
+                            <option value="1">可搜索</option>
+                            <option value="2">two</option>
+                            <option value="3">three</option>
+                        </select>
+                    </div>
+                </div>
+
+		        <code>
+&lt;select data-dojo-type="ah/util/Chosen"&gt;
+    &lt;option value="1"&gt;标准&lt;/option&gt;
+    &lt;option value="2"&gt;two&lt;/option&gt;
+    &lt;option value="3"&gt;three&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select data-dojo-type="ah/util/Chosen" data-dojo-props="theme: 'blue'" class="grid_2"&gt;
+    &lt;option value="1"&gt;蓝色主题&lt;/option&gt;
+    &lt;option value="2"&gt;two&lt;/option&gt;
+    &lt;option value="3"&gt;three&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select data-dojo-type="ah/util/Chosen" class="grid_2 chzn-search"&gt;
+    &lt;option value="1"&gt;可搜索&lt;/option&gt;
+    &lt;option value="2"&gt;two&lt;/option&gt;
+    &lt;option value="3"&gt;three&lt;/option&gt;
+&lt;/select&gt;
+
+		        </code>
+
+                <p>当内容都是事先存在的情况下</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <select data-dojo-type="ah/util/Chosen">
+                        <option value="1">one</option>
+                        <option value="2">two</option>
+                        <option value="3">three</option>
+                    </select>
+                </div>
+
+                <code>
+// template.html
+&lt;div data-dojo-attach-point="chosenObj" data-dojo-type="ah/util/layout/list/ChosenList" data-dojo-props="mode: 'someMode'"&gt;
+&lt;/div&gt;
+
+// template.js
+events : [
+    ['chosenObj', 'change', '_handleChosen']
+]
+
+
+                </code>
+
+                <p>当内容是动态添加进去的情况下</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

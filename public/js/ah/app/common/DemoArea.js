@@ -26,7 +26,7 @@ define(["dojo/_base/declare",
             var firstEl = this.srcNodeRef.firstElementChild,
                 secondEl = firstEl.nextElementSibling;
 
-			this.demoTpl = firstEl.outerHTML;
+			this.demoTpl = firstEl.outerHTML.replace('stype','type');
 			this.codeTpl = secondEl.outerHTML;
 
             if(secondEl.nextElementSibling){

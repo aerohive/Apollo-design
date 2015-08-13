@@ -18,7 +18,8 @@ define([
         {category : 'Components', list : [
 			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
 			{label : 'Chosen 选择列表', type : '', widget : 'components/Chosen'},
-			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'}
+			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'},
+			{label : 'Menu 弹出菜单', type : '', widget : 'components/menu'}
 		]},
 		{category : 'Styles', list : [
 			//{label : 'Layout 布局', widget : 'styles/layout'},

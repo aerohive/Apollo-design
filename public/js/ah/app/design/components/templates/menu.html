@@ -1,0 +1,256 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Menu 弹出菜单    
+弹出菜单
+
+## API
+### Property
+| 参数          | 说明                           | 类型          | 可选值             | 默认值(Default) | 
+| ------------- | -------------                  | -----         | ------             | --------------- |
+| items         | 用来生成弹出菜单项目           | Object或Array | 自定义,详见Demo              | N/A | 
+| btnText       | 按钮的标题                     | String        | String                       | ‘Test’ |
+| theme         | 主题样式                       | String        | medium,large                 | N/A |
+| action        | children 触发事件类型          | String        | mouse,click                  | mouse |
+| type          | 设置需要显示的菜单集           | String        | 自定义,仅当itmes是Object可用 | __ |
+
+### Methods
+| 参数          | 说明            | 类型  |
+| ------------- | -------------   | ----- |
+| show          | 显示哪些菜单项  | function( list : Array ) |
+| hide          | 隐藏哪些菜单项  | function( list : Array ) |
+
+### Events
+| 参数          | 说明                                     | 类型  |
+| ------------- | -------------                            | ----- |
+| hook          | 当点击某个菜单项且其无子菜单时触发此事件 | function( String:type,e ) |
+| type          | 当点击某个菜单项且其无子菜单时触发此事件 | function() |
+
+Events中的type，从items菜单项中获取，如果没有配置type，组件通过处理name获得。
+</xmp> 
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea" data-dojo-props="view:this">
+		        <div>
+                     <span class="ml15" data-dojo-stype="ah/util/layout/Menu" data-dojo-attach-point="actions" data-dojo-props="items : this.view.__actionItems, btnText : 'Actions', bReplace : true, theme : 'large'"></span>
+                </div>
+
+
+
+		        <code>
+// template.html
+&lt;span class=&quot;ml15&quot; data-dojo-type=&quot;ah/util/layout/Menu&quot; data-dojo-attach-point=&quot;actions&quot; data-dojo-props=&quot;items : this.__actionItems, btnText : &#39;Actions&#39;, bReplace : true, theme : &#39;large&#39;&quot;&gt;&lt;/span&gt;
+
+//items：
+
+this.__actionItems = [
+            {name : 'Assign Location', type : 'assignLocation'},
+            {name : 'Reboot', type : 'reboot'},
+            {name : 'Assign Country Code', type : 'assignCountryCode'},
+            {
+                name: 'Advanced',
+                children: [
+                    { name: 'CLI Access', type: 'cliWindow' },
+                    { name: 'Bootstrap Configuration', type: 'configureBootstrap' },
+                    {name : 'Update Netdump Settings', type : 'configureNetdump'}
+                ]
+            },
+            {
+                name: "Change Management Status",
+                children: [
+                    {name : 'Manage Devices', type : 'manageDevices'},
+                    {name : 'Unmanage Devices', type : 'unmanageDevices'}
+                ]
+            }
+        ]
+
+// template.js
+events : [
+    ['actions', 'hook', '_dispense']
+],
+_dispense : function(type,e){
+   // type 为每个菜单项的type
+}
+
+		        </code>
+
+                <p>当菜单项目为数组时且绑定hook事件：</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea" data-dojo-props="view:this" style="min-height:600px;">
+                <div>
+                    <span data-dojo-stype="ah/util/layout/Menu" data-dojo-attach-point="utilities" data-dojo-props="items : this.view.__utilitesItems, btnText : 'Utilities',bReplace : true,type : 'ap', theme : 'medium'"></span>
+                </div>      
+
+                <code>
+// template.html
+&lt;span data-dojo-type=&quot;ah/util/layout/Menu&quot; data-dojo-attach-point=&quot;utilities&quot; data-dojo-props=&quot;items : this.__utilitesItems, btnText : &#39;Utilities&#39;,bReplace : true,type : &#39;ap&#39;, theme : &#39;medium&#39;&quot;&gt;&lt;/span&gt;
+
+//items：
+this.__actionItems = {
+        'ap': [
+                { name: 'Client Information' }, //all
+                { name: 'Layer 2 Neighbor Information', type: 'layerNeighborInformation' }, //all only can select one device
+                {
+                    name: 'Diagnostics',
+                    children: [
+                        { name: 'Ping' },
+                        { name: 'Show Log' },
+                        { name: 'Show Version' },
+                        { name: 'Show Running Config' },
+                        { name: 'Show IP Routes' },
+                        { name: 'Show MAC Routes' },
+                        { name: 'Show ARP Cache' },
+                        { name: 'Show Roaming Cache' },
+                        { name: 'Show DNXP Neighbors' },
+                        { name: 'Show DNXP Cache' },
+                        { name: 'Show AMRP Tunnel' },
+                        { name: 'Show GRE Tunnel' },
+                        { name: 'Show IKE Event' },
+                        { name: 'Show IKE SA' },
+                        { name: 'Show IPsec SA' },
+                        { name: 'Show IPsec Tunnel' },
+                        { name: 'Show CPU' },
+                        { name: 'Show Memory' }
+                    ]
+                },
+                {
+                    name: 'Status',
+                    children: [
+                        { name: 'Advanced Channel Selection Protocol' },
+                        { name: 'Interface' },
+                        { name: 'Wi-Fi Status Summary', type: 'wifiStatusSummary'}
+                    ]
+                }, //all switch only support interface
+                { name: 'Reset Device to Default' }, //all
+                { name: 'Locate Device' }, //only support ap, only can select one device
+                // {
+                //  name: 'LLDP/CDP',
+                //  children: [
+                //      { name: 'LLDP/CDP Clear', type: 'lldpCdpClear' },
+                //      { name: 'Show LLDP Parameters' },
+                //      { name: 'Show LLDP Neighbors' },
+                //      { name: 'Show CDP Parameters' },
+                //      { name: 'Show CDP Neighbors '}
+                //  ]
+                // }, //switch and ap, only one
+                { name: 'Get Tech Data' }, //all
+            ],
+    'ap2': [
+
+                { name: 'Client Information' }, //all
+                { name: 'Reset Device to Default' }, //all
+                { name: 'Get Tech Data'} //all
+            ],
+    'sr': [
+                { name: 'Client Information' }, //all
+                {
+                    name: 'Diagnostics',
+                    children: [
+                        { name: 'Ping' },
+                        { name: 'Show Log' },
+                        { name: 'Show MAC Table' },
+                        { name: 'Show Version' },
+                        { name: 'Show Running Config' },
+                        { name: 'Show IP Routes' },
+                        { name: 'Show CPU' },
+                        { name: 'Show Memory' },
+                        { name: 'Show PSE '}
+                    ]
+                },
+                {
+                    name: 'Status',
+                    children: [
+                        { name: 'Interface '}
+                    ]
+                }, //all switch only support interface
+                { name: 'Reset PSE' }, // only switch
+                { name: 'Reset Device to Default' }, //all
+                // {
+                //  name: 'LLDP/CDP',
+                //  children: [
+                //      { name: 'LLDP/CDP Clear', type: 'lldpCdpClear' },
+                //      { name: 'Show LLDP Parameters' },
+                //      { name: 'Show LLDP Neighbors' },
+                //      { name: 'Show CDP Parameters' },
+                //      { name: 'Show CDP Neighbors '}
+                //  ]
+                // },, //all
+                { name: 'Get Tech Data'} //all
+            ],
+    'sr2': [
+                { name: 'Client Information' }, //all
+                { name: 'Reset PSE' }, // only swit ch
+                { name: 'Reset Device to Default' }, //all
+            ],
+    'apsr': [
+
+                { name: 'Client Information' },
+                { name: 'Reset Device to Default' },
+                { name: 'Get Tech Data'}
+            ],
+            'none': []
+    }
+
+// template.js
+        events: [
+            ['utilities', 'interface', 'launchUtilitiesDialog', 'loadInterfaceDom'],
+            ['utilities', 'advancedChannelSelectionProtocol', 'launchUtilitiesDialog', 'loadAdChannelSelPro'],
+            ['utilities', 'wifiStatusSummary', 'launchUtilitiesDialog', 'loadWiFiStatus'],
+            ['utilities', 'layerNeighborInformation', 'launchUtilitiesDialog', 'loadNeighborInformation'],
+            ['utilities', 'clientInformation', 'launchUtilitiesDialog', 'loadClientInformation'],
+            ['utilities', 'resetPSE', 'loadResetPse'],
+            ['utilities', 'resetDevicetoDefault', 'loadResetDevice'],
+            ['utilities', 'locateDevice', 'launchUtilitiesDialog', 'loadLocateDevice', {'w': '500', 'h': '360'}],
+            ['utilities', 'lldpCdpClear', 'launchUtilitiesDialog', 'loadLldpCdpClear', {'w': '500', 'h': '300'}],
+            ['utilities', 'showLLDPParameters', 'launchUtilitiesDialog', 'loadLLDPParameters'],
+            ['utilities', 'showLLDPNeighbors', 'launchUtilitiesDialog', 'loadLLDPNeighbors'],
+            ['utilities', 'showCDPParameters', 'launchUtilitiesDialog', 'loadCDPParameters'],
+            ['utilities', 'showCDPNeighbors', 'launchUtilitiesDialog', 'loadCDPNeighbors'],
+            ['utilities', 'getTechData', 'loadTechData'],
+
+            // diagnostics
+            ['utilities', 'ping', 'launchUtilitiesDialog', 'loadShowPing'],
+            ['utilities', 'showLog', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showLog'}],
+            ['utilities', 'showMACTable', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showMACTable'}],
+            ['utilities', 'showVersion', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showVersion'}],
+            ['utilities', 'showRunningConfig', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showRunningConfig'}],
+            ['utilities', 'showIPRoutes', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showIPRoutes'}],
+            ['utilities', 'showMACRoutes', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showMACRoutes'}],
+            ['utilities', 'showARPCache', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showARPCache'}],
+            ['utilities', 'showRoamingCache', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showRoamingCache'}],
+            ['utilities', 'showDNXPNeighbors', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showDNXPNeighbors'}],
+            ['utilities', 'showDNXPCache', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showDNXPCache'}],
+            ['utilities', 'showPathMTUDiscovery', 'launchUtilitiesDialog', 'loadShowCli',{'name':'showPathMTUDiscovery'}],
+            ['utilities', 'showAMRPTunnel', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showAMRPTunnel'}],
+            ['utilities', 'showGRETunnel', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showGRETunnel'}],
+            ['utilities', 'showIKEEvent', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showIKEEvent'}],
+            ['utilities', 'showIKESA', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showIKESA'}],
+            ['utilities', 'showIPsecSA', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showIPsecSA'}],
+            ['utilities', 'showIPsecTunnel', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showIPsecTunnel'}],
+            ['utilities', 'showCPU', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showCPU'}],
+            ['utilities', 'showMemory', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showMemory'}],
+            ['utilities', 'showPSE', 'launchUtilitiesDialog', 'loadShowCli', {'name': 'showPSE'}]
+        ],
+
+launchUtilitiesDialog : function(fn,attr){
+    // add your widget to content
+}
+
+                </code>
+
+                <p>当菜单项目为对象时且type为ap：</p>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

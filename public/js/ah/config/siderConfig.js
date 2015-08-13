@@ -17,12 +17,13 @@ define([
     add('components', { items : [
         {category : 'Components', list : [
 			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
-			{label : 'ObscureInput 隐藏输入', type : '', current : true, widget : 'components/obscureInput'}
+			{label : 'Chosen 选择列表', type : '', widget : 'components/Chosen'},
+			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'}
 		]},
 		{category : 'Styles', list : [
-			{label : 'Layout 布局', widget : 'styles/layout'},
-			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'},
-			{label: 'Button 按钮', widget: 'styles/button'}
+			//{label : 'Layout 布局', widget : 'styles/layout'},
+			{label: 'Button 按钮', widget: 'styles/button'},
+			{label: 'Tipbox 提示框', widget: 'styles/tipbox'},
 		]}
     ]});
 

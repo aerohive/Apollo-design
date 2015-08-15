@@ -17,23 +17,35 @@ define(["dojo/_base/declare",
 
         placeholder : 'search component...',
 
-        events : [
-            ['searchEl', 'focus', function(){domClass.add(this.ulEl, 'search-result-open')}],
-            //['searchEl', 'blur', function(){domClass.remove(this.ulEl, 'search-result-open')}],
-            [document, 'click', function(e){
-                var t = e.target;
+        //bOpen : false,
 
-                if(t !== this.searchEl){
-                    domClass.remove(this.ulEl, 'search-result-open');
+        events : [
+            ['searchEl', 'focus', '_toggleResult', true],
+            ['searchEl', 'keyup', '_changeResult'],
+            [document, 'click', function(e){
+                if(e.target !== this.searchEl){
+                    this._toggleResult(false);
                 }
             }],
             ['domNode', '.search-list-item:click', '_handleGotoWidget']
         ],
 
+        postMixInProperties : function(){
+            this.inherited(arguments);
+
+            data.search.items.forEach(function(item, i){
+                var label = item.label, reg = /\s+/;
+
+                (this._dataMap || (this._dataMap = {}))[label.split(reg)[0].toLowerCase()] = item;
+            }, this);
+        },    
+
         postCreate : function(){
             this.inherited(arguments);
+
+            this._keyMaps = {};
             
-            this._makeResult();
+            this._makeResult(data.search.items);
         },
 
         startup : function(){
@@ -45,18 +57,50 @@ define(["dojo/_base/declare",
             this.ulEl.style.width = w + 'px';
         },
 
+        _toggleResult : function(f){
+            domClass[f ? 'add' : 'remove'](this.ulEl, 'search-result-open');
+
+            //this.set('bOpen', f);
+        },
         
-        _makeResult : function(){
-            var str = '';
-            data.search.items.forEach(function(item, i){
+        _makeResult : function(d, key){
+            var str = '', key = key || 'all';
+            
+            d.forEach(function(item, i){
                 str += '<li class="search-list-item" data-w="'+item.widget+'">'+item.label+'</li>';
             });
 
-            this.ulEl.innerHTML = str;
+            this.ulEl.innerHTML = this._keyMaps[key] = str;
         },
 
         _handleGotoWidget : function(e){
             this.onClickItem(e.target.getAttribute('data-w'));
+        },
+
+        _changeResult : function(e){
+            var t = e.target,
+                val = t.value.trim().toLowerCase(),
+                reg = new RegExp('^'+val), html;
+
+            this._timer && this._timer.remove();
+            
+            this._timer = this.defer(function(){
+                var i, arr = [];
+
+                if(html = this._keyMaps[val]){
+                    this.ulEl.innerHTML = html;
+                    return;
+                }
+
+                for(i in this._dataMap){
+                    reg.test(i) &&
+                        arr.push(this._dataMap[i]);       
+                }
+
+                this._makeResult(arr, val);
+
+            }, 1e2);
+
         },
 
         onClickItem : function(){}

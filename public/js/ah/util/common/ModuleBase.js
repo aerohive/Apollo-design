@@ -8,6 +8,7 @@ define([
 		"ah/util/message/StatusMsg",
 		"ah/util/message/ConfirmMsg",
 		"ah/util/common/Base",
+		"ah/util/common/_AhMixin",
 		"dojo/aspect",
 		"dojo/_base/array",
 		"dojo/query",
@@ -15,9 +16,9 @@ define([
 		"ah/util/dojocover/AHDialog",
 		"ah/util/dojocover/__AHDialogCache"
 		],function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, on, 
-					lang, StatusMsg, CfmMsg, Base, aspect, array, query, domStyle, Dialog, dialogCache ){
+					lang, StatusMsg, CfmMsg, Base, _AhMixin, aspect, array, query, domStyle, Dialog, dialogCache ){
 	
-		return declare('ah/util/common/ModuleBase',[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Base],{
+		return declare('ah/util/common/ModuleBase',[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, _AhMixin, Base],{
 
 			//host : GDATA.ctx,
 

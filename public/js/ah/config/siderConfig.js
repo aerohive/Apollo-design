@@ -26,6 +26,7 @@ define([
 			//{label : 'Layout 布局', widget : 'styles/layout'},
 			{label: 'Button 按钮', widget: 'styles/button'},
 			{label: 'Tipbox 提示框', widget: 'styles/tipbox'},
+			{label: 'Title 标题', widget: 'styles/title'}
 		]}
     ]});
 

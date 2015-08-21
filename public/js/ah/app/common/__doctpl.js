@@ -17,11 +17,22 @@ define(["dojo/_base/declare",
 
 		_handleToggleMod : function(mod){
 			var m = this._mods[mod],
+                cur = this.get('active'),
+                spinner = this.spinner,
 				url = 'ah/app/design/'+mod;
 			
 			if(!m){
+                if(cur){
+                   cur.domNode.style.display = 'none';
+                   spinner.style.display = '';
+                }else{
+                   spinner.style.display = '';
+                }
+
 				require([url], lang.hitch(this, function(Kla){
 					var o;
+
+                    this.spinner.style.display = 'none';
 
 					this._mods[mod] = o = new Kla();
 					o.placeAt(this.area, 'last');

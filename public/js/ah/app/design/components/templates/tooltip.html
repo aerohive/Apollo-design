@@ -1,0 +1,97 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Tooltip提示框    
+提示框(对非Grid内的元素添加Tooltip,可以直接在该元素节点上加ah-pop-tip来触发组件,在_AhMixin中注册了相应事件;
+对Grid内的元素需要添加Tooltip,则必须要手动的注册触发Tooltip的事件,并且要显示的去调用Tooltip.show()和Tooltip.hide()方法)
+
+## API
+### Property
+| 参数          | 说明                           | 类型   | 可选值       | 默认值(Default) | 注意|
+| ------------- | -------------                  | -----  | ------       | --------------- |
+| title     | 标题              | String | ''  | '' | |
+| content           | 提示框内需要显示的内容 | String | '' | ''| content项可以是data-dojo-attach-point指定的节点,内部会去取它的innerHTML作为content|
+| arrowPos         | Tooltip箭头位置                       | String | 'up,down,left,right'         | 'up' | |
+| theme       | 主题               | String | 'dark'     | 'dark' | 如果需要其它theme,可以在ui.css中添加|
+|delayHide    |Tooltip是否延时隐藏    |Boolean  |true,false    |false| |
+|deferShow    |通过API异步获取Tooltip需显示的内容    |Function  |指定的Function    |N/A| 鼠标移上去的时候,Tooltip会通过deferShow指定的function去异步获取显示内容|
+
+### Methods
+| 参数          | 说明            | 类型  |
+| ------------- | -------------   | ----- |
+| show          | 显示Tooltip | function(obj : Object, deferShow : Boolean) |
+| hide          | 隐藏Tooltip | function( e : 事件对象 ) |
+| refresh          |动态改变Tooltip显示的内容 | function( data : String ) |
+
+</xmp> 
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+                    <ul data-dojo-attach-point="tmplTip" style="display:none;">
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                    </ul>
+                    <div ah-pop-tip="content: this.tmplTip, arrowPos:'left'" style="width:30px;cursor:pointer;">Test</div>
+                </div>
+
+		        <code>
+&lt;ul data-dojo-attach-point="tmplTip" style="display:none;"&gt;
+    &lt;li&gt;a&lt;/li&gt;
+    &lt;li&gt;b&lt;/li&gt;
+    &lt;li&gt;c&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div ah-pop-tip="content: this.tmplTip, arrowPos:'left'"&gt;Test&lt;/div&gt;
+
+		        </code>
+
+                <p>当内容都是事先存在的情况下</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <ul data-dojo-attach-point="tmplTip" style="display:none;">
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                    </ul>
+                    <div ah-pop-tip="content: this.tmplTip, arrowPos:'left'" style="width:30px;cursor:pointer;">Test</div>
+                </div>      
+
+                <code>
+// template.html
+&lt;div ah-pop-tip="content: '', arrowPos:'left', deferShow:'fetchData'"&gt;Test&lt;/div&gt;
+
+// template.js
+fetchData: function(el){
+    var defer = new Deferred();
+    this.$get('', lang.hitch(this, function(rsp){
+        defer.resolve(this.createTmpl(rsp));
+    }));
+    return defer.promise;
+},
+
+createTmpl: function(rsp){
+    // generate the the tooltip content.
+    return tmpl;
+}
+
+                </code>
+
+                <p>当内容是动态添加进去的情况下</p>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

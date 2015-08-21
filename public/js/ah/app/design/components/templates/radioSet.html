@@ -1,0 +1,80 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# RadioSet 单选
+这是一种特殊样式的单选,在我们的项目很多地方用到
+
+## API
+### Property
+| 参数          | 说明                           | 类型   | 可选值       | 默认值(Default) | 注意|
+| ------------- | -------------                  | -----  | ------       | --------------- |
+| items     | 必选项              | Array | {name:'1 Hr',type:'rangeOption',value:1}  | '' |type为自定义事件名称 |
+| cur     | 可选项              | int | 0,1,2,3...  | 0 |设置默认选择项 |
+
+### Methods
+| 事件          | 说明            | 类型  | 
+| ------------- | -------------   | ----- |
+| show          | 手动设置当前选中第几个 | show : function(i) {} |
+| hide          | 隐藏部分选项 | function( "1,2,3"  ) |
+| rangeOption(自定义事件,传入的时候定义的)          |当选项改变时触发的操作,供使用者调用自己的逻辑 | |
+
+</xmp> 
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+					<div data-dojo-attach-point="rangeValue" style="margin-top: 3px;"><ul><li class="entity-radioset-cur">1H</li><li>4H</li><li>8H</li><li>Last 24H</li></ul></div>
+                </div>
+		        <code>	        
+&lt;div data-dojo-type="ah/comp/entities/EntityRadioSet" style="padding-bottom:15px; margin-left:8px;" 
+	data-dojo-attach-point="rangeValue" data-dojo-props="items : [ {name:'1 Hr',type:'rangeOption'}, {name:'4 Hrs',type:'rangeOption'}, {name:'8 Hrs',type:'rangeOption'}, {name:'Last 24 Hrs',type:'rangeOption'}]"&gt;&lt;/div&gt;
+		        </code>
+
+                <p>当内容都是事先存在的情况下</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <ul data-dojo-attach-point="tmplTip" style="display:none;">
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                    </ul>
+                    <div ah-pop-tip="content: this.tmplTip, arrowPos:'left'" style="width:30px;cursor:pointer;">Test</div>
+                </div>      
+
+                <code>
+// template.html
+&lt;div ah-pop-tip="content: '', arrowPos:'left', deferShow:'fetchData'"&gt;Test&lt;/div&gt;
+
+// template.js
+fetchData: function(el){
+    var defer = new Deferred();
+    this.$get('', lang.hitch(this, function(rsp){
+        defer.resolve(this.createTmpl(rsp));
+    }));
+    return defer.promise;
+},
+
+createTmpl: function(rsp){
+    // generate the the tooltip content.
+    return tmpl;
+}
+
+                </code>
+
+                <p>当内容是动态添加进去的情况下</p>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

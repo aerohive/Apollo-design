@@ -1,0 +1,115 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Menu菜单栏
+菜单栏
+
+## API
+### Property
+| 参数      | 说明                 | 类型    | 可选值                     | 默认值(Default) |
+| ----------| -------------        | -----   | ------                     | --------------- |
+| bReplace  | 是否出现目录标题     | Boolean | true,false                 | true     |
+| btnText   | 设定目录的标题内容   | String  | 'Assign'...                | 'Test'   |
+| wrapEl    | 设定目录栏的父级标签 | String  |'&lt;div&gt;&lt;/div&gt;'...|'&lt;div&gt;&lt;/div&gt;'|
+| theme     | 设定目录栏的宽度     | String  | 'medium'/'large'           | N/A      |
+| items     | 添加目录栏中的子项   | Array   | [{},{},{}...]              | N/A      |
+
+
+### Methods
+| 参数              | 说明                            | 类型  |
+| -------------     | -------------                   | ----- |
+| getChildrenData   | 获取某一栏中的所有子项的数据    | function( type : String )|
+| show              | 设定某一栏显示                  | function( list : String,Array )|
+| hide              | 设定某一栏不显示                | function( list : String,Array )|
+
+### Events
+| 参数               | 说明                                  | 类型  |
+| -------            | -------------                         | ----- |
+| name(某一栏的name) | 当点击某一栏时，触发此事件            | function( type:Element) |
+| hook               | 当点击菜单栏中任意栏时，均触发此事件  | function( type:Element) |
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div class="table-action-icons table-add" data-dojo-stype="ah/util/layout/Menu" data-dojo-props="
+                    bReplace: false,
+                    items: [{
+                        name: 'Port Type',
+                        title: true,
+                        type: 'portIcon',
+                        icon: 'wired'
+                    },{
+                        name: 'Choose Existing',
+                        type: 'choosePortType'
+                    },{
+                        name: 'Create New',
+                        type: 'createPortType'
+                    }]
+                ">
+                    <span class="table-add-drop"></span>
+                </div>
+		        <code>
+&lt;div class="table-action-icons table-add" data-dojo-type="ah/util/layout/Menu"
+    data-dojo-props="bReplace: false, items: [
+    {name: 'Port Type', title: true, type: 'portIcon', icon: 'wired'},
+    {name: 'Choose Existing', type: 'choosePortType'},
+    {name: 'Create New', type: 'createPortType'}]"&gt;
+    &lt;span class="table-add-drop"&gt;&lt;/span&gt;
+&lt;/div&gt;
+		        </code>
+                <p>单层菜单栏</p>
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div class="table-action-icons table-add" data-dojo-stype="ah/util/layout/Menu" data-dojo-props=
+                "
+                    bReplace: true,
+                    btnText: 'Devices',
+                    items: [{
+                        name: 'Access Points',
+                        type: 'AP',
+                        children: [
+                            { name: 'AP130', type: 'AP_130' },
+                            { name: 'AP230', type: 'AP_230' },
+                            { name: 'AP330', type: 'AP_330' },
+                            { name: 'AP350', type: 'AP_350' }]
+                        }, {
+                        name: 'Switches',
+                        type: 'SR',
+                        children: [
+                            { name: 'SR2024P', type: 'SR_2024P' },
+                            { name: 'SR2124P', type: 'SR_2124P' },
+                            { name: 'SR2148P', type: 'SR_2148P' }]
+                        }]
+                ">
+                    <span class="table-add-drop"></span>
+                </div>
+                <code>
+&lt;div class="table-action-icons table-add" data-dojo-type="ah/util/layout/Menu"
+    data-dojo-props="bReplace: true, btnText: 'Devices', items: [{
+    name: 'Access Points', type: 'AP', children: [
+        { name: 'AP130', type: 'AP_130' },
+        { name: 'AP230', type: 'AP_230' },
+        { name: 'AP330', type: 'AP_330' },
+        { name: 'AP350', type: 'AP_350' }]}, {
+    name: 'Switches', type: 'SR', children: [
+        { name: 'SR2024P', type: 'SR_2024P' },
+        { name: 'SR2124P', type: 'SR_2124P' },
+        { name: 'SR2148P', type: 'SR_2148P' }]}]"&gt;
+    &lt;span class="table-add-drop"&gt;&lt;/span&gt;
+&lt;/div&gt;
+                </code>
+                <p>多层菜单栏</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

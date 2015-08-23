@@ -1,0 +1,85 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Menu选择框
+选择框
+
+## API
+### Property
+| 参数  | 说明 | 类型   | 可选值 | 默认值(Default) |
+| ---- | ---------| -----  | ------ | --------------- |
+| items | 渲染所需的数据 | Array/Object | [{},{}]/{} | N/A |
+| bReplace | 是否对原dom节点进行替换 | Boolean | true,false | true |
+| btnText | 选择框显示的文字,在bReplace为true时有效 | String | any | 'Test' |
+| action | 设置二级节点显示的动作是靠鼠标移入还是点击 | String | 'mouse','click' | 'mouse' |
+| theme | 主题样式，设置选择框样式和大小 | String | 'medium','large' | N/A |
+
+## Method
+### Property
+| 参数  | 说明  | 类型  |
+| ---- | ----- | ---- |
+| show | 显示某条或多条记录 | function(list: []) |
+| hide | 隐藏某条或多条记录 | function(list: []) |
+
+## Events
+| 参数  | 说明  | 类型  |
+| ---- | ---- | ---- |
+| hook | 点击某条选项时触发的事件 | function(type) |
+
+
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+                    <div data-dojo-stype="ah/util/layout/Menu" data-dojo-props="items: [{name: 'item1'},{name: 'item2'}], btnText: 'item'"></div>
+
+                    <div class="ml10" data-dojo-stype="ah/util/layout/Menu" data-dojo-props="items: [{name: 'item1', children: [{name: 'children1'},{name: 'children2'},{name: 'children3'},{name: 'children4'}]},{name: 'item2'}], btnText: 'hasChildren'"></div>
+
+                </div>
+
+		        <code>
+&lt;div data-dojo-stype="ah/util/layout/Menu" data-dojo-props="items: [{name: 'item1'},{name: 'item2'}], btnText: 'item'"&gt;&lt;/div&gt;
+
+&lt;div data-dojo-stype="ah/util/layout/Menu" data-dojo-props="items: [{name: 'item1', children: [{name: 'children1'},{name: 'children2'},{name: 'children3'},{name: 'children4'}]},{name: 'item2'}], btnText: 'hasChildren'"&gt;&lt;/div&gt;
+		        </code>
+
+                <p>当内容都是事先存在的情况下</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <div data-dojo-stype="ah/util/layout/Menu" data-dojo-props="items: [{name: 'item1'},{name: 'item2'},{name: 'item3'}], btnText: 'item'"></div>
+                </div>
+
+                <code>
+// template.html
+&lt;div data-dojo-attach-point="menuItem" data-dojo-stype="ah/util/layout/Menu" data-dojo-props="items: [{name: 'item1'},{name: 'item2'}], btnText: 'item'"&gt;&lt;/div&gt;
+
+
+// template.js
+events: [
+    ['menuItem', 'hook', '_handleHook']
+],
+
+_handleHook: function(type) {
+    //do something
+}
+
+                </code>
+
+                <p>当内容是动态添加进去的情况下</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

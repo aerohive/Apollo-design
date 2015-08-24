@@ -1,0 +1,33 @@
+.entity-radioset-list ul, .entity-radioset-list ul li {
+	float: left;
+	display:inline-block;
+}
+
+.entity-radioset-list ul {
+	height: 25px;
+}
+.entity-radioset-list ul li {
+	font-size: 12px;
+	padding-left:15px;
+	padding-right: 15px;
+	margin-right: 2px;
+	background-color: #d2d2d2;
+	color: #393939;
+	line-height: 25px;
+}
+.unique-clients ul li {
+	font-size: 14px;
+	padding-left:6px;
+	padding-right: 6px;
+	line-height: 25px;
+}
+.entity-radioset-list ul li.entity-radioset-cur {
+	background-color: #77a0b5;
+	color: #FFF;
+}
+li.entity-radioset-cur:hover{
+    background-color: #457e98;
+}
+.entity-radioset-list ul li:hover{
+	cursor: pointer;
+}

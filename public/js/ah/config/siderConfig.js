@@ -20,7 +20,8 @@ define([
 			{label : 'Chosen 选择列表', type : '', widget : 'components/chosen'},
 			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'},
 			{label : 'ObscureInput 密码框', type : '', widget : 'components/obscureInput'},
-			{label : 'Tooltip 提示框', type : '', widget : 'components/tooltip'}
+			{label : 'Tooltip 提示框', type : '', widget : 'components/tooltip'},
+			{label : 'Uploader 上传', type : '', widget : 'components/uploader'}
 		]},
 		{category : 'Styles', list : [
 			//{label : 'Layout 布局', widget : 'styles/layout'},

@@ -1,0 +1,68 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# TagList 标签
+标签
+
+## API
+### Property
+| 参数         | 说明                   | 类型         | 可选值             | 默认值(Default) |
+| -------------| -------------          | -----        | ------             | --------------- |
+| target       | 取得tag列表的URL      | String      | URL     | '' |
+| items        | 自定义标签列表内容         | Array      | [{}, {}]         |  | |
+
+
+### Methods
+| 参数              | 说明                     | 类型  |
+| -------------     | -------------            | ----- |
+| refresh           | 刷新标签列表      | function( d : Array )|
+
+
+### Events
+| 参数          | 说明                              | 类型  |
+| ------------- | -------------                     | ----- |
+| mouseEnter     | 当鼠标移到一个tag时，触发此事件  | function( type:String) |
+| mouseLeave     | 当鼠标离开一个tag时，触发此事件  | function( type:String) |
+| itemClose      | 关闭一个tag时，触发此事件  | function( type:String) |
+| itemRevert     | 恢复一个tag时，触发此事件  | function( type:String) |
+
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div data-dojo-type="ah/util/layout/list/TagList" data-dojo-attach-point="tags" data-dojo-props="items: [
+                    {name: 'test tag1', value: 'test-tag1', icon: 'test1'},
+                    {name: 'test tag2', value: 'test-tag2', icon: 'test2'}                
+                ]" class="fn-left"></div>
+		        <code>
+&lt;div data-dojo-type="ah/util/layout/list/TagList" data-dojo-attach-point="tags" data-dojo-props="items: [{name: 'test tag1', value: 'test-tag1', icon: 'test1'},{name: 'test tag2', value: 'test-tag2', icon: 'test2'}]" class="fn-left"&gt;&lt;/div&gt;
+                </code>
+                <p>当内容都是事先存在的情况下</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div data-dojo-type="ah/util/layout/list/TagList" data-dojo-attach-point="tags" data-dojo-props="items: [
+                    {name: 'test tag1', value: 'test-tag1', icon: 'test1'},
+                    {name: 'test tag2', value: 'test-tag2', icon: 'test2'}                
+                ]" class="fn-left"></div>
+                <code>
+&lt;div data-dojo-type="ah/util/layout/list/TagList" data-dojo-attach-point="tags" data-dojo-props="target: 'http://baidu.com'" class="fn-left"&gt;&lt;/div&gt;
+
+events : [
+    ['tags', 'mouseEnter', '_mouseEnter'],
+    ['tags', 'mouseLeave', '_mouseLeave']
+]
+                </code>
+                <p>当内容是通过URL请求添加进去的情况下</p>
+            </div>
+        </div>
+    </div>
+</div>

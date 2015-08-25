@@ -21,6 +21,8 @@ define([
 			{label : 'ObscureInput 密码框', type : '', widget : 'components/obscureInput'},
 			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
 			{label : 'Tooltip 提示框', type : '', widget : 'components/tooltip'},
+			{label : 'Menu 菜单栏', type : '', widget : 'components/menu'},
+			{label : 'SiderList 成员列表', type : '', widget : 'components/siderList'},
 			{label : 'Upload 上传组件', type : '', widget : 'components/upload'}
 		]},
 		{category : 'Styles', list : [

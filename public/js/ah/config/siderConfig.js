@@ -21,7 +21,7 @@ define([
 			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'},
 			{label : 'ObscureInput 密码框', type : '', widget : 'components/obscureInput'},
 			{label : 'Tooltip 提示框', type : '', widget : 'components/tooltip'},
-			{label : 'SiderList 成员列表', type : '', widget : 'components/siderList'},
+			{label : 'SiderList 列表', type : '', widget : 'components/siderList'},
 		]},
 		{category : 'Styles', list : [
 			//{label : 'Layout 布局', widget : 'styles/layout'},

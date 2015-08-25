@@ -1,0 +1,67 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# CustomList列表
+列表
+
+## API
+### Property
+| 参数         | 说明                         | 类型    | 可选值            | 默认值(Default) |
+| -------------| -------------                | -----   | ------            | --------------- |
+| scrollHeight | 列表高度                     | Number  | 大于56            | 56    |
+| scrollLimit  | 设定列表中的滚动条           | Number  | 1,2,3...          | 12    |
+| noItemMsg    | 设定列表内容为空时的提示信息 | String  | any               | 'No Records found' |
+| listType     | 列表类型                     | String  | 'osDhcp'/'osHttp' | N/A   |
+| item         | 列表的内容                   | Array   | ['','',''...]     | N/A   |
+
+
+### Methods
+| 参数              | 说明                                   | 类型  |
+| -------------     | -------------                          | ----- |
+| isPredefined      | 判断输入框中的值与列表中的内容是否相同 | function( v: String ) |
+
+## Events
+| 参数       | 说明                             | 类型  |
+| ----       | ----                             | ---- |
+| ItemClick  | 当点击列表中某一栏时，触发此事件 | function(type: String) |
+| blur       | 当输入框失去焦点时，触发此事件   | function() |
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <input type="text" data-dojo-stype="ah/util/layout/list/CustomList" data-dojo-props="scrollLimit: 2, scrollHeight: 70,
+                 items: ['Android', 'Apple iOS', 'Blackberry', 'CrOS']
+                ">
+                <code>
+&lt;input data-dojo-type="ah/util/layout/list/CustomList" data-dojo-props="
+scrollLimit:2, scrollHeight: 70,
+items: ['Android', 'Apple iOS', 'Blackberry', 'CrOS']"&gt;
+                </code>
+                <p>创建列表方式一</p>
+
+            </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+                    <input type="text" data-dojo-stype="ah/util/layout/list/CustomList" data-dojo-props="scrollLimit:3, scrollHeight: 90,
+                           items: ['Android', 'Blackberry']
+                          ">
+                </div>
+                <code>
+&lt;input data-dojo-type="ah/util/layout/list/CustomList" data-dojo-props="
+scrollLimit:3, scrollHeight: 90, listType: 'osHttp'"&gt;
+                </code>
+                <p>创建列表方式二</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

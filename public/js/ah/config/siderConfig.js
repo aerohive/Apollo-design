@@ -23,7 +23,8 @@ define([
 			{label : 'Tooltip 提示框', type : '', widget : 'components/tooltip'},
 			{label : 'Menu 菜单栏', type : '', widget : 'components/menu'},
 			{label : 'TagList 标签', type : '', widget : 'components/tagList'},
-			{label : 'SiderList 列表', type : '', widget : 'components/siderList'}
+			{label : 'SiderList 列表', type : '', widget : 'components/siderList'},
+			{label : 'CustomList 列表', type : '', widget : 'components/customList'}
 		]},
 		{category : 'Styles', list : [
 			//{label : 'Layout 布局', widget : 'styles/layout'},

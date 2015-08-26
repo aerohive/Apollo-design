@@ -2,28 +2,52 @@
     <article data-dojo-attach-point="markdown">
 
 <xmp style="display:none">
-# Menu 菜单
-触发显示的下拉菜单
+# Upload 上传组件
+实现客户端单文件/多文件上传功能，继承自dojox/uploader。
 
 ## API
 ### Property
+
+继承自dojox/form/uploader
+
 | 参数          | 说明| 类型   | 可选值| 默认值(Default) |
 | ------------- | ------------- | -----  | ------| --------------- |
-| tabTitles     | 用来生成几个tab页| String | 'tab1,tab2'  | N/A |
-| cur           | 初始化第几个tab处于current状态 | Number | 0,1,2,3,4... | 0 |
-| theme         | 主题样式| String | gray| N/A |
-| postion       | tab水平/垂直位置 | String | vertical     | horizontal |
+| uploadOnSelect| 是否在选择文件后立即上传| Boolean | true/false  | false |
+| multiple      | 是否支持多文件上传 | Boolean | true/false | false|
+| url           | 文件上传地址| String | '' | '' |
+| name          | 提交到后台的字段名 | String | ''| uploadedfile |
+| flashFieldName| 提交到后台的flash字段名 | String | ''| Flash |
+| force         | 上传方式 | String | form/html5/iframe/flash | html5/iframe |
+| showInput     | 显示选中的文件名的input的位置 | String | before/after|''|
+| focusedClass  | 按钮focus状态时添加的class名称 | String | ''| dijitButtonHover|
+| baseClass     | 按钮的基础样式class | String | ''| dijitUploader dijitButton |
+
+其他参数
+
+| 参数          | 说明| 类型   | 可选值| 默认值(Default) |
+| ------------- | ------------- | -----  | ------| --------------- |
+| extraParams   | 上传url地址需要附加的参数 | String | ''| null |
+| allowExtension | 允许上传的文件扩展名 | Array | jpg/jpeg/png/gif | [] |
+| sizeLimit | 允许多文件上传时的文件个数限制 | Number | | 0 (无限制) |
 
 ### Methods
 | 参数          | 说明            | 类型  |
 | ------------- | -------------   | ----- |
-| show          | 动态显示哪个tab | function( i : Number ) |
-| hide          | 动态隐藏哪个tab | function( i : Number ) |
+| upload        | 执行文件上传动作，实际在各种plugin中支持 | function( formData : Object ) |
+| submit        | 当上传组件在一个form表单中，且表单中的其他字段需要一起提交时，此方法用于替代form默认的submit | function( formNode : Node ) |
+| reset | 重置上传组件，清除所有已选中文件 | function() |
+| msg | 需要消息提示时调用的函数 |  function (msg : String) |
 
 ### Events
-| 参数          | 说明                              | 类型  |
+| 参数          | 触发条件       | 类型  |
 | ------------- | -------------                     | ----- |
-| tabClick      | 当点击各个tab项的时候，触发此事件 | function( tab:Element, content:Element, i:Number ) |
+| change      | 选中的文件发生变化 | function( fileArray: Array ) |
+| begin       | 开始上传文件 | function( dataArray: Array ) |
+| progress    | 上传过程中，且上传类型不是iframe | function( customEvent: { bytesLoaded: 已上传字节数, bytesTotal: 总字节数, type: 事件类型(progress/load), timeStamp: 开始上传时间} ) |
+| complete    | 上传完成 | function( customEvent: Object ) |
+| cancel      | 未选择文件时关闭对话框 | function(  ) |
+| abort      | 取消上传 | function(  ) |
+| error | 上传出错 | function (evtObject : Object) |
 </xmp>
 
     </article>
@@ -33,58 +57,66 @@
         <div class="code-boxes-lt">
             <div data-dojo-type="ah/app/common/DemoArea">
 		        <div>
-                    <div data-dojo-stype="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'">
-                        <div class="ui-tab-panel-wrap clearfix">
-                            <div class="ui-tab-panel">
-                                one
-                            </div>
-                            <div class="ui-tab-panel">
-                                two
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label: 'Choose File...',allowExtension:['png', 'jpg', 'gif', 'jpeg']"></div>
+                    <div class="file-upload-field">
+	                    <div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'upload',allowExtension:['png', 'jpg', 'gif', 'jpeg'],showInput: 'after'" class="feedback-upload-btn" ></div>
+	                </div>
+				</div>
+
 
 		        <code>
-&lt;div data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'"&gt;
-    &lt;div class="ui-tab-panel-wrap clearfix"&gt;
-        &lt;div class="ui-tab-panel"&gt;one&lt;/div&gt;
-        &lt;div class="ui-tab-panel"&gt;two&lt;/div&gt;
-    &lt;/div&gt;
+&lt;div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'Choose File...',allowExtension:['png', 'jpg', 'gif', 'jpeg']"&gt;
 &lt;/div&gt;
 
+&lt;div class="file-upload-field"&gt;
+    &lt;div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'upload',allowExtension:['png', 'jpg', 'gif', 'jpeg'],showInput:'after'" class="upload-self" &gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 		        </code>
 
-                <p>当内容都是事先存在的情况下</p>
+                <p>标准上传组件<br/>1. DOJO默认样式<br/>2. 自定义样式</p>
 
 	        </div>
+	        <div data-dojo-type="ah/app/common/DemoArea">
+				<div>
+	                <div class="file-upload-field">
+	                    <div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'multiple',allowExtension:['png','jpg', 'gif', 'jpeg'],showInput:'after',multiple:true" class="feedback-upload-btn" ></div>
+	                </div>
+				</div>
+
+                <code>
+&lt;div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'extension',allowExtension:['jpg', 'gif', 'jpeg'],showInput:'after',multiple:true" class="upload-self"&gt;
+&lt;/div&gt;
+
+                </code>
+
+                <p>支持多文件上传</p>
+            </div>
+
         </div>
 
         <div class="code-boxes-rt">
             <div data-dojo-type="ah/app/common/DemoArea">
-                <div>
-                    <div data-dojo-attach-point="tabObj" data-dojo-stype="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'">
-
-                    </div>
-                </div>
+				<div>
+					<div class="file-upload-field">
+	                    <div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'extension',allowExtension:['jpg', 'gif', 'jpeg'],showInput:'after'" class="feedback-upload-btn" ></div>
+	                </div>
+	                <div class="file-upload-field">
+	                    <div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'size',allowExtension:['png','jpg', 'gif', 'jpeg'],sizeLimit:25000,showInput:'after'" class="feedback-upload-btn" ></div>
+	                </div>
+				</div>
 
                 <code>
-// template.html
-&lt;div data-dojo-attach-point="tabObj" data-dojo-type="ah/util/Tab" data-dojo-props="tabTitles:'tab1,tab2'"&gt;
+&lt;div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'extension',allowExtension:['jpg', 'gif', 'jpeg'],showInput:'after'" class="upload-self"&gt;
 &lt;/div&gt;
 
-// template.js
-events : [
-    ['tabObj', 'tabClick', '_makeWidgets']
-],
 
-_makeWidgets : function(tab, content, i){
-    // add your widget to content
-}
+&lt;div data-dojo-type="ah/util/dojocover/Uploader" data-dojo-props="label:'size',allowExtension:['png','jpg', 'gif', 'jpeg'],sizeLimit:25000,multiple:true,showInput:'after'" class="upload-self"&gt;
+&lt;/div&gt;
 
                 </code>
 
-                <p>当内容是动态添加进去的情况下(一般是动态添加模块)</p>
+                <p>限制文件扩展名/文件大小</p>
             </div>
 
         </div>

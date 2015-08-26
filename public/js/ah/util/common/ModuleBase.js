@@ -15,12 +15,14 @@ define([
 		"dojo/dom-style",
 		"ah/util/dojocover/AHDialog",
 		"ah/util/dojocover/__AHDialogCache"
-		],function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, on, 
+		],function(declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, on,
 					lang, StatusMsg, CfmMsg, Base, _AhMixin, aspect, array, query, domStyle, Dialog, dialogCache ){
-	
+
 		return declare('ah/util/common/ModuleBase',[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, _AhMixin, Base],{
 
 			//host : GDATA.ctx,
+
+			_cacheCss : {},
 
 			postCreate : function(){
 				this.inherited(arguments);
@@ -28,6 +30,7 @@ define([
 				this._bindEls();
 
 				this.addEvents();
+				this.loadCss(this.cssFile);
 			},
 
 			_bindEls : function(){
@@ -42,7 +45,7 @@ define([
 						(obj[type] || (obj[type] = [])).push(str);
 					}
 				});
-			
+
 				for(i in obj){
 					dd = obj[i];
 					this[i] = dojo.map(dd,function(item){
@@ -87,15 +90,15 @@ define([
 						fn = 'string' == typeof fnCp ? this[fnCp] : 'function' == typeof fnCp ? fnCp : function(){return fnCp},
 						el, handler, callback, mapArgs;
 
-					'string' == typeof elCp ? 
+					'string' == typeof elCp ?
 								(el = this,elCp !== 'this' && dojo.forEach(elCp.split(/\b\.\b/),function(str){
 									if(/\$query/.test(str)){
 										el = el.$query(str.match(/\(['"](.+)['"]\)/)[1]);
 									}else{
 										el = el[str];
 									}
-								})) : (el = elCp); 
-					
+								})) : (el = elCp);
+
 
 					// for dynamic arguments attach to widget itself
 					mapArgs = array.map(args,lang.hitch(this,function(item){
@@ -103,7 +106,7 @@ define([
 							return new Function('return ' + item).call(this);
 						}else{
 							return item;
-						}	
+						}
 					}));
 
 
@@ -119,13 +122,37 @@ define([
 						handler = !el.on ? on(el,type,callback) : el.on(type,callback);
 					//}
 
-					
+
 					this.own(handler);
 
 				}));
+			},
+			loadCss : function(urls){
+				if(!urls) return;
+
+				var list = lang.isArray(urls) ? urls : [urls],
+					len = list.length,i,url,link;
+
+				for(i = len-1; i >= 0; i--){
+					url = list[i];
+
+					if(this._cacheCss[url]) continue;
+
+					link = document.createElement('link');
+
+
+                    link.href = url +'.css';
+
+
+					link.rel = 'stylesheet';
+					document.getElementsByTagName('head')[0].appendChild(link);
+
+					this._cacheCss[url] = true;
+				}
+
 			}
 
-			
+
 			/*
 			staMsg : function(type, message, h, p){
 				var showMsg = lang.hitch(StatusMsg,StatusMsg.show),
@@ -133,7 +160,7 @@ define([
 
 				if( len = dialogCache.length ){
 					dialog = dialogCache[len - 1];
-					dialog.isFocusable() && 
+					dialog.isFocusable() &&
 						(showMsg = lang.hitch(dialog, dialog.showMsg));
 				}
 
@@ -152,13 +179,13 @@ define([
 				this.staMsg('warning',message,h,p);
 			},
 
-            
+
             msgHide: function () {
                 StatusMsg.hide();
             },
 
 
-			
+
 			popMsg : function(type,message){
 				PopMsg.show(type,message);
 			},
@@ -188,7 +215,7 @@ define([
 				return dialog;
 			}
 			*/
-			
+
 		});
 
 });

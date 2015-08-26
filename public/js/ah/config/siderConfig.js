@@ -22,8 +22,9 @@ define([
 			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
 			{label : 'Tooltip 提示框', type : '', widget : 'components/tooltip'},
 			{label : 'Menu 菜单栏', type : '', widget : 'components/menu'},
-			{label : 'SiderList 成员列表', type : '', widget : 'components/siderList'},
-			{label : 'Upload 上传组件', type : '', widget : 'components/upload'}
+			{label : 'Upload 上传组件', type : '', widget : 'components/upload'},
+			{label : 'TagList 标签', type : '', widget : 'components/tagList'},
+			{label : 'SiderList 列表', type : '', widget : 'components/siderList'}
 		]},
 		{category : 'Styles', list : [
 			//{label : 'Layout 布局', widget : 'styles/layout'},

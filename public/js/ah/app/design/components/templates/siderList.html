@@ -2,8 +2,8 @@
     <article data-dojo-attach-point="markdown">
 
 <xmp style="display:none">
-# SideList成员列表
-成员列表
+# SideList列表
+列表
 
 ## API
 ### Property
@@ -51,7 +51,7 @@
 ]"&gt;
 &lt;/div&gt;
                 </code>
-                <p>当内容都是事先存在的情况下</p>
+                <p>创建列表方式一</p>
 
 	        </div>
         </div>
@@ -60,30 +60,32 @@
             <div data-dojo-type="ah/app/common/DemoArea">
                 <div data-dojo-stype="ah/util/layout/list/SiderList" data-dojo-props="
                 items : [
-                    {category: 'Device Details', tmpl: '_makeDetailTmpl'}
-                ]">
-                </div>
+                    {category: 'Monitoring',
+                        lists: [{
+                            name: 'Overview',
+                            current: true
+                        }, {
+                            name: 'Wireless Interfaces',
+                        }, {
+                            name: 'Wired Interfaces',
+                        }]
+                    }]"></div>
+
                 <code>
 // template.html
 &lt;div data-dojo-attach-point="sideList" data-dojo-type="ah/util/layout/list/SiderList"
 data-dojo-props="
-    items: [{category: 'Device Details', tmpl: '_makeDetailTmpl'}]
+    items: [{category: 'Device Details', tmpl: '_makeTmpl'}]
 "&gt;
 &lt;/div&gt;
 
 // template.js
-events : [
-    ['sideList', 'itemClick', '_handleClick']
-],
-
-_makeDetailTmpl : function(){
-    // add your widget to List
+_makeTmpl : function(){
+    return widget;     // add your widget to List
 }
-_handleClick: function(type){
 
-}
                 </code>
-                <p>当内容是动态添加进去的情况下</p>
+                <p>创建列表方式二</p>
             </div>
         </div>
     </div>

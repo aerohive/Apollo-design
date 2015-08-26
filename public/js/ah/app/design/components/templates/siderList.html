@@ -1,0 +1,92 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# SideList列表
+列表
+
+## API
+### Property
+| 参数         | 说明                   | 类型         | 可选值             | 默认值(Default) |
+| -------------| -------------          | -----        | ------             | --------------- |
+| bExpand      | 设定列表是否默认展开   | Boolean      | true,false         | true |
+| bDot         | 设定是否带列表提示图片 | Boolean      | true,false         | true |
+| items        | 添加列表中的内容       | Array        | [{},{},{}...]      | N/A  |
+| hideArea     | 隐藏列表中的某几栏     | String/Array | ''/['',''...]      | N/A  |
+
+
+### Methods
+| 参数              | 说明                     | 类型  |
+| -------------     | -------------            | ----- |
+| hide              | 动态隐藏列表中的某几栏   | function( d : String/Array )|
+| show              | 动态显示列表中的某几栏   | function( d : String/Array )|
+
+
+### Events
+| 参数          | 说明                              | 类型  |
+| ------------- | -------------                     | ----- |
+| itemClick     | 当点击列表中某一栏时，触发此事件  | function( type:String) |
+
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+            <div data-dojo-stype="ah/util/layout/list/SiderList" data-dojo-props="bExpand:true, bDot: false,
+            items: [
+                {category: 'Management Server',
+                lists: [{name: 'NTP Server',  href: '#/devices/configure-netdump', current: true},
+                        {name : 'DNS Server', type : 'dnsServer'}]},
+                {category: 'Policy Settings', lists : [{name : 'HIVE'}]}
+                ]"></div>
+		        <code>
+&lt;div data-dojo-type="ah/util/layout/list/SiderList" data-dojo-props="bExpand:true, bDot:false,items: [
+    {category: 'Management Server',
+     lists: [{name: 'NTP Server',  href: '#/devices/configure-netdump', current: true},
+            {name: 'DNS Server',   type: 'dnsServer'}]},
+    {category: 'Policy Settings',  lists: [{name : 'HIVE'}]}
+]"&gt;
+&lt;/div&gt;
+                </code>
+                <p>创建列表方式一</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div data-dojo-stype="ah/util/layout/list/SiderList" data-dojo-props="
+                items : [
+                    {category: 'Monitoring',
+                        lists: [{
+                            name: 'Overview',
+                            current: true
+                        }, {
+                            name: 'Wireless Interfaces',
+                        }, {
+                            name: 'Wired Interfaces',
+                        }]
+                    }]"></div>
+
+                <code>
+// template.html
+&lt;div data-dojo-attach-point="sideList" data-dojo-type="ah/util/layout/list/SiderList"
+data-dojo-props="
+    items: [{category: 'Device Details', tmpl: '_makeTmpl'}]
+"&gt;
+&lt;/div&gt;
+
+// template.js
+_makeTmpl : function(){
+    return widget;     // add your widget to List
+}
+
+                </code>
+                <p>创建列表方式二</p>
+            </div>
+        </div>
+    </div>
+</div>

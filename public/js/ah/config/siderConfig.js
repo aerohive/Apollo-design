@@ -16,14 +16,16 @@ define([
 
     add('components', { items : [
         {category : 'Components', list : [
-			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
 			{label : 'Chosen 选择列表', type : '', widget : 'components/chosen'},
 			{label : 'Carousel 轮播', type : '', widget : 'components/carousel'},
 			{label : 'ObscureInput 密码框', type : '', widget : 'components/obscureInput'},
+			{label : 'Tab 选项卡', type : '', current : true, widget : 'components/tab'},
 			{label : 'Tooltip 提示框', type : '', widget : 'components/tooltip'},
 			{label : 'Menu 菜单栏', type : '', widget : 'components/menu'},
+			{label : 'Upload 上传组件', type : '', widget : 'components/upload'},
 			{label : 'TagList 标签', type : '', widget : 'components/tagList'},
-			{label : 'SiderList 列表', type : '', widget : 'components/siderList'}
+			{label : 'SiderList 列表', type : '', widget : 'components/siderList'},
+			{label : 'CustomList 列表', type : '', widget : 'components/customList'}
 		]},
 		{category : 'Styles', list : [
 			{label : 'Layout 布局', widget : 'styles/layout'},

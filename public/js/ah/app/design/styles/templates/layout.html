@@ -1,3 +1,102 @@
 <div>
-	Layout
+	<article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# Layout 布局
+提供页面的整体布局。
+
+## 使用方式
+
+### 样式说明
+
+| class          | 说明     |
+| ------------- | ------------- |
+| clearfix     | 用来清除浮动|
+| grid_n | n从1到20,以62px递增至1220px|
+| column  | 使元素左浮动且定义了与左右相邻元素的margin值(10px)|
+| first | 使元素左margin为0|
+| last | 使元素右margin为0 |
+
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+	<div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+		        <div>
+		        	<div class="clearfix">
+		        		<div class="grid_2 first column" style="background:#ffe6b8;">column 1</div>
+		        		<div class="grid_4 last column" style="background:#a0b3d6;">column 2</div>
+		        	</div>
+		        	<div class="line clearfix">
+		        		<div class="grid_2 first column" style="background:#ffe6b8;">column 1</div>
+		        		<div class="grid_4 last column" style="background:#a0b3d6;">column 2</div>
+		        	</div>
+            </div>
+
+		        <code>
+&lt;div class="clearfix"&gt;
+	&lt;div class="grid_2 first column"&gt;column 1&lt;/div&gt;
+	&lt;div class="grid_4 last column"&gt;column 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line clearfix"&gt;
+	&lt;div class="grid_2 first column"&gt;column 1&lt;/div&gt;
+	&lt;div class="grid_4 last column"&gt;column 2&lt;/div&gt;
+&lt;/div&gt;
+		        </code>
+                <p>标准情况下的布局</p>
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div>
+									<div class="clearfix">
+				        		<div class="grid_2 first column" style="background:#ffe6b8;">column 1</div>
+				        		<div class="grid_4 last column" style="background:#a0b3d6;">column 2</div>
+	        				</div>
+	        				<div class="line clearfix">
+		        				<div class="grid_2 first column" style="background:#ffe6b8;">column 1</div>
+		        				<div class="grid_4 last column">
+		        					<div class="clearfix">
+				        				<div class="first column" style="background:#a0b3d6;">column 2</div>
+				        			</div>
+					        		<div class="line clearfix">
+					        			<div class="first column" style="background:#a0b3d6;">column 2</div>
+					        		</div>
+					        		<div class="line clearfix">
+					        			<div class="first column" style="background:#a0b3d6;">column 2</div>
+					        		</div>
+		        				</div>
+	        				</div>
+                </div>
+
+                <code>
+&lt;div class="clearfix"&gt;
+	&lt;div class="grid_2 first column"&gt;column 1&lt;/div&gt;
+	&lt;div class="grid_4 last column"&gt;column 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="line clearfix"&gt;
+	&lt;div class="grid_2 first column"&gt;column 1&lt;/div&gt;
+	&lt;div class="grid_4 last column"&gt;
+		&lt;div class="clearfix"&gt;
+			&lt;div class="first column"&gt;column 2&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="line clearfix"&gt;
+			&lt;div class="first column"&gt;column 2&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="line clearfix"&gt;
+			&lt;div class="first column"&gt;column 2&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+                </code>
+
+                <p>内含嵌套情况下的布局</p>
+            </div>
+        </div>
+    </div>
+	
 </div>

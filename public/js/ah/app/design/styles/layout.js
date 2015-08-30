@@ -1,12 +1,13 @@
-define(["dojo/_base/declare",
+define(['dojo/_base/declare',
 		'dojo/_base/lang',
-		"dojo/text!./templates/layout.html",
-	  	"ah/util/common/ModuleBase"], function(declare, lang, template, ModuleBase) {
+		'dojo/text!./templates/layout.html',
+		'ah/app/design/__doc'],
+		function(declare, lang, template, __doc) {
 
-	return declare("ah/app/design/styles/layout", [ ModuleBase ], {
+	return declare("ah/app/design/styles/layout", [ __doc ], {
 
 		templateString : template
-	
+
 	});
 
 });

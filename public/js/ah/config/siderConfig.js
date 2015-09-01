@@ -25,7 +25,8 @@ define([
 			{label : 'Upload 上传组件', type : '', widget : 'components/upload'},
 			{label : 'TagList 标签', type : '', widget : 'components/tagList'},
 			{label : 'SiderList 列表', type : '', widget : 'components/siderList'},
-			{label : 'CustomList 列表', type : '', widget : 'components/customList'}
+			{label : 'CustomList 列表', type : '', widget : 'components/customList'},
+			{label : 'textBoxList 列表', type : '', widget : 'components/textBoxList'}
 		]},
 		{category : 'Styles', list : [
 			{label : 'Layout 布局', widget : 'styles/layout'},

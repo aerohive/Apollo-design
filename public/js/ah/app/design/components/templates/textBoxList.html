@@ -18,7 +18,7 @@
 ### Methods
 | 参数              | 说明                     | 类型  |
 | -------------     | -------------            | ----- |
-| add               | 动态添加列表的内容       | function( name : object ) |
+| add               | 动态添加列表的内容       | function( name : object/String ) |
 
 </xmp>
 
@@ -65,7 +65,6 @@
                     </div>
                     <div class="column grid_6 last">
                         <div data-dojo-stype="ah/util/layout/list/TextBoxList" style="height:70px;" data-dojo-attach-point="textBoxList" data-dojo-props="
-                            defaultText: 'Press enter to add members',
                             items: [{name: 'aa'}, {name: 'bb'}, {name: 'cc'}]">
                         </div>
                     </div>
@@ -78,8 +77,7 @@
     &lt;/div&gt;
     &lt;div class="column grid_6 last"&gt;
         &lt;div data-dojo-type="ah/util/layout/list/TextBoxList" style="height:70px;"
-        data-dojo-attach-point="textBoxList"
-        data-dojo-props="defaultText: 'Press enter to add members'"&gt;
+        data-dojo-attach-point="textBoxList"&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;

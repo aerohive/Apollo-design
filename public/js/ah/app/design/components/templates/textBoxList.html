@@ -2,31 +2,23 @@
     <article data-dojo-attach-point="markdown">
 
 <xmp style="display:none">
-# ObscureInput密码框
-密码输入框
+# TextBoxList列表
+列表
 
 ## API
 ### Property
-| 参数         | 说明                   | 类型         | 可选值             | 默认值(Default) |
-| -------------| -------------          | -----        | ------             | --------------- |
-| isGenegate   | 是否出现自动生成按键   | Boolean      | true,false         | false     |
-| count        | 设置自动生成的信息长度 | Number       | 1,2,3...           | 64        |
-| required     | 是否是必填项           | Boolean      | true,false         | false     |
-| value        | 输入框默认值           | String,Number| 0,1,...;'a','b'... | N/A       |
-| checked      | 是否隐藏输入信息       | Boolean      | true,false         | true      |
-| labelClass   | 设定标签样式           | String       |'grid_1','grid_2'...| 'grid_4'  |
-| inputClass   | 设定输入区域样式       | String       |'grid_1','grid_2'...| 'grid_12' |
-| textClass    | 设定输入框样式         | String       |'input_1','input_2'...| N/A     |
-| label        | 设定第一个标签文本     | String       | 字符串             | 'Shared Secret' |
-| labelConfirm | 设定第二个标签文本     | String       | 字符串             | 'Confirm Secret'|
-| obscureTxt   | 设定隐藏提示文本       | String       | 字符串             | 'Obscure secret'|
-| des          | 设定输入提示信息       | String       |'标签&#166;字符串'  | N/A       |
-| passwordLevel|是否出现密码安全程度提示| Boolean      |  true,false        | false     |
+| 参数      |说明                    | 类型   | 可选值          | 默认值(Default) |
+|-----------|-------------           | -----  | ------          | --------------- |
+|defaultText|列表框提示信息          |String  | " "       |"Press enter to add the typed value"|
+|items      |添加列表中的内容        | Array  | [{},{},{}...]   | N/A  |
+|validRule  |添加列表内容校验规则    |function| function(){...} | N/A  |
+|jsonType   |对象类型(用于和后台交互)| String | " "             | "member-of" |
+
 
 ### Methods
 | 参数              | 说明                     | 类型  |
 | -------------     | -------------            | ----- |
-| changeDes         | 动态改变输入框提示信息   | function( msg : String )|
+| add               | 动态添加列表的内容       | function( name : object ) |
 
 </xmp>
 
@@ -36,45 +28,74 @@
     <div class="code-boxes clearfix">
         <div class="code-boxes-lt">
             <div data-dojo-type="ah/app/common/DemoArea">
-		        <div>
-                   <div class="line clearfix">
-                      <div class="column grid_3 first">
-                        <label>member</label>
-                      </div>
-                      <div class="column grid_12 last">
-                        <div data-dojo-type="ah/util/layout/list/TextBoxList" data-dojo-attach-point="tags" style="width:365px;height:320px;" disabled="disabled"></div>
-                      </div>
+                    <div class="clearfix">
+                        <div class="column w80 first">
+                            <label>member</label>
+                        </div>
+                        <div class="column grid_6 last">
+                            <div data-dojo-stype="ah/util/layout/list/TextBoxList" style="height:70px;"
+                                 data-dojo-props="
+                                    items: [{name: 'aa'}, {name: 'bb'}, {name: 'cc'}]">
+                            </div>
+                        </div>
                     </div>
-                </div>
 
 		        <code>
-&lt;div ah/util/form/ObscureInput" data-dojo-props="labelClass:'grid_2', inputClass:'grid_5', textClass:'input_3', required: true, passwordLevel:true, count:16, charType:'ANY_SELECTED_CHARACTER_TYPES', des:'p|Please input 8-16 characters'"&gt;
+&lt;div class="clearfix"&gt;
+    &lt;div class="column w80 first"&gt;
+        &lt;label&gt;member&lt;label&gt;
+    &lt;/div&gt;
+    &lt;div class="column grid_6 last"&gt;
+        &lt;div data-dojo-type="ah/util/layout/list/TextBoxList" style="height:70px;"
+        data-dojo-props="items: [{name: 'aa'}, {name: 'bb'}]"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 		        </code>
-                <p>带有自动生成和安全检测的密码输入</p>
+                <p>当内容都是事先存在的情况下</p>
 
 	        </div>
         </div>
 
         <div class="code-boxes-rt">
             <div data-dojo-type="ah/app/common/DemoArea">
-                <div>
-                    <div data-dojo-stype="ah/util/form/ObscureInput" data-dojo-props="
-                    labelClass: 'grid_2',
-                    inputClass: 'grid_4',
-                    textClass: 'input_4',
-                    required: true,
-                    des: 'p|Please input 8-16 characters'
-                    ">
+                <div class="clearfix">
+                    <div class="column w80 first">
+                        <label>member</label>
                     </div>
-                </div>
-
+                    <div class="column grid_6 last">
+                        <div data-dojo-stype="ah/util/layout/list/TextBoxList" style="height:70px;" data-dojo-attach-point="textBoxList" data-dojo-props="
+                            defaultText: 'Press enter to add members',
+                            items: [{name: 'aa'}, {name: 'bb'}, {name: 'cc'}]">
+                        </div>
+                    </div>
+                 </div>
                 <code>
-&lt;div ah/util/form/ObscureInput" data-dojo-props="labelClass:'grid_2', inputClass:'grid_4', textClass:'input_4', required:true, des:'p|Please input 8-16 characters'"&gt;
+// template.html
+&lt;div class="clearfix"&gt;
+    &lt;div class="column w80 first"&gt;
+        &lt;label&gt;member&lt;label&gt;
+    &lt;/div&gt;
+    &lt;div class="column grid_6 last"&gt;
+        &lt;div data-dojo-type="ah/util/layout/list/TextBoxList" style="height:70px;"
+        data-dojo-attach-point="textBoxList"
+        data-dojo-props="defaultText: 'Press enter to add members'"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
+
+// template.js
+startup : function(){
+    this.inherited(arguments);
+
+    //data从后台拿到的数据
+    array.forEach(data, function(item){
+        this.textBoxList.add(item);
+    }, this);
+}
                 </code>
 
-                <p>普通的密码输入</p>
+                <p>当内容是动态添加进去的情况下</p>
             </div>
 
         </div>

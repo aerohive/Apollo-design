@@ -1,9 +1,17 @@
 var profile = (function(){
+
+    var copyOnly = function(filename, mid){
+        var list = {
+            "ah/ah.profile": true,
+            "ah/package": true
+        };
+        return (mid in list) || /(png|jpg|jpeg|gif|tiff)$/.test(filename);
+    };
  
     return {
         resourceTags: {
 			copyOnly : function(filename, mid){
-				return /(png|jpg|jpeg|gif|tiff)$/.test(filename);		
+				return copyOnly(filename, mid);		
 			},
 
             amd: function(filename, mid){

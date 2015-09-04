@@ -1,0 +1,102 @@
+<div>
+    <article data-dojo-attach-point="markdown">
+
+<xmp style="display:none">
+# TextBoxList列表
+列表
+
+## API
+### Property
+| 参数      |说明                    | 类型   | 可选值          | 默认值(Default) |
+|-----------|-------------           | -----  | ------          | --------------- |
+|defaultText|列表框提示信息          |String  | " "       |"Press enter to add the typed value"|
+|items      |添加列表中的内容        | Array  | [{},{},{}...]   | N/A  |
+|validRule  |添加列表内容校验规则    |function| function(){...} | N/A  |
+|jsonType   |对象类型(用于和后台交互)| String | " "             | "member-of" |
+
+
+### Methods
+| 参数              | 说明                     | 类型  |
+| -------------     | -------------            | ----- |
+| add               | 动态添加列表的内容       | function( name : object/String ) |
+
+</xmp>
+
+    </article>
+
+    <h2>Demos</h2>
+    <div class="code-boxes clearfix">
+        <div class="code-boxes-lt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                    <div class="clearfix">
+                        <div class="column w80 first">
+                            <label>member</label>
+                        </div>
+                        <div class="column grid_6 last">
+                            <div data-dojo-stype="ah/util/layout/list/TextBoxList" style="height:70px;"
+                                 data-dojo-props="
+                                    items: [{name: 'aa'}, {name: 'bb'}, {name: 'cc'}]">
+                            </div>
+                        </div>
+                    </div>
+
+		        <code>
+&lt;div class="clearfix"&gt;
+    &lt;div class="column w80 first"&gt;
+        &lt;label&gt;member&lt;label&gt;
+    &lt;/div&gt;
+    &lt;div class="column grid_6 last"&gt;
+        &lt;div data-dojo-type="ah/util/layout/list/TextBoxList" style="height:70px;"
+        data-dojo-props="items: [{name: 'aa'}, {name: 'bb'}]"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+		        </code>
+                <p>当内容都是事先存在的情况下</p>
+
+	        </div>
+        </div>
+
+        <div class="code-boxes-rt">
+            <div data-dojo-type="ah/app/common/DemoArea">
+                <div class="clearfix">
+                    <div class="column w80 first">
+                        <label>member</label>
+                    </div>
+                    <div class="column grid_6 last">
+                        <div data-dojo-stype="ah/util/layout/list/TextBoxList" style="height:70px;" data-dojo-attach-point="textBoxList" data-dojo-props="
+                            items: [{name: 'aa'}, {name: 'bb'}, {name: 'cc'}]">
+                        </div>
+                    </div>
+                 </div>
+                <code>
+// template.html
+&lt;div class="clearfix"&gt;
+    &lt;div class="column w80 first"&gt;
+        &lt;label&gt;member&lt;label&gt;
+    &lt;/div&gt;
+    &lt;div class="column grid_6 last"&gt;
+        &lt;div data-dojo-type="ah/util/layout/list/TextBoxList" style="height:70px;"
+        data-dojo-attach-point="textBoxList"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+// template.js
+startup : function(){
+    this.inherited(arguments);
+
+    //data从后台拿到的数据
+    array.forEach(data, function(item){
+        this.textBoxList.add(item);
+    }, this);
+}
+                </code>
+
+                <p>当内容是动态添加进去的情况下</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -10,16 +10,16 @@
 | 参数         | 说明                   | 类型         | 可选值             | 默认值(Default) |
 | -------------| -------------          | -----        | ------             | --------------- |
 | isGenegate   | 是否出现自动生成按键   | Boolean      | true,false         | false     |
-| count        | 设置自动生成的信息长度 | Number       | 1,2,3...           | 64        |
+| count        | 设置自动生成的信息长度 | Number/funciton | 1,2,3... 或返回数字的函数          | 64        |
 | required     | 是否是必填项           | Boolean      | true,false         | false     |
 | value        | 输入框默认值           | String,Number| 0,1,...;'a','b'... | N/A       |
-| checked      | 是否隐藏输入信息       | Boolean      | true,false         | true      |
+| checked      | 是否隐藏密码，以*代替  | Boolean      | true,false         | true      |
 | labelClass   | 设定标签样式           | String       |'grid_1','grid_2'...| 'grid_4'  |
 | inputClass   | 设定输入区域样式       | String       |'grid_1','grid_2'...| 'grid_12' |
 | textClass    | 设定输入框样式         | String       |'input_1','input_2'...| N/A     |
 | label        | 设定第一个标签文本     | String       | 字符串             | 'Shared Secret' |
 | labelConfirm | 设定第二个标签文本     | String       | 字符串             | 'Confirm Secret'|
-| obscureTxt   | 设定隐藏提示文本       | String       | 字符串             | 'Obscure secret'|
+| obscureTxt   | 设定隐藏密码的提示文本       | String       | 字符串             | 'Obscure secret'|
 | des          | 设定输入提示信息       | String       |'标签&#166;字符串'  | N/A       |
 | passwordLevel|是否出现密码安全程度提示| Boolean      |  true,false        | false     |
 
@@ -27,6 +27,12 @@
 | 参数              | 说明                     | 类型  |
 | -------------     | -------------            | ----- |
 | changeDes         | 动态改变输入框提示信息   | function( msg : String )|
+
+### Events
+| 参数          | 说明                     | 类型  |
+| ------------- | -------------            | ----- |
+| change        | 密码框值发生变化时触发   | function( e:event )|
+| click         | 点击自动生成密码时触发   | function()|
 
 </xmp>
 

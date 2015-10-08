@@ -26,7 +26,8 @@ define([
 			{label : 'TagList 标签', type : '', widget : 'components/tagList'},
 			{label : 'SiderList 列表', type : '', widget : 'components/siderList'},
 			{label : 'CustomList 列表', type : '', widget : 'components/customList'},
-			{label : 'TextBoxList 列表', type : '', widget : 'components/textBoxList'}
+			{label : 'TextBoxList 列表', type : '', widget : 'components/textBoxList'},
+			{label : 'PasswordLevel 密码强度提示', type : '', widget : 'components/PasswordLevel'}
 		]},
 		{category : 'Styles', list : [
 			{label : 'Layout 布局', widget : 'styles/layout'},
